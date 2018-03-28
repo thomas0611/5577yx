@@ -1,0 +1,94 @@
+﻿@charset "utf-8";
+/*全局复写*/
+body{font-family:"Microsoft YaHei"; font-size:12px;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {padding:0;margin:0}
+fieldset,img {border:0}
+address,caption,cite,code,dfn,em,th,var {font-weight:normal;font-style:normal}
+ol,ul{list-style:none}
+caption,th {text-align:left}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;font-size:100%}
+abbr,acronym {border:0}
+button,input,select,textarea{font-size:100%; cursor:pointer;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input{border:none;}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clear{clear:both; line-height:0px; height:0px; font-size:0px;}
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner{border:none;padding:0;}
+a{text-decoration:none;}
+.fl{float:left;}
+.fr{float:right;}
+
+.warpDiv{width:695px; height:404px; background:url(../../images/jhwj/bg1.jpg) no-repeat; position:relative;}
+.LoginBg{width:695px; height:404px; position:absolute; top:23px; left:21px;}
+.NewBg{width:660px; height:208px; background:url(../../images/jhwj/newbg.jpg) no-repeat; overflow:hidden; position:relative;}
+
+.Tab{width:255px; height:175px; position:absolute; right:10px; top:20px; overflow:hidden;}
+.Tab .Menubox{color:#6b6b6b; margin-bottom:8px;}
+.Tab .Menubox a{font-size:14px; color:#e8b47c; font-weight:bold; margin:0px 4px 0px 5px;}
+.Tab .Menubox a.current{color:#FFF;}
+.Tab .yin{display:none;}
+.Tab .yin li{height:30px; line-height:30px; background:url(../../images/jhwj/xian.jpg) left bottom repeat-x;}
+.Tab .yin li a{color:#c1c1c1;}
+.Tab .yin li a:hover{color:#FFF;}
+.Tab .yin li span{color:#929292;}
+.Tab .yin li.more{padding-top:4px; background:none; text-align:right; padding-right:30px;}
+
+.Login{width:660px; height:115px; margin-top:15px; overflow:hidden; position:relative;}
+.Login1{margin-top:35px;}
+.Login .name{color:#eedda6; font-size:16px; text-align:right; padding-right:10px;}
+.Login .login_bt2{width:178px; height:26px; line-height:26px; background:url(../../images/jhwj/bt.jpg) no-repeat; color:#FFF; padding-left:5px;}
+.Login .tip{color:#f00; padding-left:120px;}
+.Login .login_bt1{width:184px; height:65px; background:url(../../images/jhwj/bt1.jpg) no-repeat; position:absolute; top:6px; right:100px;}
+.Login span{display:block; float:left; color:#FFF; padding:0px 6px;}
+.Login .box1{width:16px; height:14px; background:url(../../images/jhwj/boxhover.png) no-repeat; cursor:pointer; padding:0 2px;}
+.Login .box2{width:16px; height:14px; background:url(../../images/jhwj/box.png) no-repeat;}
+.Login .wjmm{padding:10px 0px 0px 78px;}
+.Login .wjmm a{color:#FFF;}
+
+.Login_on{width:642px; height:207px; background:url(../../images/jhwj/loginbg.jpg) no-repeat; overflow:hidden;}
+.Login_on .personal{width:642px; height:22px; overflow:hidden; color:#FFF;  padding-top:14px;}
+.Login_on .personal .fl{padding-left:40px;}
+.Login_on .personal .fr{padding-right:40px;}
+.Login_on .personal a{color:#ffd48a; padding:0px 4px;}
+.Login_on .personal span{color:#ffd48a;}
+.Login_on .Gamebox{width:560px; height:135px; margin:3px 0px 0px 40px; overflow:hidden;  position:relative;}
+.Login_on .Gamebox p{margin-top:6px;}
+.Login_on .Gamebox p a{color:#ffd48a;}
+.Login_on .zjfwq{width:290px; height:32px; background:url(../../images/jhwj/zi.png) 12px 7px no-repeat; margin-top:10px; overflow:hidden;}
+.Login_on .zjfwq a{width:93px; height:27px; background:url(../../images/jhwj/bt3.jpg) no-repeat; display:block; float:right; line-height:27px; color:#fff; margin:2px 6px 0px 0px; position:relative; padding-left:20px;}
+.Login_on .zjfwq span{width:6px; height:6px; position:absolute; top:10px; left:8px; display:block; overflow:hidden;}
+.Login_on .zjfwq span.green{background:#76c522;}
+.Login_on .input_1{width:94px; height:21px; line-height:21px; background:url(../../images/jhwj/fu.png) no-repeat; padding-left:50px; color:#FFF; text-align:center;}
+.Login_on .input_2{width:113px; height:31px; background:url(../../images/jhwj/bt4.jpg) no-repeat; position:absolute; top:82px; left:155px;}
+.Login_on .choose{margin-top:22px;}
+.Login_on .start{position:absolute; top:40px; right:35px;}
+
+.Link{width:640px; height:50px; background:url(../../images/jhwj/xian1.jpg) top left repeat-x;}
+.Link a{margin-left:10px;}
+.Link .fl{padding-top:15px;}
+.Link .fr{padding-top:12px;}
+.Link1{position:absolute; top:-25px; left:55px; z-index:1}
+
+.server{width:646px; height:151px; background:url(../../images/jhwj/serverbg.jpg) no-repeat; margin-top:10px; margin-left:-4px; overflow:hidden;}
+.server h3{height:26px; line-height:26px; color:#FFF; padding-left:70px;}
+.server h3 a{float:right; color:#ffd48a; text-decoration:underline; padding-right:6px;}
+.server div{width:610px; height:84px; margin:0px auto; overflow:hidden; overflow-y:scroll; margin-top:20px; *position:relative;}
+.server div a{width:93px; height:27px; background:url(../../images/jhwj/bt3.jpg) no-repeat; display:block; float:left; line-height:27px; color:#fff; margin:10px 4px 0px 0px; position:relative; padding-left:20px;}
+.server div span{width:6px; height:6px; position:absolute; top:10px; left:8px; display:block; overflow:hidden;}
+.server div span.green{background:#76c522;}
+.server div span.yellow{background:#ffd200;}
+.server div span.red{background:#f00;}
+.server div span.gray{background:#929292;}
+
+#focus {width:337px;height:168px; background:#37687f; border:1px solid #04384e; padding:2px; position:absolute; top:16px; left:28px; overflow:hidden; cursor:pointer;}
+#focus ul {display:none}
+#focus img {width:337px;height:168px;display:block}
+.d1 {position:relative;}
+.d2 {width:337px;overflow:hidden;}
+.num_list{position:absolute;left:3px;bottom:2px;height:20px;overflow:hidden; background:#000; width:336px;}
+.button {position:absolute;z-index:10;right:5px;bottom:5px; _top:156px; font-size:12px;font-family:Arial}
+.b1,.b2{display:block;float:left; width:11px; height:11px; background:url(../../images/jhwj/focus.png) no-repeat; line-height:50px; margin-right:4px;}
+.b2{background:url(../../images/jhwj/focushover.png) no-repeat;}

@@ -1,0 +1,181 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexPic</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        function UpdateIndexPic() {
+            $("form").ajaxSubmit({
+                url: "/Settings/UpdateIndexPic",
+                type: "post",
+                success: function (data, textStatus) {
+                    if (data == "True") {
+                        jsprint("修改成功！", "", "Success");
+                    } else {
+                        jsprint("修改失败！", "", "Error");
+                    }
+                }
+            });
+            return false;
+        }
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理&gt; 首页幻灯片
+    </div>
+    <div class="tools_box">
+    </div>
+    <!--列表展示.开始-->
+    <div class="photo_list4 clearfix">
+        <div class="box">
+            <a href="javascript:;">首页幻灯片编辑：</a><br />
+            <form onsubmit="return UpdateIndexPic()" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td colspan="2"><span style="color: Blue">图片1：</span><span>大图(尺寸740x244)</span></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input id="txtImgUrl1" name="txtImgUrl1" class="txtInput normal left" maxlength="255" value="@( ViewData["txtImgUrl1"])">
+                                        <a href="javascript:;" class="files">
+                                            <input type="file" id="File1" name="File1" onchange="Upload('SingleFile', 'txtImgUrl1', 'File1');" /></a>
+                                        <span class="uploading">正在上传，请稍候...</span></td>
+                                </tr>
+                                <tr>
+                                    <td>链接地址:</td>
+                                    <td>
+                                        <input id="TextBox1" name="TextBox1" class="txtInput normal left" value="@(ViewData["TextBox1"])"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td colspan="2"><span style="color: Blue">图片2：</span>
+                                        大图(尺寸740x244)</td>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input id="txtImgUrl2" name="txtImgUrl2" class="txtInput normal left" maxlength="255" value="@( ViewData["txtImgUrl2"])">
+                                        <a href="javascript:;" class="files">
+                                            <input type="file" id="FileUpload1" name="FileUpload1" onchange="Upload('SingleFile', 'txtImgUrl2', 'FileUpload1');" /></a>
+                                        <span class="uploading">正在上传，请稍候...</span></td>
+                                </tr>
+                                <tr>
+                                    <td>链接地址：</td>
+                                    <td>
+                                        <input id="TextBox2" name="TextBox2" class="txtInput normal left" value="@(ViewData["TextBox2"])"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td colspan="2"><span style="color: Blue">图片3：</span>大图(尺寸740x244)</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input id="txtImgUrl3" name="txtImgUrl3" class="txtInput normal left" maxlength="255" value="@( ViewData["txtImgUrl3"])">
+                                        <a href="javascript:;" class="files">
+                                            <input type="file" id="FileUpload2" name="FileUpload2" onchange="Upload('SingleFile', 'txtImgUrl3', 'FileUpload2');" /></a>
+                                        <span class="uploading">正在上传，请稍候...</span></td>
+                                </tr>
+                                <tr>
+                                    <td>链接地址：</td>
+                                    <td>
+                                        <input id="TextBox3" name="TextBox3" class="txtInput normal left"value="@(ViewData["TextBox3"])"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td colspan="2"><span style="color: Blue">图片4：</span>大图(尺寸740x244)<br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input id="txtImgUrl4" name="txtImgUrl4" class="txtInput normal left" maxlength="255"value="@( ViewData["txtImgUrl4"])">
+                                        <a href="javascript:;" class="files">
+                                            <input type="file" id="FileUpload4" name="FileUpload4" onchange="Upload('SingleFile', 'txtImgUrl4', 'FileUpload4');" /></a>
+                                        <span class="uploading">正在上传，请稍候...</span></td>
+                                </tr>
+                                <tr>
+                                    <td>链接地址：</td>
+                                    <td>
+                                        <input id="TextBox4" name="TextBox4" class="txtInput normal left"value="@(ViewData["TextBox4"])"></td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td colspan="2">
+                                        <span style="color: Blue">图片5：</span> 大图(尺寸740x244)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input id="txtImgUrl5" name="txtImgUrl5" class="txtInput normal left" maxlength="255"value="@( ViewData["txtImgUrl5"])">
+                                        <a href="javascript:;" class="files">
+                                            <input type="file" id="FileUpload5" name="FileUpload5" onchange="Upload('SingleFile', 'txtImgUrl5', 'FileUpload5');" /></a>
+                                        <span class="uploading">正在上传，请稍候...</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>链接地址：</td>
+                                    <td>
+                                        <input id="TextBox5" name="TextBox5" class="txtInput normal left" value="@(ViewData["TextBox5"])"></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr style="text-align: center;@ViewData["style"]">
+                        <td colspan="2">
+                            <input type="submit" id="btnok" value="确定" class="btnSubmit" /></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

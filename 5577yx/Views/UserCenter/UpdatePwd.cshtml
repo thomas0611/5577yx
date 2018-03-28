@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "修改密码";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner">
+            <div class="user_center_content_title">
+                修改密码
+            </div>
+            <div class="user_center_content_right">
+                <div class="session session_first" style="padding-bottom: 0px;">
+                    <div class="board board_yes" style="width: 320px;">
+                        <span class="user_center_icon yes"></span><span class="board_item">修改密码后将需要重新登陆</span>
+                    </div>
+                </div>
+                <div class="session session_first" style="margin-top: 0px;">
+                    <div class="input_div">
+                        <table>
+                            <tr>
+                                <td>原密码：</td>
+                                <td>
+                                    <input name="yPWD" type="password" id="yPWD" class="txt1" onblur="VerifyyPWD()" maxlength="16"></td>
+                                <td style="text-align: left"><em>*</em> <span id="yPWDMsg" class="msg">请输入原密码。</span></td>
+                            </tr>
+                            <tr>
+                                <td>新密码：</td>
+                                <td>
+                                    <input name="PWD" type="password" id="PWD" class="txt1" onkeyup="VerifyPWDStrong()" onblur="VerifyPWD()" maxlength="16"></td>
+                                <td style="text-align: left"><em>*</em> <span id="PWDMsg" class="msg">密码长度为6～16位，不可与账号相同。</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>确认密码：</label></td>
+                                <td>
+                                    <input type="password" id="PWDAgain" name="PWDAgain" class="txt1" maxlength="16" onblur="VerifyPWDAgain()"></td>
+                                <td style="text-align: left"><em>*</em> <span id="PWDAgainMsg" class="msg">再一次输入密码进行确认，效验密码是否填写错误。</span></td>
+
+                            </tr>
+                        </table>
+                        <div class="button_box">
+                            <input type="hidden" id="UserName" value="@ViewData["UserName"]" />
+                            <input type="hidden" id="YMima" value="@ViewData["Mima"]" />
+                            <input type="submit" name="btnsave" value="确定" onclick="UpdateUserInfo();" id="btnsave"
+                                class="big_orange_button" style="margin-left: 180px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

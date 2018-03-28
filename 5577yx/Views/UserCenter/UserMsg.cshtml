@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "消息管理";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner">
+            <div class="user_center_content_title">
+                消息管理
+            </div>
+            <table bordercolor="#dcdcdc" class="paydetail_table xx" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th align="center" width="100">消息类型
+                        </th>
+                        <th align="left" class="t">消息标题
+                        </th>
+                        <th align="center" width="60">状态
+                        </th>
+                        <th align="center" width="120">发布时间
+                        </th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="SysMsg">
+                </tbody>
+            </table>
+            <div style="float: left; margin-top: 5px; width: 650px; text-align: center;">
+                <div id="PageContent" class="flickr right">
+                </div>
+                <input id="txtPageNum" type="hidden" value="10" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    InitPageContent("SysMsg");
+    function ShowMsg(SysMsg) {
+        if (document.getElementById("trCon" + SysMsg).style.display == "none") {
+            document.getElementById("trCon" + SysMsg).style.display = "";
+        } else {
+            document.getElementById("trCon" + SysMsg).style.display = "none";
+        }
+    }
+</script>

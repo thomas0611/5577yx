@@ -1,0 +1,64 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MasterRole</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            InitPageContent("MasterRole");
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 系统管理 &gt; 管理员角色列表
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+            </div>
+            <a href="AddMasterRole" class="tools_btn" style="@ViewData["Style"]">
+                <span><b class="add">添加角色权限组</b></span></a>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th width="5%">ID
+                </th>
+                <th>角色权限组名称
+                </th>
+                <th width="20%">操作
+                </th>
+            </tr>
+        </thead>
+        <tbody id="MasterRole">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="10" onchange="InitPageContent('MasterRole')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

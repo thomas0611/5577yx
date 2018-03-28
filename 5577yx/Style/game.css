@@ -1,0 +1,242 @@
+﻿.gameGolf
+{
+	width:745px;
+	overflow:hidden;
+	float:right;	
+}
+.gameGolf .gameList
+{
+	width: 724px;
+	float: left;
+	padding:0px 10px;
+	overflow: hidden;
+		
+}
+.gameGolf .golftip
+{
+	border:1px solid #E06F00;
+	overflow:hidden;
+	background-color:White;
+}
+.gameGolf .golftip .title
+{
+	height: 40px;
+	padding-left: 5px;
+	font: 15px "Microsoft Yahei UI","Microsoft Yahei",Tahoma,SimHei;
+	line-height: 41px;
+	border-bottom: 2px solid #E06F00;	
+	padding-left: 15px;
+	color: #FF5A00;
+	font-weight: bold;
+	border: 1px solid white;
+	background-color: #FFDAA2;
+	border-bottom: 1px solid #E06F00;
+}
+.gameGolf .golftip .tip
+{
+	padding:15px 30px 10px 30px;
+	background-color:White;	
+	overflow:hidden;
+}
+.gameGolf .golftip .tip .l
+{
+	background:url(../images/tword.gif) no-repeat;	
+	float:left;
+	width:165px;
+	height:115px;
+	border:1px solid #555;
+	background-position-y:7px;
+	border-radius:12px 0px 0px 12px;
+}
+.gameGolf .golftip .tip .w
+{
+	width:480px;
+	height:100px;
+	float:left;
+	padding-left:20px;
+	padding-right:10px;
+	border:1px solid #555;
+	border-left:0px;
+	border-radius:0px 12px 12px 0px;
+	line-height:22px;
+	padding-top:15px;
+}
+
+
+
+.gameGolf .mb10 img
+{
+	border:1px solid #E06F00;	
+}
+.gameGolf .gameList h1
+{
+	height: 34px;
+	padding-left: 5px;
+	font: 15px "Microsoft Yahei UI","Microsoft Yahei",Tahoma,SimHei;
+	color: #E06F00;
+	line-height: 35px;
+	border-bottom: 2px solid #E06F00;	
+}
+.gameGolf .gameList h1 span 
+{
+	height: 34px;
+	padding-left: 5px;
+	font: 15px "Microsoft Yahei UI","Microsoft Yahei",Tahoma,SimHei;
+	font-weight: 500;
+	color: #E06F00;
+	font-weight: bold;
+	line-height: 35px;
+	width: 180px;
+	float: left;
+}
+.gameGolf .gameList h1 .tit 
+{
+	width:400px;
+	float:left;
+	color:#666;
+	font-weight:bold;
+	font-family:宋体;
+	font-size:12px;
+	margin-left:10px;
+	text-align:left;
+}
+.gameGolf .gameList .games
+{
+	padding-left:10px;
+	padding-bottom:10px;
+	padding-top:7px;
+	width:695px;	
+	overflow:hidden;
+}
+
+/*领取游戏礼包详情页*/
+.getGolf
+{
+	width:681px;
+	overflow:hidden;
+	float:right;	
+	border:1px solid #E06F00;
+	background-color:White;
+	padding:25px 30px 30px 30px;
+	min-height:500px;
+}
+.getGolf .gameDetail
+{
+	overflow:hidden;
+	padding-bottom:20px;	
+}
+.getGolf .left
+{
+	width:210px;
+	float:left;
+}
+.getGolf .right
+{
+	width:400px;
+	float:left;	
+	line-height:28px;
+}
+.getGolf .right h1
+{
+	font-size: 16px;
+	font-family: "宋体";
+	color: #434343;
+	padding-bottom: 10px;
+	width: 310px;
+}
+.getGolf .right p
+{
+	font-size:14px;	
+}
+.getGolf .right p label
+{
+	float: left;
+	text-align: right;
+	color: #8D8784;
+	height: 21px;
+	padding-top: 0px;
+	_padding-top: 3px;
+}
+.getGolf .btn
+{
+	width:650px;
+	text-align:right;
+	padding-right:20px;
+	float:left;
+	overflow:hidden;	
+}
+.btn span
+{
+	margin-right:20px;
+}
+.btn .btngetcard
+{
+	background: url(../images/getgolf.gif) 0px 0px no-repeat;
+	width: 86px;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	border-style:none;
+	cursor:pointer;
+}
+/*说明*/
+.getGolf .tip
+{
+	overflow: hidden;
+	width:683px;
+}
+.tip .tipUl
+{
+	border-bottom: 2px solid #B00000;
+	padding-left: 20px;	
+	overflow:hidden;
+}
+.tip .tipUl ul li {
+background: papayaWhip;
+border: 1px solid #FFD792;
+border-bottom: none;
+float: left;
+line-height: 30px;
+text-align: center;
+color: #666;
+font-size: 14px;
+margin-right: 10px;
+cursor: pointer;
+padding:0px 10px;
+}
+.tip .tipUl ul li a
+{
+	color: white;
+	text-decoration: none;	
+}
+.tip .tipUl ul li.current
+{
+	background: #D10011;
+	border: 1px solid #B00000;
+	border-bottom: none;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.tip .tipUl ul li.current a
+{
+	color: white;
+	text-decoration: none;	
+}
+.tip .tipArea
+{
+	padding-top:20px;	
+}
+.tip p
+{
+	color: #8D8784;
+	line-height: 25px;	
+	padding-left:20px;
+}

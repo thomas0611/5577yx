@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "邮箱绑定";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner" style="min-height: 400px">
+            <div class="user_center_content_title">
+                邮箱绑定
+            </div>
+            <div class="user_center_content_right">
+                <div class="session session_first" style=@ViewData["ShowStyle1"]>
+                    <div class="board board_yes" style="width: 320px;">
+                        <span class="user_center_icon @ViewData["EmailStyle"]""></span><span class="board_item">绑定邮箱:@ViewData["Email"]</span>
+                    </div>
+                    <div class="center_div">
+                    </div>
+                </div>
+                <div class="session session_first"style=@ViewData["ShowStyle2"]>
+                    <div class="board board_yes" style="width: 320px;">
+                        <span class="user_center_icon @ViewData["EmailStyle"]"></span><span class="board_item">请您及时绑定邮箱</span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>电子邮箱：</label></td>
+                            <td>
+                                <input name="Email" type="text" id="Email" maxlength="50" class="txt1" onblur="VerifyEmail()"></td>
+                            <td style="text-align: left"><em>*</em> <span id="EmailMsg" class="msg">请务必输入真实有效的邮箱。</span></td>
+                        </tr>
+                    </table>
+                    <div class="button_box">
+                        <input type="submit" name="Button1" value="立即绑定" onclick="UpdateUserInfo()" id="Button1"
+                            class="big_orange_button">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

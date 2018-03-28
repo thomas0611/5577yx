@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "CallBack";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+<div id="content_n" style="background: none; height: 450px;">
+    <div id="codecontent" style="background-image: url(../images/czpaybg_03.png)">
+        <!--找回密码邮件-->
+        <div class="email2">
+            <div class="emailtop">
+                <div class="pic">
+                </div>
+                乐扣平台温馨提示
+            </div>
+            <p>
+                <span style="font-size: 20px; line-height: 25px;">
+                    <img src="@ViewData["ImgUrl"]" width="25" height="25" />@ViewData["Msg"]</span><br />
+                <br />
+                <span><a href="/UserCenter/PayHistory">查看充值记录</a></span>
+                <label id="showtip">
+                </label>
+            </p>
+        </div>
+    </div>
+</div>

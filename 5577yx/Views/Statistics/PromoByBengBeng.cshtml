@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PromoByBengBeng</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/sty.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+</head>
+   
+<body class="mainbody">
+    <script>
+        function GetAllGame() {
+            $.ajax({
+                type: "get",
+                url: "../../Models/AdminFunction.ashx?method=GetGames",
+                success: function (text) {
+                    var jsonObj = eval(text);
+                    for (var i = 0; i < jsonObj.length; i++) {
+                        $("#Selyx").append("<option value=\"" + jsonObj[i].Id + "\">" + jsonObj[i].Name + "</option>");
+                    }
+                }
+            })
+        }
+        function onyxchange() {
+           // $("#Selfwq").val(0);
+            GetAllServer($("#Selyx").val());
+        }
+        function GetAllServer(GameId) {
+            $.ajax({
+                type: "get",
+                url: "../../Models/AdminFunction.ashx?method=GetServers&GameId=" + GameId,
+                success: function (text) {
+                    var jsonObj = eval(text);
+                    //var html = "<option value=\"0\">" + $("#Selfwq option").html() + "</option>";
+                    var html = "<option value=\"0\">" + "所有区服" + "</option>";
+                    for (var i = 0; i < jsonObj.length; i++) {
+                        html += "<option value=\"" + jsonObj[i].Id + "\">" + jsonObj[i].Name + "</option>";
+                    }
+                    $("#Selfwq").html(html);
+                }
+            })
+        }
+        </script>
+    <form method="post" action="/Statistics/PromoUserInfo">
+        <div class="navigation">
+            首页 &gt; 统计管理&gt; 蹦蹦网推广统计
+        </div>
+        <div class="photo_list4 clearfix">
+            <ul>
+                <li>
+                    <div class="box">
+                        
+                        <div id="Search" style="padding-left: 20px;">
+                            @*用户名：
+                            <input type="text" name="Selname" />*@
+                            选择游戏：
+                            <select id="Selyx" class="select2" name="GameId" onchange="onyxchange()">
+                                <option value="0">所有游戏</option>
+                            </select>
+                            选择区服：
+                            <select id="Selfwq" name="ServerId" class ="select2">
+                            </select>
+                           
+                            <input type="submit" id="btnSearch" value="搜 索" class="btnSearch" style="margin-left:15px;" onclick="" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+        <!--列表展示.开始-->
+        
+        <div class="main">
+            <div class="user_password">
+                
+                <div class="zixun" style="overflow: auto; width: 1000px;">
+                    <table style="text-align: center; width: 99%; border: #dcdcdc" class="paydetail_table">
+                        <thead>
+                            <tr>
+                                <th>推广用户 </th>
+                                <th>注册时间</th>
+                                <th>推广总金额</th>
+                                <th>注册Ip</th>
+                            </tr>
+                        </thead>
+                        <tbody id="SpreadUser"></tbody>
+                        <tfoot>
+                            <tr class="pagination">
+                                <td colspan="5"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="page_box">
+                    <div id="PageContent" class="flickr right">
+                    </div>
+                    <div class="left">
+                        <input type="hidden" value="10" id="txtPageNum" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            GetAllGame();
+            GetAllServer($("#Selyx").val());
+        </script>
+</body>
+</html>

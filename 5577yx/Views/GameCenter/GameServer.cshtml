@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = ViewData["Title"];
+    Layout = "~/Views/MainLayout.cshtml";
+}
+@Html.Action("Left", "Home")
+<div id="youxiliebiao">
+    <div class="game_t">
+        <div class="title">
+            服务器列表
+        </div>
+        <div class="game_tmore">
+        </div>
+    </div>
+    <div class="comcent">
+        <div class="jianjie">
+            <div class="left">
+                <a style="width: 431px; height: 205px; cursor: pointer">
+                    <img src="@ViewData["IndexHbImg"]" width="380" height="200"></a>
+            </div>
+            <div class="righttext">
+                <h1>新闻公告 <a class="zxkf_a">more</a>
+                </h1>
+                <ul>
+                    @Html.Raw(ViewData["NewsGG"])
+                </ul>
+            </div>
+        </div>
+        <ul id="biaoge">
+            <li><span class="span1">游戏类型</span><span class="span2">@ViewData["GameLx"]</span><span class="span1">游戏特征</span><span
+                class="span2">@ViewData["GameTz"]</span><span class="span1">操作类型</span><span class="span2">@ViewData["GameCzlx"]</span></li>
+            <li><span class="span1">游戏画面</span><span class="span2">@ViewData["GameHm"]</span><span class="span1">游戏状况</span><span
+                class="span2">火爆</span><span class="span1">收费模式</span><span class="span2">@ViewData["GameSfms"]</span></li>
+            <li><span class="span1">快速通道</span><a href="/GameGift/" class="lb">&gt; 礼包领取</a><a href="http://@ViewData["GameCom"]" class="xs" target="_blank">&gt; 游戏官网</a><a href="http://@ViewData["BBS"]" class="lt" target="_blank">&gt; 论坛专区</a><a href="http://@ViewData["game_url_hd"]" class="hd" target="_blank">&gt; 开服活动 </a>@Html.Raw(ViewData["Dlq"])</li>
+        </ul>
+        <div class="daohang001" style="margin-bottom: 10px; margin-top: 6px;">
+            <ul>
+                <li class="current"><a style="">游戏服务器</a></li>
+                <li class=""><a style="">游戏资料</a></li>
+                <li class=""><a style="">游戏画面</a></li>
+                <li class=""><a style="">客服中心</a></li>
+            </ul>
+        </div>
+        <div class="daohang1">
+            <ul>
+                <li style="width: 683px; height: 30px; margin: 5px 0px 10px 11px;">
+                    <div id="ServerSel">
+                        @Html.Raw(ViewData["SelHtml"])
+                    </div>
+                </li>
+                <li class="ul_fuwuqi">
+                    @Html.Raw(ViewData["ServerHtml"])
+                </li>
+            </ul>
+            <ul class="ziliao001" style="display: none">
+                @Html.Raw(ViewData["ZlHtml"])
+            </ul>
+            <ul class="youxihuamian" style="display: none">
+                <li>
+                    <img src="@ViewData["Pic1"]" /></li>
+                <li>
+                    <img src="@ViewData["Pic2"]" /></li>
+                <li>
+                    <img src="@ViewData["Pic3"]" /></li>
+                <li>
+                    <img src="@ViewData["Pic4"]" /></li>
+            </ul>
+            <ul class="daohang1" style="display: none">
+                <div class="kefu">
+
+                    <h3>欢迎来到5577游戏平台！</h3>
+                    <p class="p1">
+                        如果您再游戏过程中遇到任何问题，可以咨询我们的在线客服帮您解决
+                    </p>
+                    <p class="p0 p2">
+                        QQ：<span>2067257264</span><area shape="rect" coords="6,92,138,115" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2067257264&amp;site=qq&amp;menu=yes" target="_blank">
+                    </p>
+                    <p class="p0 p3">
+                        Tel： <span>400-009-4577
+                        </span>
+                    </p>
+                    <p class="p0 p4">
+                        Email：<span>service@5577yx.com</span>
+                    </p>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="down">
+    </div>
+</div>
+<script>
+    $(".daohang001 ul li").each(function (i, k) {
+        // var li = $(this);
+        $(k).mouseover(function () {
+            $('.daohang001 ul li').removeClass('current');
+            $(this).addClass('current');
+            $(".daohang1 ul").hide().attr("style", 'display: none;');
+            $(".daohang1 ul:eq(" + i + ")").show().attr("style", 'display: block;');
+        });
+    });
+    $("#ServerSel a").each(function (i, k) {
+        $(k).click(function () {
+            //$('.daohang1 ul div div').removeClass('current');
+            //$(this).addClass('current');
+            $(".ul_fuwuqi div").hide().attr("style", 'display: none;');
+            $(".ul_fuwuqi div:eq(" + i + ")").show().attr("style", 'display: block;');
+        });
+    });
+    $('#ServerSel a:first').click();
+</script>

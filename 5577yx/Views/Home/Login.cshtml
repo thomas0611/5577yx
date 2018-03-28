@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "会员登录";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+<div class="loginArea" style="width:600px;height:490px;margin:0px 190px 20px 190px;padding-top:40px;font-family:'Microsoft YaHei';">
+    <span style="font-size:16px;font-weight:800;">快速登录您的5577游戏账户</span>
+    <div class="login_box">
+        <form method="post" onsubmit="return GameUserLogin()">
+            <div id="login">
+                <ul style="list-style:none;">
+                    <li style="margin-top:8px;"><span>用户名：</span><input name="UserName" type="text" value="@ViewData["UserName"]" id="UserName" style="height:32px;line-height:32px;font-size:18px;border:1px solid #afa5a0;border-radius:3px;padding :0 6px;font-family:'Microsoft YaHei';"></li>
+                    <li style="margin-top:8px;"><span>密&nbsp;&nbsp;&nbsp;码：</span><input name="PWD" type="password" id="PWD" value="@ViewData["PWD"]" style="height:32px;line-height:32px;font-size:18px;border:1px solid #afa5a0;border-radius:3px;padding :0 6px;font-family:'Microsoft YaHei';"></li>
+                    <li style="margin-top:8px;"><span>验证码：</span><input name="Code" type="text" id="Code" value="" style="width: 100px;height:32px;line-height:32px;font-size:18px;border:1px solid #afa5a0;border-radius:3px;margin-right:15px;padding :0 6px;font-family:'Microsoft YaHei';">
+                    <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;"></li>
+                    <li style="margin:8px 8px;"><input type="submit" name="btnlogin" value="" id="btnlogin" class="btn_login" style="width:240px;height:46px;line-height:46px;background:url('../Images/bg_login.png');background-position:0 -47px;cursor: pointer;font-size:18px;border:0;border-radius:3px;padding :0 6px;"></li>
+                    <li style="margin:8px 8px;"><span class="go_reg">还没有账号？ <a href="/Home/Reg">免费注册&gt;&gt; </a>
+            </span>&nbsp;&nbsp; <a class="back_pwd" href="/UserCenter/FindPwd">找回密码？</a></li>
+                </ul>
+                @*<label class="log_user" for="ID-U-0">
+                    <span>用户名：</span><input name="UserName" type="text" value="@ViewData["UserName"]" id="UserName"></label>
+                <label class="log_password" for="ID-U-1">
+                    <span>密&nbsp;&nbsp;码：</span>
+                    <input name="PWD" type="password" id="PWD" value="@ViewData["PWD"]"></label>
+                <label class="code_label_position" for="ID-U-2">
+                    <span>验证码：</span>
+                    <input name="Code" type="text" id="Code" value="" style="width: 80px;">
+                    <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;">
+                </label>*@
+                @*<div>
+                <input type="submit" name="btnlogin" value="" id="btnlogin" class="btn_login" style="width:240px;height:46px;border:0px;background:url('../Images/bg_login.png');background-position:0 -47px;cursor: pointer;"></div>
+                <span class="auto_span" title="请勿在公共电脑使用此功能"><span class="ck">
+                    <input id="ck1" type="checkbox" name="ck1" checked="checked"></span>
+                    <label for="auto_label" style="vertical-align: middle">
+                        记住登录</label></span>*@
+            </div>
+        </form>
+        <div class="nolog">
+            
+        </div>
+    </div>
+    @*<div class="reg">
+        <h2>还不是5577游戏平台的用户？</h2>
+        <ul>
+            <li>一个账号可以登录所有的游戏。</li>
+            <li>与游戏平台的玩家交友、交互。</li>
+            <li>现在免费注册5577游戏平台账号，便可以登录享受游戏带来的乐趣</li>
+        </ul>
+        <a href="/Home/Reg">
+            <img src="/Images/login_gg.gif" width="170" height="49"></a>
+    </div>*@
+</div>
+

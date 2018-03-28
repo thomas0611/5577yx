@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "修改资料";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner">
+            <div class="user_center_content_title">
+                修改资料
+            </div>
+            <div class="user_center_content_right">
+                <div class="input_div">
+                    <div class="line imgline">
+                        <div class="left">
+                            当前头像：
+                        </div>
+                        <div class="mid">
+                            <span>
+                                <img class="user_head" src="@Html.Raw("/Images/users/" + ViewData["Photo"] + ".jpg")" id="userphoto"></span><input id="Photo" type="hidden" value="@ViewData["Photo"]" />
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
+                    <div class="line imglistline">
+                        <div class="left">
+                            可选头像：
+                        </div>
+                        <div class="mid">
+                            <a id="open" class="open" style="color: blue; display: block;" onclick="ShowMore()">展开</a> <a id="close" class="close" style="display: none; color: Blue;" onclick="ShowMore()">收起</a>
+                            <div id="moreImg" style="width: 400px; height: 240px; border: 1px solid #FFE5CD; padding: 5px; display: none;">
+                                <div style="width: 400px; height: 240px; overflow-x: auto;">
+                                    <img src="/Images/users/1.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/2.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/3.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/4.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/5.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/6.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/7.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/8.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/9.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/10.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/11.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/12.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/13.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/14.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/15.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/16.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/17.jpg" style="cursor: pointer">
+                                    <img src="/Images/users/18.jpg" style="cursor: pointer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            帐号：
+                        </div>
+                        <div class="mid">
+                            <span>@ViewData["UserName"]</span>
+                        </div>
+                        <div class="right">
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            性别：
+                        </div>
+                        <div class="mid">
+                            <span class="user_infor_span_right">@ViewData["Sex"]</span>
+                        </div>
+                        <div class="right" id="tip">
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            真实姓名：
+                        </div>
+                        <div class="mid">
+                            <span>@ViewData["RealName"]</span>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            出生年月：
+                        </div>
+                        <div class="mid">
+                            <span>@ViewData["BirthDay"]</span>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <div class="left">
+                            Email：
+                        </div>
+                        <div class="mid">
+                            <span>@ViewData["Email"]</span>
+                        </div>
+                        <div class="onShow" id="tip">
+                        </div>
+                    </div>
+                </div>
+                <div class="button_box">
+                    <input type="submit" name="Button1" value="确认修改" onclick="UpdateUserInfo()" id="Button1"
+                        class="big_orange_button">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function ShowMore() {
+        if (document.getElementById('open').style.display == "block") {
+            document.getElementById('open').style.display = "none";
+            document.getElementById('close').style.display = "block";
+            document.getElementById('moreImg').style.display = "block";
+        }
+        else {
+            document.getElementById('open').style.display = "block";
+            document.getElementById('close').style.display = "none";
+            document.getElementById('moreImg').style.display = "none";
+        }
+    }
+    $("#moreImg img").each(function (i, k) {
+        $(k).click(function () {
+            $("#userphoto").attr("src", $(k).attr("src"));
+            $("#Photo").val(i + 1);
+        });
+    });
+</script>

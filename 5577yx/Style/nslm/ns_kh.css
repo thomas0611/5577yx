@@ -1,0 +1,92 @@
+body,div,h1,input,form,ul,li,dl,dt,dd,h2{padding:0;margin:0}
+ul,li{list-style:none}
+body{background:#000;}
+a,a:hover{text-decoration:none}
+.clear{clear:both;font-size:0;padding:0;margin:0;height:0;line-height:0;}
+/*通用*/
+.yx_tit{height:31px;overflow:hidden;line-height:150px;}
+.fuwuqi_dl,.fuwuqi_d2{width:494px;height:290px;overflow:hidden;font-size:12px;font-family:simsun;}
+.fuwuqi_dl{background:url(../../Images/nslm/client/bg_1.jpg) no-repeat;}
+.fuwuqi_d2{background:url(../../Images/nslm/client/bg_2.jpg) no-repeat;}
+/*游戏登陆*/
+.youxi_dl{width:278px;height:280px;float:left;overflow:hidden;}
+.denglu_yx{padding:12px 0 0 15px;position:relative;height:230px;}
+.qudiao_ul{padding-top:8px;height:210px;}
+.denglu_yx li{height:25px;overflow:hidden;line-height:24px;}
+.denglu_yx li label,.denglu_yx li input,.denglu_yx li a,.denglu_yx li img{float:left;}
+.denglu_yx li label{font-size:14px;font-weight:700;color:#d9d6ad;width:60px;}
+.denglu_yx li a{color:#a99877;text-decoration:underline}
+.denglu_yx li img{margin:2px 8px 0 0;}
+.denglu_yx li.xix,.denglu_yx li.quxiao{color:#ff5a5c;padding:2px 0 2px 62px;height:18px;line-height:18px;*height:16px;*line-height:16px;overflow:hidden;}
+.denglu_yx li.jiz{height:20px;line-height:20px;padding:3px 0 5px 62px;overflow:hidden;}
+.denglu_yx li.jiz input{margin:4px 3px 0 0;*margin:1px 0 0 -3px}
+.denglu_yx li.jiz label,.denglu_yx li.quxiao label{font-size:12px;font-weight:400;width:100px;text-align:left;}
+.denglu_yx li.bout{height:40px;padding:5px 0 0 62px;}
+.denglu_yx li.quxiao label{color:#ffa72e;margin:-1px 0 0 0;width:180px;_display:inline;}
+.remember_info{padding-left:0px;margin-left:-20px; color:#cc0000; display:block; width:180px;}
+/*平台*/
+.pingtai_dl{width:215px;height:275px;overflow:hidden;color:#d7d5af;line-height:25px;float:right;}
+.pingt_yx{margin:10px 0 0 11px;}
+.pingt_yx span{display:inline-block;width:118px;}
+.pingt_yx a{background:url(../../Images/nslm/client/but.png) no-repeat 0 -138px;padding-left:24px;color:#ffa72e;text-decoration:underline;display:inline-block;}
+.pingt_kf{margin:25px 0 0 13px;color:#ffa72e;}
+.pingt_kf dt{padding:0 5px 5px;}
+.pingt_kf dd{background:url(../../Images/nslm/client/kd.png) no-repeat;height:32px;line-height:100px;overflow:hidden;margin:3px 0 0 5px; }
+/*登录框和按钮*/
+.denglu_yx .deng_inp,.denglu_yx .yan_inp,.regBtn,.ck_fwq .fuw_bu{background:url(../../Images/nslm/client/but.png) no-repeat;overflow:hidden;border:0;}
+.denglu_yx .deng_inp{width:122px;margin:0 5px 0 0;float:left;position:relative;height:25px;}
+.denglu_yx .yan_inp{width:70px;background-position:0 -29px;margin:0 3px 0 0;height:25px;float:left;position:relative;}
+.denglu_yx .deng_inp input,.denglu_yx .yan_inp input{border:0;background:none;line-height:17px;color:#d8d6af;position:absolute;width:110px;top:4px;left:5px;}
+.denglu_yx .yan_inp input{width:55px;}
+.regBtn{background-position:0 -58px;width:127px;height:37px;padding:37px 0 0;cursor:pointer;float:left;}
+.ck_fwq .fuw_bu{background-position:0 -98px;width:220px;height:36px;line-height:999px;padding-top:36px;overflow:hidden;display:block;cursor:pointer;}
+
+/*服务器*/
+.fwq_con,.fwq_more{width:495px;height:220px;overflow:hidden;}
+.fuw_dl{padding:0 0 0 10px;clear:both;}
+.fuw_dl .fw_ti{font-size:16px;color:#ffa72e;height:24px;overflow:hidden;line-height:24px;padding:3px 0 0 10px;}
+.fuw_dl .fuw_xz{padding:5px 0 0;}
+.fuw_dl .fuq_xzz li{width:201px;float:left;margin:0 12px 10px;display:inline;line-height:34px;height:34px;overflow:hidden;}
+.fuw_dl .fuq_xzz li a{display:block;width:160px;height:36px;padding-left:42px;overflow:hidden;background:url(../../Images/nslm/client/yd_xq.png) no-repeat;color:#d8d6af;}
+.fuw_dl .fuq_xzz li span{font-weight:700;padding-right:5px;}
+.fuw_dl .fuq_xzz .s4{background-position:0 0;}
+.fuw_dl .fuq_xzz .s5{background-position:0 -36px;}
+.fuw_dl .fuq_xzz .s6{background-position:0 -72px;}
+.fuw_dl .fuq_xzz .s3{background-position:0 -108px;}
+.fuw_dl .fuq_xzz .s1{background-position:0 -212px;}
+.fuw_dl .fuq_xzz .s2{background-position:0 -248px;}
+.ck_fwq{margin:0 auto;width:197px;height:35px;padding:10px 0 10px;clear:both}
+.ser_sort{height:28px;line-height:28px;padding:4px 0 0;color:#ff5b5c;margin-left:8px;overflow:hidden}
+.ser_sort span{padding-left:30px;display:inline-block;background:url(../../Images/nslm/client/yd_xq.png) no-repeat;margin-right:2px;}
+.ser_sort span.sort1{background-position:0 -147px;}
+.ser_sort span.sort2{background-position:-154px -147px;}
+.ser_sort span.sort3{background-position:0 -181px;}
+.ser_sort span.sort4{background-position:-154px -181px;}
+/*滚动条*/
+.fwq_more .gundong{overflow-y:scroll;margin:3px 0 0;height:215px;width:490px;scrollbar-arrow-color:#78604c;/*三角箭头的颜色*/
+scrollbar-face-color:#534533;/*立体滚动条的颜色（包括箭头部分的背景色）*/
+scrollbar-3dlight-color:#857462;/*立体滚动条亮边的颜色*/
+scrollbar-highlight-color:#654a2a;/*滚动条的高亮颜色（左阴影？）*/
+scrollbar-shadow-color:#251f14;/*立体滚动条阴影的颜色*/
+scrollbar-darkshadow-color:#251f14;/*立体滚动条外阴影的颜色*/
+scrollbar-track-color:#160501;/*立体滚动条背景颜色*/
+scrollbar-base-color:#503a1e;/*滚动条的基色*/
+}
+/*服务器列表*/
+.fuw_dl .fw_ti11{font-size:14px;color:#521004;line-height:29px;height:29px;overflow:hidden;}
+.fuw_dl .fw_ti11 .fuw_lis{float:left;}
+.fuw_dl .fw_ti11 .fuw_lir{float:right;font-weight:400;width:277px;}
+.fuw_dl .fw_ti11 .fuw_lir label,.fuw_lir input{float:left}
+.fuw_dl .fw_ti11 .fuw_lir .kuas{width:100px;height:19px;line-height:19px;padding:2px 5px;background:#e0d7b5;border:1px solid #b59973;margin:2px 5px 0;color:#aa9b81;font-size:14px;}
+.fuw_dl .fw_ti11 .fuw_lir .jnr_but{background:url(../../Images/nslm/client/jinr.png) no-repeat;width:85px;height:29px;line-height:29px;font-size:14px;font-weight:700;color:#5f4f32;margin-bottom:5px;display:block;text-align:center;float:left}
+/*new0521*/
+.fwq_title{height:17px;background:url(../../Images/nslm/client/logo.jpg) no-repeat 0 center;margin:8px 0 10px 20px;padding:0 0 0 27px;color:#d8d6af;line-height:18px;}
+.fwq_title a{color:#ffe432;padding-left:5px;text-decoration:underline}
+
+.fw_text{color:#d8d6af;text-align:center;padding:5px 0;}
+
+/*0802大眼睛登录*/
+.bout  .ha_tubiao{float:left;margin:0;padding:6px 0 0;width:60px;}
+.bout  .ha_tubiao a{background:url(../../Images/nslm/client/sprite_sntu.png) no-repeat;width:20px;display:block;float:left;height:20px;margin:0 3px;overflow:hidden;line-height:90px;}
+.bout  .ha_tubiao .deng_17173{background-position:0 0;}
+.bout  .ha_tubiao .deng_sina{background-position:0 -24px;}

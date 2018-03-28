@@ -1,0 +1,607 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>5577yx古剑奇侠官网</title>
+    <link href="~/Style/gjqx/common.css" rel="stylesheet" />
+    <link href="~/Style/gjqx/layout.css" rel="stylesheet" />
+    <link href="~/Style/gjqx/index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/gjqx/jquery.smallslider.js"></script>
+    <script src="~/Scripts/gjqx/gjqx.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#roleSlider').slideShow({ imgWrap: '#roleSlider .role-pic', controllWrap: '#roleSlider .role-index', gap: 6000, fadeSpeed: 500 });
+            $('#newsSlider .slide-pic').smallslider({ time: 5000, onImageStop: true, switchEffect: 'ease', switchEase: 'easeOutSine', switchPath: 'left', switchMode: 'hover', switchTime: 500, showText: false });
+            $('#banner').accordion({ accWrap: '#banner li.slide', controllWrap: '#banner .slide-btn', offsetWidth: '440px' });
+            $('#info').accordion({ accWrap: '#info li.slide', controllWrap: '#info .slide-btn', offsetWidth: '277px' });
+            $("#cooperation").carousel({ line: 1, speed: 500, gap: 3000 }); //gap为滚动间隔
+            $('#news').tabSwitch({ indexWrap: '#news .tab-index', contentWrap: '#news .tab-content', switchMethod: 'click' });
+            $('#intro').tabSwitch({ indexWrap: '#intro .tab-index', contentWrap: '#intro .tab-content', switchMethod: 'click' });
+            $('#photo').tabSwitch({ indexWrap: '#photo .tab-index', contentWrap: '#photo .tab-content', switchMethod: 'click' });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="center">
+            <div id="roleSlider">
+                <div class="role-pic">
+                    <div class="role slide-1 curr">
+                        <div class="intro"></div>
+                    </div>
+                    <div class="role slide-2">
+                        <div class="intro"></div>
+                    </div>
+                    <div class="role slide-3">
+                        <div class="intro"></div>
+                    </div>
+                </div>
+
+                <div id="flashDeco" class="abs">
+                    <object width="960" height="380" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                        <param name="movie" value="../Content/gjqx/flower.swf">
+                        <param name="quality" value="high">
+                        <param name="allowscriptaccess" value="always">
+                        <param name="wmode" value="transparent">
+                        <embed width="960" height="380" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" src="../Content/gjqx/flower.swf" />
+                    </object>
+                </div>
+
+                <div class="role-index hide-wd abs">
+                    <ul>
+                        <li class="r-index1 curr">
+                            <span class="alpha-bg bg-1"></span>
+                            <a href="#">神将</a>
+                        </li>
+                        <li class="r-index2">
+                            <span class="alpha-bg bg-2"></span>
+                            <a href="#">剑仙</a>
+                        </li>
+                        <li class="r-index3">
+                            <span class="alpha-bg bg-3"></span>
+                            <a href="#">太乙</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="logo" class="abs">
+                <a href="/gjqx/" title="古剑奇侠">
+                    <h1 class="hide-wd">古剑奇侠</h1>
+                </a>
+                <h2 class="hide-wd">古剑出鞘，奇侠问世</h2>
+            </div>
+            <div id="nav" class="abs">
+                <ul class="abs">
+                    <li class="left-part nav-1"><a href="/gjqx/" class="hide-wd">古剑奇侠</a></li>
+                    <li class="nav-2"><a href="/NewsCenter/" class="hide-wd">新闻中心</a></li>
+                    <li class="nav-3"><a href="#" class="hide-wd">登录器下载</a></li>
+                    <li class="right-part nav-4"><a href="/NewsCenter/" class="hide-wd">游戏资料</a></li>
+                    <li class="nav-5"><a href="/PayCenter/" class="hide-wd" target="_blank">游戏充值</a></li>
+                    <li class="nav-6"><a href="http://bbs.5577yx.com" class="hide-wd" target="_blank">游戏论坛</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main" class="center clearfix">
+        <!-- 左侧栏 -->
+        <div id="sidebar" class="fl">
+            <div id="startGame">
+                @*<object width="231" height="144" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+                    <param name="movie" value="../Content/gjqx/start.swf">
+                    <param name="quality" value="high">
+                    <param name="allowscriptaccess" value="always">
+                    <param name="wmode" value="transparent">
+                    <embed width="231" height="144" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" src="../Content/gjqx/start.swf" />
+                </object>*@
+            </div>
+            <div id="extraBtn">
+                @*  <a href="/Home/Reg" target="_blank" class="hide-wd" id="registerBtn">注册</a>
+                <a href="/PayCenter/" target="_blank" class="hide-wd" id="rechargeBtn">充值</a>*@
+            </div>
+            <div id="loginBox" class="box">
+                <form method="post" onsubmit="return KsLogin2()" name="fmLogin" id="fmLogin">
+                    <p>
+                        <label for="username">账号：</label><input type="text" name="UserName" id="UserName" class="input-bar" tabindex="1" />
+                    </p>
+                    <p>
+                        <label for="password">密码：</label><input type="password" name="PWD" id="PWD" class="input-bar" tabindex="2" />
+                    </p>
+                    <p>
+                        <label for="autoLogin">
+                            <input type="checkbox" name="ck1" id="autoLogin" tabindex="3" />下次自动登录</label>
+                        <a href="/UserCenter/FindPwd" target="_blank" id="forgetPw">忘记密码？</a>
+                    </p>
+                    <input id="loginBtn" type="submit" tabindex="4" class="hide-wd" style="border: none" />
+                </form>
+            </div>
+
+            <div class="side-box">
+                <div id="server">
+                    <div class="tt hide-wd">
+                        <h3>推荐服务器</h3>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <li><a href="@ViewData["TjqfHref"]">@ViewData["TjqfName"]</a><span class="new"></span></li>
+                        </ul>
+                        <a href="/@ViewData["GameNo"]/Server" target="_self" id="moreServer" class="hide-wd">更多服务器</a>
+                    </div>
+                </div>
+
+                <div id="ad">
+                    <a href="#" target="_blank">
+                        <img src="../Images/gjqx/ad_1.jpg" /></a>
+                    <a href="#" target="_blank">
+                        <img src="../Images/gjqx/ad_2.jpg" /></a>
+                    <a href="#" target="_blank">
+                        <img src="../Images/gjqx/ad_3.jpg" /></a>
+                    <a href="#" target="_blank">
+                        <img src="../Images/gjqx/ad_4.jpg" /></a>
+                    <a href="#" target="_blank">
+                        <img src="../Images/gjqx/ad_5.jpg" /></a>
+                </div>
+
+                <div id="cutomerCenter">
+                    <div class="tt hide-wd">
+                        <h3>客服中心</h3>
+                    </div>
+                    <div class="bd">
+                        <p>客服热线： 400-009-4577</p>
+                        <p>客服邮箱： service@5577yx.com</p>
+                        <p>充值客服：<a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes" target="_blank" class="enter hide-wd">点击进入</a></p>
+                        <p>游戏论坛：<a href="http://bbs.5577yx.com" target="_blank" class="enter hide-wd">点击进入</a></p>
+                        <p>客服时间： 7x24小时服务</p>
+                    </div>
+                </div>
+
+                <div id="cooperation">
+                    <div class="tt hide-wd">
+                        <h3>合作媒体</h3>
+                    </div>
+                    <div class="bd">
+                        <ul class="co-list">
+                            <li><a href="#" target="_blank">
+                                <img src="../Images/gjqx/alt_cooperation.jpg" /></a></li>
+                            <li><a href="#" target="_blank">
+                                <img src="../Images/gjqx/alt_cooperation.jpg" /></a></li>
+                            <li><a href="#" target="_blank">
+                                <img src="../Images/gjqx/alt_cooperation.jpg" /></a></li>
+                            <li><a href="#" target="_blank">
+                                <img src="../Images/gjqx/alt_cooperation.jpg" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 右侧栏 -->
+        <div id="mainbar" class="fr">
+            <!-- banner -->
+            <div id="banner" class="accordion box">
+                <div class="hd"></div>
+                <div class="bd">
+                    <ol class="slides">
+                        <li class="slide slide-1 open active">
+                            <a class="slide-btn" href="javascript:void(0);" title="投票赢大奖"></a>
+                            <a class="slide-con" href="#"></a>
+                        </li>
+                        <li class="slide slide-2">
+                            <a class="slide-btn" href="javascript:void(0);" title="登录器下载"></a>
+                            <a class="slide-con" href="#"></a>
+                        </li>
+                        <li class="slide slide-3">
+                            <a class="slide-btn" href="javascript:void(0);" title="豪华新手卡"></a>
+                            <a class="slide-con" href="#"></a>
+                        </li>
+                        <li class="slide slide-4">
+                            <a class="slide-btn" href="javascript:void(0);" title="VIP特权卡"></a>
+                            <a class="slide-con" href="#"></a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- news -->
+            <div id="news" class="box">
+                <div class="tt">
+                    <ul class="tab-index hide-wd">
+                        <li class="on"><a class="no1" href="javascript:void(0);">公告</a></li>
+                        <li><a class="no2" href="javascript:void(0);">媒体</a></li>
+                        <li class="last"><a class="no3" href="javascript:void(0);">活动</a></li>
+                    </ul>
+                    <a href="gonggao.html" target="_self" class="more abs">更多&gt;&gt;</a>
+                </div>
+                <div class="bd">
+                    <div class="esp">
+                        <div class="hd"></div>
+                        <div class="bd">
+                            <span class="date fr">[10/24]</span>
+                            <h4><a href="gonggao-detail.html" target="_self">《古剑奇侠》每周维护公告</a></h4>
+                            <p>亲爱的玩家朋友： 为保证服务器的运行稳定和服务质量，《古剑奇侠》所有服务器将于每周日晚上8:00停机，为保证服务器的运行稳定和服务质量，《古剑奇侠》所有进行每周例行的维护工作...<a href="#" target="_self">[详细]</a></p>
+                        </div>
+                        <div class="ft"></div>
+                    </div>
+                    <div class="list-wrap clearfix">
+                        <div id="newsSlider" class="news-pic fl">
+                            <div class="slide-pic">
+                                <ul>
+                                    <li class="curr"><a href="#">
+                                        <img src="../Images/gjqx/alt_news.jpg" /></a></li>
+                                    <li><a href="#">
+                                        <img src="../Images/gjqx/alt_news_2.jpg" /></a></li>
+                                    <li><a href="#">
+                                        <img src="../Images/gjqx/alt_news.jpg" /></a></li>
+                                    <li><a href="#">
+                                        <img src="../Images/gjqx/alt_news_2.jpg" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-box on">
+                                <ul class="news-list fr">
+                                    @Html.Raw(ViewData["News"])
+                                </ul>
+                            </div>
+
+                            <div class="tab-box">
+                                <ul class="news-list fr">
+                                    @Html.Raw(ViewData["News"])
+                                </ul>
+                            </div>
+                            <div class="tab-box">
+                                <ul class="news-list fr">
+                                    @Html.Raw(ViewData["GGNews"])
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft"></div>
+            </div>
+
+            <!-- intro -->
+            <div id="intro" class="box">
+                <div class="tt">
+                    <ul class="tab-index hide-wd">
+                        <li class="on"><a class="no1" href="javascript:void(0);">鸿蒙天书</a></li>
+                        <li><a class="no2" href="javascript:void(0);">仙盟争霸</a></li>
+                        <li><a class="no3" href="javascript:void(0);">神兵仙魂</a></li>
+                        <li><a class="no4" href="javascript:void(0);">自组技能</a></li>
+                        <li><a class="no5" href="javascript:void(0);">本命法宝</a></li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <div class="tab-content hide-wd">
+                        <div class="tab-box on">
+                            <a href="#" target="_self">
+                                <img src="../Images/gjqx//career_01.jpg" /></a>
+                        </div>
+                        <div class="tab-box">
+                            <a href="#" target="_self">
+                                <img src="../Images/gjqx//career_02.jpg" /></a>
+                        </div>
+                        <div class="tab-box">
+                            <a href="#" target="_self">
+                                <img src="../Images/gjqx//career_03.jpg" /></a>
+                        </div>
+                        <div class="tab-box">
+                            <a href="#" target="_self">
+                                <img src="../Images/gjqx//career_04.jpg" /></a>
+                        </div>
+                        <div class="tab-box">
+                            <a href="#" target="_self">
+                                <img src="../Images/gjqx//career_05.jpg" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- info -->
+            <div id="info" class="accordion box">
+                <div class="tt hide-wd">
+                    <h3>游戏资料</h3>
+                </div>
+                <div class="bd">
+                    <ol class="slides">
+                        <li class="slide slide-1 open active">
+                            <a class="slide-btn" href="javascript:void(0);" title="游戏资料"></a>
+                            <div class="info-list">
+                                <table class="info-tb">
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1434">背景故事</a></td>
+                                            <td><a href="/NewsCenter/News?N=1435">游戏介绍</a></td>
+                                            <td><a href="#">基本操作</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1438">角色创建</a></td>
+                                            <td><a href="#">游戏界面</a></td>
+                                            <td><a href="/NewsCenter/News?N=1439">职业技能</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1437">第一次PK</a></td>
+                                            <td><a href="#">如何聊天</a></td>
+                                            <td><a href="/NewsCenter/News?N=1440">如何组队</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1441">添加好友</a></td>
+                                            <td><a href="/NewsCenter/News?N=1436">自动打怪</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="slide slide-2">
+                            <a class="slide-btn" href="javascript:void(0);" title="游戏特色"></a>
+                            <div class="info-list">
+                                <table class="info-tb">
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1450">轩辕秘境</a></td>
+                                            <td><a href="#">万兽塔</a></td>
+                                            <td><a href="/NewsCenter/News?N=1455">三千幻界</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1454">富甲天下</a></td>
+                                            <td><a href="/NewsCenter/News?N=1465">仙兽林</a></td>
+                                            <td><a href="/NewsCenter/News?N=1449">屠魔殿</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1445">护送女神</a></td>
+                                            <td><a href="/NewsCenter/News?N=1483">钓鱼系统</a></td>
+                                            <td><a href="#">鸿蒙天书</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">鸿蒙战技</a></td>
+                                            <td><a href="#">战力等级</a></td>
+                                            <td><a href="#">VIP仙女</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1459">经验仙瓶</a></td>
+                                            <td><a href="#">好友推荐</a></td>
+                                            <td><a href="#">打折抢购</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">仙盟宴会</a></td>
+                                            <td><a href="/NewsCenter/News?N=1468">九幽探险</a></td>
+                                            <td><a href="/NewsCenter/News?N=1482">世界BOSS</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">火神祭坛</a></td>
+                                            <td><a href="#">封神战场</a></td>
+                                            <td><a href="#">橙装仙魂</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1477">智慧问答</a></td>
+                                            <td><a href="#">天池仙泉</a></td>
+                                            <td><a href="#">搜神系统</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="slide slide-3">
+                            <a class="slide-btn" href="javascript:void(0);" title="游戏进阶"></a>
+                            <div class="info-list">
+                                <table class="info-tb">
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#">宠物系统</a></td>
+                                            <td><a href="/NewsCenter/News?N=1487">坐骑系统</a></td>
+                                            <td><a href="#">市场系统</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">成就系统</a></td>
+                                            <td><a href="/NewsCenter/News?N=1479">仙盟系统</a></td>
+                                            <td><a href="#">排行榜</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">福利系统</a></td>
+                                            <td><a href="/NewsCenter/News?N=1452">在线奖励</a></td>
+                                            <td><a href="#">神秘商人</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">技能系统</a></td>
+                                            <td><a href="#">斩妖任务</a></td>
+                                            <td><a href="/NewsCenter/News?N=1460">封魔任务</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="/NewsCenter/News?N=1453">皇榜任务</a></td>
+                                            <td><a href="/NewsCenter/News?N=1461">仙盟任务</a></td>
+                                            <td><a href="#">装备强化</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">装备洗练</a></td>
+                                            <td><a href="#">强化转移</a></td>
+                                            <td><a href="#">物品分解</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="#">宝石系统</a></td>
+                                            <td><a href="/NewsCenter/News?N=1478">合成系统</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="slide slide-4">
+                            <a class="slide-btn" href="javascript:void(0);" title="游戏套装"></a>
+                            <div class="info-list">
+                                <!-- 暂无 -->
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="ft"></div>
+            </div>
+
+            <!-- strategy -->
+            @*<div id="strategy" class="box">
+                <div class="tt">
+                    <h3 class="hide-wd">游戏攻略</h3>
+                    <a href="gonglue.html" target="_self" class="more abs">更多&gt;&gt;</a>
+                </div>
+                <div class="bd clearfix">
+                    <ul class="half fl">
+                        <li><span class="date fr">[10/22]</span><a href="gonglue-detail.html" target="_self"><strong>91wan古剑奇侠教你怎么拿万圣节活动奖</strong></a></li>
+                        <li><span class="date fr">[10/21]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠新增个性头像上传指南</a></li>
+                        <li><span class="date fr">[10/20]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠各职业PVP对附加属性的91wan古剑奇侠各职业PVP对附加属性的</a></li>
+                        <li><span class="date fr">[10/19]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠剖析坐骑系统的升级与升91wan古剑奇侠各职业PVP对附加属性的</a></li>
+                        <li><span class="date fr">[10/18]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠四大职业对战技巧</a></li>
+                    </ul>
+                    <ul class="half fr">
+                        <li><span class="date fr">[10/17]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠教你怎么拿万圣节活动奖</a></li>
+                        <li><span class="date fr">[10/16]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠新增个性头像上传指南</a></li>
+                        <li><span class="date fr">[10/15]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠各职业PVP对附加属性的</a></li>
+                        <li><span class="date fr">[10/14]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠剖析坐骑系统的升级与升91wan古剑奇侠各职业PVP对附加属性的</a></li>
+                        <li><span class="date fr">[10/13]</span><a href="gonglue-detail.html" target="_self">91wan古剑奇侠四大职业对战技巧</a></li>
+                    </ul>
+                </div>
+                <div class="ft"></div>
+            </div>*@
+
+            <!-- photo -->
+            <div id="photo" class="box">
+                <div class="tt">
+                    <ul class="tab-index hide-wd">
+                        <li class="on"><a class="no1" href="javascript:void(0);">截图</a></li>
+                        <li><a class="no2" href="javascript:void(0);">原画</a></li>
+                        <li><a class="no3" href="javascript:void(0);">壁纸</a></li>
+                    </ul>
+                    <a href="jietu.html" target="_self" class="more abs">更多&gt;&gt;</a>
+                </div>
+                <div class="bd">
+                    <div class="tab-content clearfix">
+                        <div class="tab-box on">
+                            <ul>
+                                <li>
+                                    <a href="jietu-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="jietu-detail.html">游戏截图</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="jietu-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="jietu-detail.html">游戏截图</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="jietu-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="jietu-detail.html">游戏截图</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="jietu-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="jietu-detail.html">游戏截图</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-box">
+                            <ul>
+                                <li>
+                                    <a href="yuanhua-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="yuanhua-detail.html">游戏原画</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="yuanhua-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="yuanhua-detail.html">游戏原画</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="yuanhua-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="yuanhua-detail.html">游戏原画</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="yuanhua-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="yuanhua-detail.html">游戏原画</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-box">
+                            <ul>
+                                <li>
+                                    <a href="bizhi-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="bizhi-detail.html">游戏壁纸</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="bizhi-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="bizhi-detail.html">游戏壁纸</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="bizhi-detail.html" target="_self">
+                                        <img src="../Images/gjqx//alt_photo.jpg" /></a>
+                                    <div class="desc">
+                                        <div class="tit-bg"></div>
+                                        <a class="tit cut" target="_self" href="bizhi-detail.html">游戏壁纸</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ft"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="center">
+            <p>
+                @Html.Raw(ViewData["YqLink"])
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@charset "utf-8";
+/*
+ * Filename: style.css
+ * Name : YY
+ * By : 游戏客服端前端组
+ */
+/*core*/body{color:#000;font-size:12px;line-height:1.666em;}body,input,select,button,textarea{font-family:arial,sans-serif;}h1,h2,h3,h4,h5,h6,select,input,textarea,button,table{font-size:100%;}body,h1,h2,h3,h4,h5,h6,ul,ol,li,form,p,dl,dt,dd,table,th,td,img,blockquote,legend,fieldset{margin:0;padding:0;border:0;}input,button,textarea,select,img{margin:0;line-height:normal;}abbr,acronym,address,cite,q,em,code,var,dfn,ins{font-style:normal;text-decoration:none}q:before,q:after{content:"";}ul,ol{list-style:none;}table{border-collapse:collapse;border-spacing:0;}button{line-height:135%;padding:0.5em;overflow:visible;}select,input,button,button img{vertical-align:middle;}.cs-clear{+zoom:1;}.cs-clear:before,.cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}.cs-ib{display:-moz-inline-box;-moz-box-align:center;display:inline-block;+display:inline;+zoom:1;vertical-align:middle;}
+/**/
+body,div,ul,li,h1,h2,h3,form,input,button,p{margin:0; padding:0;}
+ul{list-style:none;}
+img {border:0;}
+a{text-decoration:none; outline:none;}
+a:hover{text-decoration:none;}
+q:before, q:after{content:'';}
+body, button, input{font:12px/1.5 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+h1 {font-size:18px;}
+h2 {font-size:16px;}
+h3 {font-size:14px;}
+body{background:#000}
+.part-login,.mod-right .mhd p,.quick-login p .q-login-btn,.btn-blue-login,#errorinfo,#errorinfo span{background:url(/Style/fyws/login_bg.gif) no-repeat;}
+.main{width:675px; height:360px; overflow: hidden;margin:0 auto}
+.login_index{background:url(login_body.jpg) no-repeat;}
+.login_focus{padding:2px 0 0 24px}
+.focusImg{width:309px; height: 225px; float:left}
+.focus_news{width:318px; float:left}
+.focus_news h2{height:30px; line-height:30; overflow:hidden}
+.focus_news .list{padding:15px 15px 0 25px}
+.focus_news .list li{height:28px; line-height:28px; overflow:hidden;}
+.focus_news .list li a{color:#e26910; text-decoration:none;padding-left: 20px;}
+.focus_news .list li a:hover{color:#fff}
+.login_login{padding:25px 0 0; position: relative;}
+.enter_btn{width:217px; height:163px; overflow:hidden; position:absolute;top: 12px;right:-26px}
+a.login{width:155px; height:77px; line-height:77; overflow:hidden; margin:0 275px 0 0; float:right}
+/**/
+.login_xf{background:url(login_xf.jpg) no-repeat;}
+.use_conn{height:145px; margin:0 0 0 5px;}
+.use{height:46px; line-height:46px; padding-left:35px; color:#e5ca5e}
+.use a{color:#f00;margin-left:10px}
+.member{margin-left:20px}
+.useleft{width:420px; float:left; padding-top:26px}
+.useleft p{height:58px; line-height:58px; padding:5px 0 0 110px;text-align:center; text-align:center; color:#ffdf9a; text-decoration:none; float:left;width: 308px }
+.useright{width:182px; float:right;margin-right:24px}
+a.use_btn{width:198px; height:98px; line-height:120; overflow:hidden; float:left}
+.use_xf{padding:20px 15px 0}
+.tabTit{padding-left:3px}
+.tabTit p{width:110px; height:25px; line-height:25px; text-align:center; color:#a79e8b; cursor:pointer; margin-top:4px;  float:left; margin-right:6px}
+.tabTit .on{height:28px; line-height:28px; margin-top:0; font-weight:bold;color:#b29c50;background:url(/Style/fyws/li_hover.png) no-repeat;}
+.tabCon{height:153px;overflow-x: hidden;overflow-y: auto;margin-top:5px}
+.tabCon .list a{width:149px; height:33px; line-height:33px; text-align:center; color:#ffdf9a; float:left; margin:14px 4px 0;  text-decoration:none; background:url(/Style/fyws/normal.png) no-repeat; }
+.inputstyle{ float:left; width:200px; border:1px solid #d3d6db;border-radius: 3px; padding:4px; color:gray; margin-right:6px; height:18px; line-height:18px;-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s, box-shadow linear 0.2s;-ms-transition: border linear 0.2s, box-shadow linear 0.2s;-o-transition: border linear 0.2s, box-shadow linear 0.2s;transition: border linear 0.2s, box-shadow linear 0.2s; -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}
+.inputstyle:focus{ border-color: rgba(82, 168, 236, 0.8);-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);outline:0 none;}  
+
+.login_index{background:url(login_body2.jpg) no-repeat}
+.use_conn{height:115px}
+.login_focus{padding:2px 0 0 8px}
+.focusImg,.focusImg img{width:338px;height:208px}
+.focus_news .list{padding:22px 15px 0 25px}
+a.login{width:169px;height:104px;margin:0 270px 0 0}
+.login_xf{background:url(login_xf2.jpg) no-repeat;}
+.use{line-height:35px}
+.useleft{padding:0;width:530px}
+.useleft p{line-height:30px;padding:5px 0 0 238px;font-size:14px;color:#fff}
+a.use_btn{height:42px;width:100px;}
+.useright{margin:0;width:128px;}
+.use_xf{padding-top:0}
+/*表单内样式*/
+.mod-right{ float:left; overflow:hidden; width:333px;}
+.mod-right .mhd{ padding: 16px 0 0px; overflow:hidden;zoom:1;}
+.mod-right .mhd h2{height:34px; line-height:34px; font-family:"微软雅黑"; font-size:20px; color:#0f8ee8; font-weight:normal; padding:0 0 1px 20px;}
+.mod-right .mhd h2 span{ font-size:16px; color:#b4b8bf; padding-left:10px;}
+.mod-right .mhd p{ background-position: 8px -448px; height:25px; line-height:25px; padding-left:27px;color:#78a0c7;} 
+.mod-right .quick-login{ overflow:hidden; padding:16px 0 0 10px;zoom:1;}
+.mod-right .quick-login h3{ font-size:12px; font-weight:normal; color:#828b9a; padding-bottom:6px;zoom:1;}
+.mod-right .quick-login p{ overflow:hidden;zoom:1; margin-bottom:7px; vertical-align:middle; height:18px; line-height:18px;}
+.mod-right .quick-login p.last{ height:auto; padding-top:5px;zoom:1;}
+.quick-login p label{ vertical-align:middle; color:#545c5f;}
+.quick-login p input{ vertical-align:middle; margin-right:4px;}
+.quick-login p .q-login-btn,.btn-blue-login{ background-position: 0 -386px; width:100px; height:32px; line-height:32px; text-align:center; display:block; color:#fff; font-size:18px; font-family:"微软雅黑"; text-decoration:none; margin-right:17px; float:left;}
+.quick-login p .login-link{ display:inline-block; margin-top:14px; color:#0e9fed; float:left;}
+.common-login{ overflow:hidden;zoom:1; padding:32px 0 0 10px; display:none; position:relative;}
+.common-login p{zoom:1; margin-bottom:12px; height:28px; line-height:28px;}
+.common-login p.last{ height:auto; padding-top:5px;zoom:1; overflow:hidden;}
+.common-login .inputstyle{ float:left; width:200px; border:1px solid #d3d6db;border-radius: 3px; padding:4px; color:gray; margin-right:6px; height:18px; line-height:18px;-webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+-moz-transition: border linear 0.2s, box-shadow linear 0.2s;-ms-transition: border linear 0.2s, box-shadow linear 0.2s;-o-transition: border linear 0.2s, box-shadow linear 0.2s;transition: border linear 0.2s, box-shadow linear 0.2s; -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}
+  
+.common-login .inputstyle:focus{ border-color: rgba(82, 168, 236, 0.8);-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);outline:0 none;}  
+.register-btn{ color:#818d9d; float:left;}
+.fpassword{ color:#818d9d;}
+.register-btn:hover,.fpassword:hover{ color:#0e9fed; text-decoration:underline;}
+.common-login .inputstyle1{ width:100px; float:left;margin-right:14px;}
+.changeOne{ float:left; }
+.btn-blue-login{ border: 0 none; cursor:pointer; padding-bottom:4px; float:left;color:#fff; font-size:18px; line-height:32px;height:32px; background:url(/Style/fyws/login_bg.gif);background-position:0 -386px; width:100px;}
+.common-login p.last a{ float:left; padding-top:9px; color:#0e9fed;}
+#errorinfo{  height:34px; line-height:30px;overflow:hidden;zoom:1; display:inline-block; padding-left:17px; position:absolute; left:16px; top:8px;padding-right:13px; display:none;background:url(/Style/fyws/login_bg.gif);background-position:0 -324px;}
+#errorinfo span{ height:34px; overflow:hidden;zoom:1;float:left; display:inline-block; line-height:25px; color:#cc0000; padding-right:13px;font-size:12px;max-width: 276px;background-position:100% -324px;}
+#errorinfo span font{font:12px/1 Tahoma,Helvetica,Arial,"宋体",sans-serif; line-height:25px;display: block;height: 25px;overflow: hidden;}
+#password{display:none;position:absolute;}
+.changeOne img{ width:85px; height:26px;}
+#secid{display:none;}
+.login-close{position: absolute; padding: 0px 10px; top: 3px; right: 2px; font-weight: bold; font-size: 14px;}
+.login-close a{color: #A7CFEC;}
+.common-login p.rememberCon{ margin-bottom:0px; vertical-align:middle;display:none;}
+.common-login p.rememberCon label{ vertical-align:middle;}
+.common-login p.rememberCon input{ vertical-align:middle; margin-right:4px;}

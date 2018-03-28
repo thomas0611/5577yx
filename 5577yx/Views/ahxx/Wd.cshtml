@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="~/Style/ahxx/base.css"/>
+    <link rel="stylesheet" href="~/Style/ahxx/index.css"/>
+    <script type="text/javascript" src="~/Style/ahxx/jquery.js"></script>
+    <script type="text/javascript" src="~/Style/ahxx/jquery.d.imagechange.min.js"></script>
+    <script type="text/javascript" src="~/Style/ahxx/comman.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+</head>
+<body>
+
+    <div class="wrap index">
+    	<div class="top">
+            <div class="news-box">
+                <ul>
+                    @foreach (var n in ViewData["NewsList"] as List<Game.Model.News>)
+                    {
+                        <li><span class="sprite square"></span><a href="/NewsCenter/News?N=@n.Id">@n.Title<i></i></a></li>
+                    }
+                    
+                </ul>
+            </div>
+            <div class="kaifu"></div>
+       	</div>
+        <div class="clearfix">
+        	<dl class="game-info">
+            	<dt>游戏简介</dt>
+                <dd><a href="#"><span class="sprite dot"></span>星脉系统</a></dd>
+                <dd><a href="#"><span class="sprite dot"></span>伙伴系统</a></dd>
+                <dd><a href="#"><span class="sprite dot"></span>装备系统</a></dd>
+                <dd><a href="#"><span class="sprite dot"></span>帮会系统</a></dd>
+                <dd><a href="#"><span class="sprite dot"></span>马匹系统</a></dd>
+            </dl>
+        </div>
+        <div class="top-box">
+        	<div class="logo-link">
+            	<a href="#"></a>
+            </div>
+            <div class="login-box tab">
+            	<form onsubmit="return KsLogin5()" method="post">
+                    <div id="errorinfo" style="padding-left:120px;"></div>
+                	<div class="clearfix inner-box">
+                        <div class="left">
+                            <div class="item">
+                                <label class="sprite username" for="username"></label>
+                                <input class="sprite text" name="UserName" id="UserName" type="text" />
+                            </div>
+                            <div class="item">
+                                <label class="sprite pwd" for="pwd"></label>
+                                <input class="sprite text" name="PWD" id="PWD" type="password" />
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <input value="" class="sprite button" type="submit"/>
+                        </div>
+                   	</div>
+                    <div class="others">
+                        <span class="sprite check-box" alts="re_pwd">记住密码</span>
+                        @*<a href="/UserCenter/FindPwd" target="_blank" class="forget">忘记密码？</a>
+                        <a show="reg-box" class="reg-link" href="/Home/Reg">注册帐号？</a>*@
+                    </div>
+                </form>
+            </div>
+            @*<div class="reg-box tab">
+                <div class="clearfix inner-box">
+                    <div class="left">
+                        <div class="item">
+                            <label class="sprite username" for="username"></label>
+                            <input class="sprite text" id="username" type="" />
+                        </div>
+                        <div class="item">
+                            <label class="sprite pwd" for="pwd"></label>
+                            <input class="sprite text" id="username" type="" />
+                        </div>
+                        <div class="item">
+                            <label class="sprite reg-pwd1" for="regpwd1"></label>
+                            <input class="sprite text" id="regpwd1" type="" />
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <input value="" class="sprite button" type="submit"/>
+                    </div>
+                    <a class="a-link" show="login-box" href="javascript:void(0)">返回登陆</a>
+                </div>
+            </div>*@
+        </div>
+    </div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("input").focus(function(){
+			$(this).parent().addClass("hover");
+		});
+		$("input").blur(function(){
+			$(this).parent().removeClass("hover");
+		});
+	});
+    $(function(){
+        $(".check-box").click(function(){
+            var ids = $("#"+$(this).attr("alts"));
+            if($(this).hasClass("checked")){
+                $(this).removeClass("checked");
+                ids.val("0");
+            }else{
+                $(this).addClass("checked");
+                ids.val("1");
+            }
+        })
+		$(".reg-box").hide();
+        $(".top-box").setTab({
+            btn:'.a-link'
+        });
+    })
+</script>
+<!--[if lt IE 7 ]>
+
+<script>
+    DD_belatedPNG.fix(".item label,.item .text,.button,.check-box,.dot,.square,background");
+</script>
+<![endif]-->
+</body>
+</html>

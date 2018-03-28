@@ -1,0 +1,158 @@
+﻿/*reset*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,ul,ol{margin:0;}
+body{font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#000; background:#def2fe url("../../images/xxas/body_bg.jpg") center 608px no-repeat; min-width:980px;}
+ul,ol{padding-left:0; list-style:none;}
+img{display:block; border:0;}
+table{clear:both; border-collapse:collapse;}
+a{color:#000; text-decoration:none;}
+a:hover{text-decoration:underline;}
+var{margin:0 5px;}
+.fl{float:left;}
+.fr{float:right;}
+.hd, .ft{font-size:0;}
+.hide-wd{display:block; font-size:0; text-indent:-2000px;}
+.clearfix:after{content:"\200B"; display:block; height:0; clear:both;}
+.clearfix{*zoom:1;}
+.center{margin:0 auto; width:980px;}
+.alpha-bg{display:block;}
+
+/*通用头部*/
+#Header{height:608px; overflow:hidden; background:url("../../images/xxas/header_bg.jpg") center top no-repeat; position:relative;}
+#FLashDeco{position:absolute; top:0; left:50%; margin-left:50px;}
+.head-wrap{position:absolute; top:0; left:50%;}
+#Logo{position:absolute; top:20px; left:-450px;}
+#Logo span{width:235px; height:200px; background:url("../../images/xxas/logo.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/logo.png");}
+#Logo a{display:block; position:absolute; top:45px; left:15px; width:195px; height:124px;}
+#Title{position:absolute; top:50px; left:-190px; width:385px; height:151px; background:url("../../images/xxas/title.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/title.png");}
+.alert{position:absolute; top:583px; right:-445px; width:220px; text-align:right; text-shadow:1px 1px 1px #fff;}
+
+.hl-bar{position:absolute; top:255px; left:-469px; padding:6px 15px 0 22px; width:262px; height:350px; overflow:hidden; background:url("../../images/xxas/header-left-bar.jpg") no-repeat;}
+#Video{margin-bottom:18px; padding:6px 8px;}
+#Login{padding:7px 6px;}
+#StartGame{height:72px; background:url("../../images/xxas/start_alt.jpg") no-repeat;}
+
+#LoginForm{margin-top:20px;}
+#LoginForm .input-bar{width:115px;}
+#LoginForm .input-bar input{margin-bottom:7px; padding:0 5px; width:100px; height:24px; line-height:22px; border:1px solid #058dd2;}
+#LoginForm .input-bar .watermark{color:#999;}
+#LoginForm .btn-bar{width:134px; background:url("../../images/xxas/login_btn_bg.jpg") 5px 0 no-repeat;}
+#LoginForm label,
+#LoginForm a{color:#525b66;}
+#LoginBtn{margin-left:5px; float:left; background:none; border:0; width:60px; height:25px; cursor:pointer; display:inline;}
+#RegisterBtn{margin-bottom:10px; float:left; display:block; width:60px; height:25px;}
+
+.role-pic{height:608px; position:relative; overflow:hidden;}
+.role-pic .role{position:absolute; width:1440px; height:608px; background-position:center top; background-repeat:no-repeat; display:none; top:0; left:50%; margin-left:-720px;}
+.role-pic .on{display:block;}
+.role-pic .r1{background-image:url("../../images/xxas/role_01.jpg");}
+.role-pic .r2{background-image:url("../../images/xxas/role_02.jpg");}
+.role-pic .r3{background-image:url("../../images/xxas/role_03.jpg");}
+.role-pic .r4{background-image:url("../../images/xxas/role_04.jpg");}
+.role-pic .intro{position:absolute; top:260px; left:50%; margin-left:-165px; width:330px; height:145px;}
+.r1 .intro{background:url("../../images/xxas/role_intro_01.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/role_intro_01.png") sizingMethod="crop";}
+.r2 .intro{background:url("../../images/xxas/role_intro_02.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/role_intro_02.png") sizingMethod="crop";}
+.r3 .intro{background:url("../../images/xxas/role_intro_03.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/role_intro_03.png") sizingMethod="crop";}
+.r4 .intro{background:url("../../images/xxas/role_intro_04.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/role_intro_04.png") sizingMethod="crop";}
+.role-index{position:absolute; top:410px; left:30px; width:440px; height:190px;}
+.role-index li{position:absolute;}
+.role-index .alpha-bg{width:108px; height:108px; _background-image:none;}
+.role-index a{display:block; width:108px; height:108px; position:absolute; top:0; left:0; cursor:pointer; outline:none;}
+.r-index1{top:55px; left:0;}
+.r-index1 span{background:url("../../images/xxas/ri_01.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_01.png");}
+.r-index1 .on{background:url("../../images/xxas/ri_h_01.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_h_01.png");}
+.r-index2{top:70px; left:125px;}
+.r-index2 span{background:url("../../images/xxas/ri_02.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_02.png");}
+.r-index2 .on{background:url("../../images/xxas/ri_h_02.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_h_02.png");}
+.r-index3{top:60px; right:95px;}
+.r-index3 span{background:url("../../images/xxas/ri_03.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_03.png");}
+.r-index3 .on{background:url("../../images/xxas/ri_h_03.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_h_03.png");}
+.r-index4{top:0; right:0;}
+.r-index4 span{background:url("../../images/xxas/ri_04.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_04.png");}
+.r-index4 .on{background:url("../../images/xxas/ri_h_04.png"); _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/ri_h_04.png");}
+
+/*通用框架*/
+#Main{background:url("../../images/xxas/main_bg.jpg") center bottom no-repeat; zoom:1;}
+#Nav{margin:0 auto; padding:0 45px 0 61px; width:844px; height:55px; background:url("../../images/xxas/nav_bg.png") 0 0 no-repeat;}
+#Nav ul{position:relative; zoom:1;}
+#Nav li{float:left;}
+#Nav a{display:block; width:128px; height:55px; outline:none;}
+#Nav .nav1{margin-right:27px;}
+#Nav .nav2{margin-right:247px;}
+#Nav .index-btn{position:absolute; top:-30px; left:300px;}
+#Nav .alpha-bg{width:215px; height:96px; background:url("../../images/xxas/index_btn_bg.png") 0 0 no-repeat; _background-image:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/index_btn_bg.png");}
+#Nav .nav3{display:block; width:155px; height:96px; position:absolute; top:0; left:30px;}
+#Nav .nav4{margin-right:30px;}
+#Nav li.on .nav1,
+#Nav .nav1:hover{background:url("../../images/xxas/nav_bg.png") -61px -55px;}
+#Nav li.on .nav2,
+#Nav .nav2:hover{background:url("../../images/xxas/nav_bg.png") -216px -55px;}
+#Nav li.on .nav4,
+#Nav .nav4:hover{background:url("../../images/xxas/nav_bg.png") -591px -55px;}
+#Nav li.on .nav5,
+#Nav .nav5:hover{background:url("../../images/xxas/nav_bg.png") -749px -55px;}
+
+#Content{margin:0 auto; width:950px;}
+#Content .hd,
+#Content .ft{height:11px;}
+#Content .hd{background:url("../../images/xxas/con_top_bg.png") 0 0 no-repeat;}
+#Content .ft{background:url("../../images/xxas/con_bot_bg.png") 0 0 no-repeat;}
+#Content .mid{padding:0 11px 0 9px; background:url("../../images/xxas/con_mid_bg.png") 0 0 repeat-y;}
+
+#Content .sidebar{width:214px; color:#fff;}
+#Content .mainbar{width:708px;}
+.box{margin-bottom:10px;}
+#Content .tt,
+#Content .wrap{background:url("../../images/xxas/mix-bg.jpg") no-repeat;}
+.sidebar .tt{height:43px;}
+.sidebar .wrap{padding:10px;}
+.mainbar .fl{width:469px;}
+.mainbar .fr{width:230px;}
+.mainbar .tt{height:37px;}
+
+#InnerWrap .mid{height:auto !important; height:702px; min-height:702px;}
+
+/*选择服务器*/
+#Servers .tt{background-position:0 -240px;}
+#Servers .wrap{height:200px; background-position:0 -388px;}
+#Servers li{margin-bottom:4px;}
+#Servers span{margin-right:10px;}
+#Servers li a{display:block; padding-left:30px; width:162px; height:30px; line-height:30px; background:url("../../images/xxas/mix-icon.png") 0 0 no-repeat; color:#fff;}
+#Servers .status{color:#30ff00;}
+#Servers li a:hover{background-position:0 -30px; text-decoration:none;}
+#Servers li a:hover .status{color:#f00;}
+.more-servers{display:block; margin:12px auto 0; text-align:center; color:#fff600;}
+
+/*客服中心*/
+#CustomerService .tt{background-position:0 -283px;}
+#CustomerService .wrap{padding-left:25px; height:219px; background-position:0 -369px; line-height:20px;}
+#CustomerService a{color:#fff600;}
+#CustomerService .enter{display:block; margin-top:5px; height:28px; background:url("../../images/xxas/mix-bg.jpg") -15px -60px;}
+
+/*合作媒体*/
+#Cooperation{margin-bottom:0;}
+#Cooperation .tt{background-position:0 -326px;}
+#Cooperation .wrap{height:134px; background-position:0 -454px; overflow:hidden;}
+#Cooperation li{margin-bottom:3px; width:190px; height:42px; zoom:1;}
+#Cooperation img{width:190px; height:40px; border:1px solid #5c88ba;}
+
+/*内页主体内容样式*/
+#InnerWrap{margin:0 auto; width:708px;}
+#InnerWrap .hd,
+#InnerWrap .ft{height:20px;}
+#InnerWrap .hd{background:url("../../images/xxas/inner_top_bg.png") 0 0 no-repeat;}
+#InnerWrap .ft{background:url("../../images/xxas/inner_bot_bg.png") 0 0 no-repeat;}
+#InnerWrap .mid{background:url("../../images/xxas/inner_mid_bg.png") 0 0 repeat-y;}
+
+/*通用页码*/
+.pager{margin-top:50px; text-align:center;}
+.pager a{display:inline-block; width:52px; height:25px; line-height:25px; background:#edf8fe; border:1px solid #9cc7d8;}
+/*通用文章索引*/
+.article-index{color:#e20101; line-height:30px;}
+.article-index a{text-decoration:underline;}
+
+#Footer{padding-top:30px; height:245px; line-height:24px; text-align:center; background:url("../../images/xxas/footer_bg.jpg") center top no-repeat;}
+
+/*视频播放*/
+#Mask{position:absolute; top:0px; left:0px; background-color:#000; display:none; z-index:1001; opacity:0.5; filter:alpha(opacity = 50);}
+#PlayerBox{position:absolute; padding:10px; width:600px; height:400px; text-align:center; border:2px solid #f5f5f5; background-color:#e1dfe0; display: none; z-index:1002;}
+#CloseBtn{position:absolute; top:-2px; right:-33px; display:block; width:31px; height:31px; background:url("../../images/xxas/mix-icon.png") -469px 0 no-repeat; z-index:1003;}

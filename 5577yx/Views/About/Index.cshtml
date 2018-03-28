@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "关于我们";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+<div id="aboutuscontent">
+    <div class="aut">
+    </div>
+    <div class="aumid">
+        <div class="auleft">
+            <ul>
+                <li class="gy"><a href="/About/?Id=1">关于我们</a></li>
+                <li class="lx"><a href="/About/?Id=2">联系我们</a></li>
+                <li class="sw"><a href="/About/?Id=3">商务合作</a></li>
+                <li class="fw"><a href="/About/?Id=4">服务条款</a></li>
+                <li class="rc"><a href="/About/?Id=5">人才招聘</a></li>
+                <li class="wc"><a href="/About/?Id=6">未成年家长监护</a></li>
+            </ul>
+        </div>
+        <div class="auright">
+            <h3>@ViewData["AboutTitle"]</h3>
+            <br />@Html.Raw(ViewData["AboutText"])
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

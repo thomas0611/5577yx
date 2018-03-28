@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "订单详情";
+    Layout = "~/Views/PayCenter/PayCenterLayout.cshtml";
+}
+<div id="cczx_right">
+<div id="vipcontent">
+    <p>升级为5577yx平台<a>VIP</a>即可享受充值返利优惠！</p>
+    <table class="viplist">
+        <tr>
+            <th colspan="2" style="text-align:center;">VIP返利系统</th>
+        </tr>
+        <tr>
+            <td>金额(m)</td><td>返利优惠</td>
+        </tr>
+        <tr>
+            <td>0< m <=100</td><td>3%</td>
+        </tr>
+        <tr>
+            <td>100< m <=499</td><td>5%</td>
+        </tr>
+        <tr>
+            <td>500< m <=999</td><td>8%</td>
+        </tr>
+        <tr>
+            <td>1000< m <=1999</td><td>10%</td>
+        </tr>
+        <tr>
+            <td>2000< m <=4999</td><td>12%</td>
+        </tr>
+        <tr>
+            <td>m > 5000</td><td>15%</td>
+        </tr>
+    </table>
+    <p>升级为<a>VIP</a>的方法：</p>
+    <p style="float:left;height:42px;line-height:42px;margin-right:80px;">&nbsp;&nbsp;&nbsp;&nbsp;1.<span>立即支付<a><label id="Money" style="color: #FF3300;">@ViewData["Money"]</label>元</a>，即可升级为VIP。</span></p>
+           <input type="submit" value="" class="anniu" onclick="document.location='PayVip'"/>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;2.单笔充值大于2000元，即可激活VIP权限；</p>
+    <p style="line-height:300%;">支付成功后，可以在"个人中心"--"用户资料"中查看，如遇问题请拨打全国客服电话：400-009-4577。</p>
+</div>
+<div>
+
+    </div>
+    </div>

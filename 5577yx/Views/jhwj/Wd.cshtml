@@ -1,0 +1,107 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>5577yx-江湖问剑微端</title>
+    <link href="~/Style/jhwj/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/jhwj/main.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+</head>
+<body>
+    <div>
+        <div class="warpDiv">
+            <!--主体-->
+            <div class="LoginBg">
+                <p class="Link1">
+                    <a href="/jhwj/" target="_blank" title="官方网站"><img src="/images/jhwj/bt2.png" /></a>
+                    <a href="http://bbs.5577yx.com" target="_blank" title="论坛活动"><img src="/images/jhwj/bt3.png" /></a>
+                </p>
+                <div class="NewBg">
+                    <div id="focus" class="d1">
+                        <!--轮播-->
+                        <ul>
+                            <li><a href="#"><img src="/images/jhwj/1.jpg"></a></li>
+                            <li><a href="#"><img src="/images/jhwj/1.jpg"></a></li>
+                        </ul>
+                        <div class="button"></div>
+                        <script type="text/javascript">
+                            var interv = 3000; //切换间隔时间
+                            var interv2 = 10; //切换速速
+                            var opac1 = 50; //文字背景的透明度
+                            var source = "focus" //焦点轮换图片容器的id名称
+                            //获取对象
+                            function getTag(tag, obj) { if (obj == null) { return document.getElementsByTagName(tag) } else { return obj.getElementsByTagName(tag) } }
+                            function getid(id) { return document.getElementById(id) };
+                            var opac = 0, j = 0, t = 63, num, scton = 0, timer, timer2, timer3; var id = getid(source); id.removeChild(getTag("div", id)[0]); var li = getTag("li", id); var div = document.createElement("div"); var title = document.createElement("div"); var span = document.createElement("span"); var button = document.createElement("div"); button.className = "button"; for (var i = 0; i < li.length; i++) { var a = document.createElement("a"); a.innerHTML = i + 1; a.onclick = function () { clearTimeout(timer); clearTimeout(timer2); clearTimeout(timer3); j = parseInt(this.innerHTML) - 1; scton = 0; t = 63; opac = 0; fadeon(); }; a.className = "b1"; a.onmouseover = function () { this.className = "b2" }; a.onmouseout = function () { this.className = "b1"; sc(j) }; button.appendChild(a); }
+                            //控制图层透明度
+                            function alpha(obj, n) { if (document.all) { obj.style.filter = "alpha(opacity=" + n + ")"; } else { obj.style.opacity = (n / 100); } }
+                            //控制焦点按钮
+                            function sc(n) { for (var i = 0; i < li.length; i++) { button.childNodes[i].className = "b1" }; button.childNodes[n].className = "b2"; }
+                            title.className = "num_list"; title.appendChild(span); alpha(title, opac1); id.className = "d1"; div.className = "d2"; id.appendChild(div); id.appendChild(title); id.appendChild(button);
+                            //渐显
+                            var fadeon = function () { opac += 5; div.innerHTML = li[j].innerHTML; span.innerHTML = getTag("img", li[j])[0].alt; alpha(div, opac); if (scton == 0) { sc(j); num = -2; scrolltxt(); scton = 1 }; if (opac < 100) { timer = setTimeout(fadeon, interv2) } else { timer2 = setTimeout(fadeout, interv); }; }
+                            //渐隐
+                            var fadeout = function () { opac -= 5; div.innerHTML = li[j].innerHTML; alpha(div, opac); if (scton == 0) { num = 2; scrolltxt(); scton = 1 }; if (opac > 0) { timer = setTimeout(fadeout, interv2) } else { if (j < li.length - 1) { j++ } else { j = 0 }; fadeon() }; }
+                            //滚动文字
+                            var scrolltxt = function () { t += num; span.style.marginTop = t + "px"; if (num < 0 && t > 3) { timer3 = setTimeout(scrolltxt, interv2) } else if (num > 0 && t < 62) { timer3 = setTimeout(scrolltxt, interv2) } else { scton = 0 } };
+                            fadeon();
+                        </script>
+                    </div><!--轮播 end-->
+                    <div class="Tab">
+                        <!--选项卡-->
+                        <div class="Menubox">
+                            <a href="javascript:;" id="one1" class="current">游戏公告</a>
+                            <span>|</span>
+                            <a href="javascript:;" id="one2">游戏活动</a>
+                            <span>|</span>
+                        </div>
+                        <ul id="con_one_1" class="yin" style="display:block;">
+                            @Html.Raw(ViewData["News"])
+                            <li class="more"><a href="/NewsCenter/" target="_blank">查看更多</a></li>
+                        </ul>
+                        <ul id="con_one_2" class="yin">
+                            @Html.Raw(ViewData["News"])
+                            <li class="more"><a href="/NewsCenter/" target="_blank">查看更多</a></li>
+                        </ul>
+                    </div><!--选项卡 end-->
+                </div>
+                <form onsubmit="return KsLogin4()" method="post">
+                    <div class="Login Login1">
+                        <!--登录-->
+                        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                            <tbody>
+                                <tr>
+                                    <td width="18%" class="name"><img src="/images/jhwj/name.png" /></td>
+                                    <td><input id="UserName" name="UserName" type="text" class="login_bt2" /></td>
+                                </tr>
+                                <tr><td colspan="2" height="20" class="tip"><span style="display:none;">帐号密码错误</span></td></tr>
+                                <tr>
+                                    <td class="name"><img src="/images/jhwj/name1.png" /></td>
+                                    <td><input id="PWD" name="PWD" type="password" class="login_bt2" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" value="" class="login_bt1" />
+                        <div class="wjmm">
+                            <span class="box1"><input id="ck1" name="ck1" type="checkbox" checked="checked" style="visibility:hidden;"/></span>
+                            <span>记住账号</span>
+                            <span>|</span>
+                            <span><a href="/UserCenter/FindPwd" target="_blank" style="text-decoration:underline;">忘记密码</a></span>
+                            <span>|</span>
+                            <span><a href="/Home/Reg" target="_blank" style="color:#e99f47;">注册账号</a></span>
+                        </div>
+                    </div><!--登录 end-->
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

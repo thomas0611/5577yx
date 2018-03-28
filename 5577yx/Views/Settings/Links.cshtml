@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Links</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            InitPageContent("Links");
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 系统管理 &gt; 系统日志管理 
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+            </div>
+            <a href="/Settings/AddLink" class="tools_btn" style="@ViewData["style"]"><span><b class="add">增加链接</b></span></a>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>是否图片
+                </th>
+                <th>发布时间
+                </th>
+                <th>排序</th>
+                <th>属性
+                </th>
+                <th width="8%">操作
+                </th>
+            </tr>
+        </thead>
+        <tbody id="Links">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="10" onchange="InitPageContent('Links')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

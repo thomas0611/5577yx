@@ -1,0 +1,148 @@
+﻿/*找回Miami*/
+#codecontent
+{
+	border: 1px solid #E06F00;
+	background-color: white;
+}
+#codecontent h1
+{
+	font-weight: bold;
+	height: 45px;
+	padding-left: 15px;
+	font-family: 微软雅黑;
+	font-size: 18px;
+	font-weight: 500;
+	color: #FF5A00;
+	font-weight: bold;
+	line-height: 45px;
+	border: 1px solid white;
+	background-color: #FFDAA2;
+	border-bottom: 1px solid #E06F00;
+}
+#codecontent .codemain
+{
+	background-color: White;
+	overflow: hidden;
+	padding-top: 30px;
+}
+.codemain .codetop, .codemain .mid
+{
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 35px;
+}
+
+/*根据邮箱找回密码*/
+.codemain .title
+{
+	padding-left: 50px;
+	padding-top: 30px;
+}
+.codemain .title h2
+{
+	font-size: 14px;
+	color: #FD9E33;
+}
+.codemain table
+{
+	margin: 0 auto;
+}
+table, td, tr, th
+{
+	font-size: 12px;
+	line-height: 150%;
+	font: 12px/1.8 "宋体" ,Arial,sans-serif;
+	color: #535353;
+}
+.codemain table tr td input
+{
+	border: 1px solid #A7A6AA;
+	height: 25px;
+	margin: 0 5px 0 0;
+	padding: 2px 0 2px 5px;
+	_line-height: 25px;
+	border: 1px solid #D0D0D0;
+	width: 220px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 13px;
+	margin-left: 10px;
+}
+.codemain table tr td .next
+{
+	cursor: pointer;
+	background-color: #51B600;
+	color: white;
+	width: 80px;
+}
+/*提示*/
+.onShow, .onFocus, .onError, .onCorrect, .onLoad, .onTime
+{
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	vertical-align: middle;
+	background: url(../images/msg_bg.png) no-repeat;
+	color: #444;
+	line-height: 18px;
+	padding: 2px 10px 2px 23px;
+}
+/*感叹号*/
+.onShow
+{
+	background-position: 3px -147px;
+	border-color: #40B3FF;
+	color: #959595;
+}
+/*错误*/
+.onError
+{
+	background-position: 3px -47px;
+	border-color: #40B3FF;
+	color: red;
+}
+/*正确*/
+.onCorrect
+{
+	background-position: 3px -247px;
+	border-color: #40B3FF;
+}
+
+
+
+
+
+
+
+
+
+/*找回密码OK页面*/
+.codemain p.tiptitle
+{
+	font-size:18px;
+	text-align:center;	
+	margin-top:40px;
+	margin-bottom:20px;
+	font-weight:bold;
+}
+.codemain p.tip
+{
+	width:500px;
+	margin:0 auto;
+	text-align:center;	
+	font-family:微软雅黑;
+	font-size:13px;
+	color:#aaa;
+}
+.codemain p.a
+{
+	width:400px;
+	margin:0 auto;
+	text-align:right;
+	padding-right:50px;
+	padding-top:50px;
+	color:Blue;		
+}
+.codemain p.a a
+{
+	color:Blue;	
+}

@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理员登录</title>
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+</head>
+<body class="loginbody">
+    <form onsubmit="return AdminLogin()" method="post">
+        <div class="login_div">
+            <div class="login_box">
+                <div class="login_logo">
+                    LOGO
+                </div>
+                <div class="login_content">
+                    <dl>
+                        <dt>登录账号：</dt>
+                        <dd>
+                            <input name="txtUserName" type="text" id="txtUserName" class="login_input" style="width: 130px;"></dd>
+                    </dl>
+                    <dl>
+                        <dt>登录密码：</dt>
+                        <dd>
+                            <input name="txtUserPwd" type="password" id="txtUserPwd" class="login_input" style="width: 130px;"></dd>
+                    </dl>
+                    <dl>
+                        <dt>验证码：</dt>
+                        <dd>
+                            <input name="txtCode" type="text" maxlength="6" id="txtCode" class="login_input" style="width: 55px; text-transform: uppercase;">
+                            <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;">
+                        </dd>
+                    </dl>
+                </div>
+                <div class="login_foot">
+                    <div class="right">
+                        <input type="submit" name="btnSubmit" value="登 录" id="btnSubmit" class="login_btn">
+                    </div>
+                </div>
+                <div class="login_tip">
+                </div>
+            </div>
+            <div class="login_copyright">
+                Copyright © 2009 - 2012 Inc. All Rights Reserved.<br>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

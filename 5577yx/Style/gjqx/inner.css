@@ -1,0 +1,35 @@
+#mainbar{ margin-top:20px; background:#dff0f6;}
+#mainbar .tt{padding:0 15px 0 8px; height:38px; line-height:38px; background:url("../images/mix-bg.jpg") 0 -500px no-repeat; overflow:hidden;}
+#mainbar .tt h3{float:left; width:180px; height:38px; background:url("../images/mix-bg.jpg") no-repeat;}
+#mainbar .dir{float:right; color:#fff;}
+#mainbar .dir a{color:#fff;}
+#mainbar .dir a:hover{ text-decoration:underline;}
+#mainbar .bd{padding:20px 35px 40px 35px; border:1px solid #8ec0d3; border-top:0; color:#005f80; line-height:22px;}
+#mainbar .bd{height:auto !important; height:995px; min-height:995px;}
+#mainbar .bd .content a:hover{ text-decoration:underline;}
+
+#mainbar .tab{ margin-bottom:15px; padding-left:9px; height:31px; border-bottom:1px solid #239ebc;}
+#mainbar .tab li{margin-right:3px; float:left; display:inline;}
+#mainbar .tab a{display:block; padding:0 15px; height:30px; line-height:30px; color:#239ebc; font-size:14px; text-align:center; background:#d8eae7; border:1px solid #c7d5d3; border-bottom:none;}
+#mainbar .tab .on a{font-weight:bold; height:31px; color:#cfeaf3; background:#43b0e3; border:1px solid #239ebc; border-bottom:none;text-decoration:none;}
+#mainbar .tab a:hover{ text-decoration:underline;}
+
+#mainbar .text-list li{padding:0 10px 0 25px; height:35px; line-height:35px; border-bottom:1px dashed #aac7c5; background:url("../images/mix-bg.jpg") -695px -98px no-repeat;}
+#mainbar .text-list .date{float:right; color:#83aaab;}
+
+#mainbar .pic-list li{float:left; margin:5px 22px; display:inline; text-align:center; line-height:30px;}
+#mainbar .pic-list img{padding:3px; width:263px; height:146px; background:#fff; border:1px solid #c5d3cc;}
+
+#mainbar .title h4{margin-bottom:5px; text-align:center; font-size:16px; line-height:30px;}
+#mainbar .title .desc{line-height:30px; border-bottom:1px dashed #aac7c5; text-align:center;}
+#mainbar .title .desc span{margin:0 10px;}
+
+#mainbar .pager{margin:35px 0 20px; text-align:center; line-height:24px; zoom:1;}
+#mainbar .pager a{ margin:3px; padding:0 5px; display:inline-block; width:15px; height:25px; background:#96cce8; border:1px solid #86c8ea; font-weight:bold; vertical-align:middle;}
+#mainbar .pager a.index{ width:40px;}
+#mainbar .pager span{ padding:0 10px; font-weight:bold;}
+
+#mainbar .article-pager{ padding:5px 0; line-height:25px; border-top:1px dashed #aac7c5;}
+
+#mainbar .picture-pager ul{padding-bottom:10px; border-bottom:1px solid #b6c5bd;}
+#mainbar .picture-pager .back{padding-top:10px; text-align:center;}

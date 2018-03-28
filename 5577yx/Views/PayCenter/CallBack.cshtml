@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "订单详情";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+<div id="content_n" style="background: none; height: 450px;">
+    <div id="codecontent" style="border: 0px; background-color: transparent">
+        <div class="email2">
+            <div class="emailtop">
+                <div class="pic">
+                </div>
+                5577yx平台温馨提示
+            </div>
+            <p>
+                <span style="height: 50px; width: 100%; display: inline-block; padding-bottom: 10px;">
+                    <img src="@ViewData["ImgUrl"]" style="width:40px;height:40px;"/>
+                    <label style="font-size: 20px; line-height: 25px; margin-left: 8px; display: inline-block">@ViewData["Msg"]</label>
+                </span>
+                <br />
+                <br />
+                <span><a href="/UserCenter/PayHistory">查看充值记录</a></span>
+                <label id="showtip">
+                </label>
+            </p>
+        </div>
+    </div>
+</div>

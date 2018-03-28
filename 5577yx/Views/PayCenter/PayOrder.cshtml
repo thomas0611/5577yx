@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "订单详情";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+<form method="post" @Html.Raw(ViewData["Function"])  @Html.Raw(ViewData["Action"])>
+    <div id="dingdan" style="@ViewData["OVisible"]">
+        @Html.Raw(ViewData["PayHtml"])
+        <div id="dingdan2">
+            <span>立即支付<a><label id="Money" style="color: #FF3300;">@ViewData["Money"]</label>元</a>，即可完成订单。</span>请在<a>24小时内</a>完成支付，否则订单将自动取消。
+        </div>
+        <div id="dingdan5">
+            <div id="dingdan6">
+                <input id="Submit1" type="submit" value="" class="anniu" />
+            </div>
+            <p>
+                温馨提示：
+            </p>
+            <p>
+                1.网银银行页面打不开，怎么办？
+            </p>
+            <p>
+                -建议使用IE核心的浏览器，点击IE的菜单“工具”－“Internet选项”－“安全”，将安全中的各项设置回复到默认级别。
+            </p>
+            <p>
+                &nbsp;
+            </p>
+            <p>
+                2.我的银行卡未开通网上支付功能，怎么办？
+            </p>
+            <p>
+                -登录该银行卡的网上银行主页，在线开通网上支付功能，有些银行开通需要到银行柜台，您最好致电该银行客服咨询。
+            </p>
+            <p>
+                &nbsp;
+            </p>
+
+        </div>
+    </div>
+    <div id="dingdanshibai" style="@ViewData["EVisible"]" >
+        <div id="dingdanshibaileft">
+        </div>
+        <p class="p0">
+            您的订单存在安全风险，请查看订单状态或稍后重试。
+        </p>
+        <p class="p1">
+            <span class="s0">有问题请拨打全国客服电话：400-633-5300</span>
+        </p>
+    </div>
+</form>

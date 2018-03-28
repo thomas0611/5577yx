@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "用户中心";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner">
+            <div class="user_center_content_title">
+                我的资料
+            </div>
+            <div class="user_center_content_right">
+                <!--个人资料-->
+                <div class="session session_first">
+                    <a href="/UserCenter/MyInfoEdit" title="点击更换头像">
+                        <img src="@Html.Raw("/Images/users/" + ViewData["Photo"] + ".jpg")" class="user_avatar"></a>
+                    <div class="user_page_info">
+                        <p>
+                            尊敬的玩家：<font class="orange_link">@ViewData["UserName"]</font>,欢迎您! 『 账户余额:<font color="red">@ViewData["Money"]</font>
+                            平台币』&nbsp;@*『 兑换券:<font color="red">0</font>』&nbsp;*@『 返利币:<font color="red">@ViewData["FlMoney"]</font>
+                            』
+                        </p>
+                        <p>
+                            用户等级：<img src="/images/@ViewData["vip"]" style="position: relative; top: 4px;">
+                        </p>
+                        <p>
+                            您当前<a href="/UserCenter/UserMsg"><font color="red" style="margin: 0px 6px;">@ViewData["MsgCount"]</font></a>条未读信息
+                        </p>
+                    </div>
+                </div>
+                <!--安全中心-->
+                <div class="session">
+                    <div class="title">
+                        帐号安全
+                    </div>
+                    <div class="security_block">
+                        <div style="height: 21px;">
+                            <span class="label">当前安全级别:</span> <span class="sec_bar"><span class="sec_bar_inner">
+                                <span class="good">强</span> </span></span>
+                        </div>
+                        <div class="security_info">
+                            <div class="security_info_head">
+                            </div>
+                            <p>
+                                <span>您的账户很安全，请继续保持.</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--防沉迷-->
+                <div class="session">
+                    <div class="title">
+                        安全认证
+                    </div>
+                    <div class="session_content user_basic">
+                        <div class="line">
+                            <span>您已设置密保问题。</span>
+                        </div>
+                        <div class="line">
+                            <span>您已认证邮箱。</span>
+                        </div>
+                        <div class="line">
+                            <span>您已绑定身份证号码。</span>
+                        </div>
+                    </div>
+                </div>
+                <!--开服信息-->
+                @*<div class="session">
+                    <div class="kLeft">
+                        <div class="title">
+                            我最近玩过的游戏
+                        </div>
+                        <div class="user_game">
+                            <ul style="margin-top: 20px">
+                                @Html.Raw(ViewData["LoginOnline"])
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="newKf" style="background-color: White;">
+                        <h1>
+                            <img src="/images/fire.png" width="25px">最新开服
+                        </h1>
+                        <table cellpadding="0" cellspacing="0" width="100%" class="listTable">
+                            <thead>
+                                <th width="10px">&nbsp;
+                                </th>
+                                <th width="50px">日期
+                                </th>
+                                <th width="50px">时间
+                                </th>
+                                <th width="80px" class="name">游戏名称
+                                </th>
+                                <th width="38px">服数
+                                </th>
+                            </thead>
+                            <tbody id="NewsServer">
+                                @Html.Raw(ViewData["NewServerHtml"])
+                            </tbody>
+                        </table>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+</div>

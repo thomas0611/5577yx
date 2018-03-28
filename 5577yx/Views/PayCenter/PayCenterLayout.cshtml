@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+<div id="content_czzx">
+    <div class="title">
+        充值中心
+        <span style="padding-left:80px;"><a style="color:red;font-size:14px;" href="/PayCenter/Vip">VIP充值优惠</a></span>
+        <span style="text-align:right;color:#343434;padding-left:70px;font-size:12px;font-weight:normal;"> 温馨提示：如果您在充值的过程中遇到问题，请联系本站 <a>在线客服</a> 或 拨打 <a>400-009-4577</a> 帮您解决，我们竭诚为您服务~</span>
+    </div>
+   @* <div id="czzxmaintop" style="margin-top: 10px; padding-left: 30px">
+        温馨提示：如果您在充值的过程中遇到问题，请联系本站 <a>在线客服</a> 或 拨打 <a>400-009-4577</a> 帮您解决，我们竭诚为您服务~
+    </div>*@
+    <div class="chargeBox">
+
+        <div class="chongzhileft001">
+            <div class="sidebar">
+                <!--充值大标题--->
+                <div id="KQ_BANK" class="payment @ViewData["WyOn"]" onclick="window.location.href='/PayCenter'">
+                    <span class="white_border">网银充值(推荐)</span>
+                </div>
+                <div id="JUN_BANK" class="payment @ViewData["PtbOn"]" onclick="window.location.href='/PayCenter/Ptb'">
+                    <span class="white_border">平台币充值</span>
+                </div>
+                @*<div id="ALI" class="payment @ViewData["DhqOn"]" onclick="window.location.href='/PayCenter/Dhq'">
+                    <span class="white_border">兑换券充值</span>
+                </div>*@
+                <div id="KQ_CM" class="payment @ViewData["ZfbOn"]" onclick="window.location.href='/PayCenter/Zfb'">
+                    <span class="white_border">支付宝支付</span>
+                </div>
+                @* <div id="Qbk" class="payment @ViewData["QbOn"]" onclick="window.location.href='/PayCenter/Szx'">
+                    <span class="white_border">Q币卡充值</span>
+                </div>*@
+                <div id="KQ_TC" class="payment @ViewData["SzxOn"]" onclick="window.location.href='/PayCenter/Szx'">
+                    <span class="white_border">神州行支付</span>
+                </div>
+                <div id="JUN_JCARD" class="payment @ViewData["LtOn"]" onclick="window.location.href='/PayCenter/Lt'">
+                    <span class="white_border">联通卡支付</span>
+                </div>
+                <div id="KQ_SNDA" class="payment @ViewData["DxOn"]" onclick="window.location.href='/PayCenter/Dx'">
+                    <span class="white_border">电信卡支付</span>
+                </div>
+                <div id="KQ_SOHU" class="payment @ViewData["JwOn"]" onclick="window.location.href='/PayCenter/Jw'">
+                    <span class="white_border">骏网卡支付</span>
+                </div>
+                <div id="Sdk" class="payment @ViewData["SdkOn"]" onclick="window.location.href='/PayCenter/Sdk'">
+                    <span class="white_border">盛大卡支付</span>
+                </div>
+                <div id="WyYkt" class="payment @ViewData["WyYktOn"]" onclick="window.location.href='/PayCenter/WyYkt'">
+                    <span class="white_border">网易一卡通</span>
+                </div>
+                <div id="WmYkt" class="payment @ViewData["WmYktOn"]" onclick="window.location.href='/PayCenter/WmYkt'">
+                    <span class="white_border">完美一卡通</span>
+                </div>
+                <div id="Flb" class="payment @ViewData["FlbOn"]" onclick="window.location.href='/PayCenter/Flb'">
+                    <span class="white_border">返利币支付</span>
+                </div>
+                @*<div id="Rgcz" class="payment @ViewData["RgczOn"]" onclick="window.location.href='/PayCenter/Rgcz'">
+                    <span class="white_border">人工充值</span>
+                </div>*@
+            </div>
+        </div>
+        @RenderBody()
+    </div>
+</div>

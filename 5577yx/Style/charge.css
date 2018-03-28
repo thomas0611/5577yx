@@ -1,0 +1,111 @@
+/*充值中心*/
+/**************左边************/
+#content_czzx .title
+{
+	border-bottom: 1px solid #FEDEBE;
+	font-size: 14px;
+	font-weight: bold;
+	color: #E06F00;
+	padding: 5px 0 5px 5px;
+	width: 923px;
+	margin-bottom:20px;
+}
+#content_czzx .chargeBox
+{
+	padding: 2px;
+	margin-top: 10px;
+	overflow: hidden;
+	height: 100%;
+	border: 1px solid #FCA171;
+	width: 928px;
+	margin-bottom: 12px;
+}
+.sidebar
+{
+	float: left;
+	width: 210px;
+	position: relative;
+	background: url(../images/paysidebar_bg.png) -30px 0 repeat-y;
+	margin: -3px 0 0 -1px;
+	overflow: hidden;
+	border-bottom: 1px solid #FCA171;
+}
+.sidebar .payment
+{
+	border-top: 1px solid #FCA171;
+	border-bottom: 1px solid #FCA171;
+	margin-bottom: 5px;
+	color: #36100A;
+	cursor: pointer;
+	overflow: hidden;
+}
+.sidebar div span
+{
+	display: block;
+	text-align: right;
+	padding: 5px 0;
+	overflow: hidden;
+	height: 25px;
+	margin-top: 0px;
+	padding-right: 5px;
+	margin-left: 0px;
+}
+.chongzhileft001
+{
+	margin-top: 0px;
+}
+.chongzhileft001 span.white_border
+{
+	border-top: 1px solid white;
+	width: 203px;
+}
+.sidebar div font
+{
+	float: left;
+	font-size: 12px;
+	padding-left: 30px;
+	line-height: 25px;
+}
+.chongzhileft001 span.order_arrow
+{
+	background: url(../images/items.gif) 3px -1px;
+	width: 15px;
+	height: 15px;
+	float: right;
+	padding: 0 !important;
+	border: none !important;
+	margin-right: 20px;
+}
+/*选中*/
+.sidebar div.chosen span
+{
+	background: white;
+	position: relative;
+	width: 205px;
+	_width: 200px;
+}
+.sidebar div.chosen span
+{
+	background: white;
+	position: relative;
+	width: 205px;
+	_width: 200px;
+}
+
+.chargetitle
+{
+	border-bottom: 1px solid #FEDEBE;
+	color: #CE4119;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 0 11px 5px;
+	margin: 0 auto;
+	width: 99%;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.chargetitle span
+{
+	float: left;
+	padding-top: 5px;
+}

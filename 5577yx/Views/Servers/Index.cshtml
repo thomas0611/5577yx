@@ -1,0 +1,95 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            GetAllGame();
+
+        });
+        $(document).ajaxSuccess(function (event, xhr, settings) {
+            if (settings.url === "../Models/AdminFunction.ashx?method=GetGamesIdName") {
+                $("#Selyx").val(@ViewData["GameId"]);
+                InitPageContent("Server");
+            }
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理 &gt; 游戏内容管理 &gt; 游戏服务器
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+            </div>
+            <a href="AddServer" class="tools_btn"style="@ViewData["Style"]">
+                <span><b class="add">添加服务器</b></span></a>
+        </div>
+        <div class="select_box">
+            &nbsp; 游戏： &nbsp;
+            <select id="Selyx" class="select2" onchange="InitPageContent('Server')">
+                <option value="0">所有游戏</option>
+            </select>
+            &nbsp; 属性： &nbsp;
+             <select id="ddlProperty" class="select2" onchange="InitPageContent('Server')">
+                 <option value="0">所有状态</option>
+                 <option value="1">即将开启</option>
+                 <option value="2">维护</option>
+                 <option value="3">流畅</option>
+                 <option value="4">火爆</option>
+             </select>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th width="5%">ID
+                </th>
+                <th width="10%">编号
+                </th>
+                <th>所属游戏</th>
+                <th>服数</th>
+                <th>名称    
+                </th>
+                <th>服务器状态</th>
+                <th width="16%">开服时间
+                </th>
+                <th width="60">排序
+                </th>
+                <th width="50">操作
+                </th>
+            </tr>
+        </thead>
+        <tbody id="Server">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="10" onchange="InitPageContent('Server')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

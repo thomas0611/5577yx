@@ -1,0 +1,146 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddNews</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/ui/js/ligerBuild.min.js"></script>
+    <script src="~/Scripts/Admin/editor/kindeditor-min.js" charset="utf-8"></script>
+    <script src="~/Scripts/Admin/editor/lang/zh_CN.js" charset="utf-8"></script>
+    <script src="~/Scripts/Admin/iColorPicker.js"></script>
+    <script>
+        KindEditor.ready(function (K) {
+            GetAllGame();
+            window.editor = K.create('#txtContent', {
+                uploadJson: '../Models/upload_ajax.ashx?action=EditorFile&IsWater=1',
+                fileManagerJson: '../Models/upload_ajax.ashx?action=ManagerFile',
+                allowFileManager: true
+            });
+        });
+        $(document).ajaxComplete(function () {
+            $("#Selyx").val(@ViewData["GameId"]);
+            $("#Type").val(@ViewData["Type"]);
+        });
+
+    </script>
+</head>
+<body class="mainbody">
+    <form method="post" onsubmit="return @(ViewData["Function"]);">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt; 内容管理 &gt; 编辑信息
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <tbody>
+                        <tr>
+                            <th>所属游戏：
+                            </th>
+                            <td>
+                                <select id="Selyx" name="GameId" class="select2 required min{0}">
+                                    <option value="0">请选择游戏</option>
+                                </select>
+                                <input type="hidden" name="NewsId" value="@ViewData["NewsId"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>所属类型：
+                            </th>
+                            <td>
+                                <select id="Type" name="Type" class="select2 required">
+                                    <option value="0">请选择类型</option>
+                                    <option value="1">新闻</option>
+                                    <option value="2">公告</option>
+                                    <option value="3">攻略</option>
+                                    <option value="4">活动</option>
+                                    <option value="5">资料</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>标题名称：
+                            </th>
+                            <td>
+                                <input id="txtTitle" name="Title" class="txtInput normal required" maxlength="100" value="@ViewData["Title"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>标题颜色：
+                            </th>
+                            <td>
+                                <input name="NameColor" id="NameColor" value="@ViewData["NameColor"]"  type="text" class="iColorPicker" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>设置属性：
+                            </th>
+                            <td>
+                                <input type="checkbox" name="IsTop" checked="@ViewData["IsTop"]" />是否置顶
+                                <input type="checkbox" name="IsRed" checked="@ViewData["IsRed"]" />是否推荐
+                                <input type="checkbox" name="IsHot" checked="@ViewData["IsHot"]" />是否热门
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>新闻关键字：
+                            </th>
+                            <td>
+                                <input id="txtKeyword" class="txtInput normal" name="Keyword" maxlength="100" value="@ViewData["Keyword"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>新闻来源：
+                            </th>
+                            <td>
+                                <input id="txtForm" name="Source" class="txtInput normal" maxlength="100" value="@ViewData["Source"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>排序数字：
+                            </th>
+                            <td>
+                                <input id="SortId" class="txtInput small required digits min{0}" name="SortId"
+                                    maxlength="10" value="@ViewData["SortId"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>显示图片：
+                            </th>
+                            <td>
+                                <input id="txtImgUrl" class="txtInput normal left" maxlength="255" value="@ViewData["Photo"]">
+                                <a href="javascript:;" class="files" style="margin: 10px;">
+                                    <input type="file" id="FileUpload" name="FileUpload" onchange="Upload('SingleFile', 'txtImgUrl', 'FileUpload');" /></a>
+                                <span class="uploading">正在上传，请稍候...</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">详细内容：
+                            </th>
+                            <td>
+                                <textarea id="txtContent" name="NewsContent" cols="100" rows="8" style="width: 99%; height: 350px; visibility: hidden;">@(ViewData["NewsContent"])</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" id="btnSubmit" value="提交保存" class="btnSubmit" />
+                &nbsp;<input name="btnExit" type="button" class="btnSubmit" value="取 消" onclick="javascript: location.href = document.referrer;" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

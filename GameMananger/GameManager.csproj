@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73B2B3AF-A8E2-40BB-8AA6-089BB69BB156}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game.Manager</RootNamespace>
+    <AssemblyName>GameManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\..\6qm\Common\bin\Debug\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnumGame.cs" />
+    <Compile Include="Game_Ahxx.cs" />
+    <Compile Include="Game_Cssg.cs" />
+    <Compile Include="Game_Dqqyz.cs" />
+    <Compile Include="Game_Ftz.cs" />
+    <Compile Include="Game_Fyws.cs" />
+    <Compile Include="Game_Jhwj.cs" />
+    <Compile Include="Game_Jstm.cs" />
+    <Compile Include="Game_Nslm.cs" />
+    <Compile Include="Game_Qjll.cs" />
+    <Compile Include="Game_Sbcs.cs" />
+    <Compile Include="Game_Shmc.cs" />
+    <Compile Include="Game_Tyjy.cs" />
+    <Compile Include="Game_Yxy.cs" />
+    <Compile Include="Game_Zwj.cs" />
+    <Compile Include="LockManager.cs" />
+    <Compile Include="CardManager.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameConfigManager.cs" />
+    <Compile Include="GamesManager.cs" />
+    <Compile Include="GameUserManager.cs" />
+    <Compile Include="Game_Chcq.cs" />
+    <Compile Include="Game_Dhz.cs" />
+    <Compile Include="Game_Djj.cs" />
+    <Compile Include="Game_Dpqk.cs" />
+    <Compile Include="Game_Dxz.cs" />
+    <Compile Include="Game_Gjqx.cs" />
+    <Compile Include="Game_Jdsj.cs" />
+    <Compile Include="Game_Jjsg.cs" />
+    <Compile Include="Game_Jlc.cs" />
+    <Compile Include="Game_Lm.cs" />
+    <Compile Include="Game_Ly.cs" />
+    <Compile Include="Game_Mxqy.cs" />
+    <Compile Include="Game_Nz.cs" />
+    <Compile Include="Game_Qh.cs" />
+    <Compile Include="Game_Rxhzw.cs" />
+    <Compile Include="Game_Sjsg.cs" />
+    <Compile Include="Game_Tgzt.cs" />
+    <Compile Include="Game_Tj.cs" />
+    <Compile Include="Game_Txj.cs" />
+    <Compile Include="Game_Wdqk.cs" />
+    <Compile Include="Game_Wz.cs" />
+    <Compile Include="Game_Xxas.cs" />
+    <Compile Include="Game_Xyb.cs" />
+    <Compile Include="Game_Klsg.cs" />
+    <Compile Include="Game_Yjxy.cs" />
+    <Compile Include="Game_Zsg.cs" />
+    <Compile Include="LinksManager.cs" />
+    <Compile Include="LotteryManager.cs" />
+    <Compile Include="MasterManager.cs" />
+    <Compile Include="NewsManager.cs" />
+    <Compile Include="OnlineLogManager.cs" />
+    <Compile Include="OrderManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleCompetenceManager.cs" />
+    <Compile Include="ServersMananger.cs" />
+    <Compile Include="SiteConfigManager.cs" />
+    <Compile Include="SourceChangeManager.cs" />
+    <Compile Include="SysMsgManager.cs" />
+    <Compile Include="UpLoad.cs" />
+    <Compile Include="ValiDateCodeManager.cs" />
+    <Compile Include="WebInfoManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameDAL\GameDAL.csproj">
+      <Project>{74C349B6-C356-429B-8653-4D1195795FAD}</Project>
+      <Name>GameDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameModel\GameModel.csproj">
+      <Project>{91F5EC83-A80D-44E9-B7C8-3F51EAB459B8}</Project>
+      <Name>GameModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

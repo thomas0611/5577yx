@@ -1,0 +1,223 @@
+/*推广中心*/
+.spArea1,.spArea2
+{
+	display:none;	
+}
+#tgcontent
+{
+	border-style: none;
+	width: 935px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 14px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	overflow: hidden;
+	border: 1px solid #FEC18E;
+	background-color: white;
+	padding: 15px 20px;
+}
+#tgcontent .title
+{
+	border-bottom: 1px solid #FEDEBE;
+	font-size: 14px;
+	font-weight: bold;
+	color: #E06F00;
+	padding: 5px 0 5px 5px;
+	width: 923px;
+	margin-bottom: 0px;
+}
+.session
+{
+	clear: both;
+	overflow: hidden;
+	padding: 0 10px 10px 20px;
+	font-size: 12px;
+}
+.session .user_avatar
+{
+	padding-top: 15px;
+	float: left;
+	width: 85px;
+}
+.session_first
+{
+	border: none !important;
+}
+.session .user_page_info
+{
+	float: left;
+	padding-left: 25px;
+	width: 540px;
+	line-height: 21px;
+	font-size: 13px;
+	padding-top: 15px;
+}
+.user_page_info p
+{
+	color: #4E4841;
+	line-height: 30px;
+	font-family: 宋体;
+	font-size: 12px;
+}
+.user_page_info p span
+{
+	float: left;
+}
+.user_page_info p strong
+{
+	float: left;
+}
+.user_page_info p span.process
+{
+	margin-right: 15px;
+}
+.orange_link
+{
+	color: #FF7F00;
+	cursor: pointer;
+}
+
+em.choosegame
+{
+	background: url(../images/choose.png) no-repeat center center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: left;
+	height: 30px;
+}
+em.tglink
+{
+	background: url(../images/tglink.png) no-repeat center center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: left;
+	height: 30px;
+}
+em.share
+{
+	background: url(../images/share.png) no-repeat center center;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	float: left;
+	height: 30px;
+}
+
+#tgcontent .tgmain
+{
+	clear: both;
+	overflow: hidden;
+	padding: 25px 28px 20px 10px;
+	border-top: 1px dashed #FEDEBE;
+	margin-top: 10px;
+}
+#tgcontent .tgmain .box
+{
+	padding: 2px;
+	margin-top: 10px;
+	overflow: hidden;
+	height: 100%;
+	border: 1px solid #FCA171;
+	width: 928px;
+	margin-bottom: 12px;	
+}
+/*左边栏*/
+.sidebar
+{
+	float: left;
+	width: 195px;
+	position: relative;
+	background: url(../images/paysidebar_bg.png) -45px 0 repeat-y;
+	margin: 0px 0 0 -1px;
+	overflow: hidden;
+	border-bottom: 1px solid #FCA171;
+	border-left: 1px solid #FCA171;
+}
+.sidebar .payment
+{
+	border-top: 1px solid #FCA171;
+	border-bottom: 1px solid #FCA171;
+	margin-bottom: 5px;
+	color: #36100A;
+	cursor: pointer;
+	overflow: hidden;
+}
+.sidebar div span
+{
+	display: block;
+	text-align: right;
+	padding: 5px 0;
+	overflow: hidden;
+	height: 25px;
+	margin-top: 0px;
+	padding-right: 5px;
+	margin-left: 0px;
+}
+.chongzhileft001
+{
+	margin-top: 0px;
+}
+.chongzhileft001 span.white_border
+{
+	border-top: 1px solid white;
+	width: 189px;
+}
+.sidebar div font
+{
+	float: left;
+	font-size: 12px;
+	padding-left: 30px;
+	line-height: 25px;
+}
+.chongzhileft001 span.order_arrow
+{
+	background: url(../images/items.gif) 3px -1px;
+	width: 15px;
+	height: 15px;
+	float: right;
+	padding: 0 !important;
+	border: none !important;
+	margin-right: 20px;
+}
+/*选中*/
+.sidebar div.chosen span
+{
+	background: white;
+	position: relative;
+	width: 205px;
+	_width: 200px;
+}
+.sidebar div.chosen span
+{
+	background: white;
+	position: relative;
+	width: 205px;
+	_width: 200px;
+}
+
+
+#tgcontent .tgmain .main
+{
+	margin-top: 0px;
+	margin-right: 0px;
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	color: #333;
+	line-height: 14px;
+	float: right;	
+	border: 1px solid #FCA171;
+	width: 701px;
+	position:relative;
+	margin-left:-1px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	
+	min-height:340px;
+}

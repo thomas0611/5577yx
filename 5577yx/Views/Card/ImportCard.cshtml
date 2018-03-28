@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ImportCard</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+</head>
+<body class="mainbody">
+    <form method="post" onsubmit="return AddData('/Card/DoImportCard')">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt; 新手卡管理 &gt; 导入新手卡
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">导入卡号</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>卡号：
+                            </th>
+                            <td>
+                                <input type="hidden" name="CardId" value="@ViewData["CardId"]"/>
+                                <textarea id="txtdesc" name="CardTextContent" cols="60" rows="15" runat="server"></textarea>
+                                <br />
+                                注： 不可重复，可同时导入多个卡号，以换行区分
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" id="btnSubmit" value="提交保存" class="btnSubmit" />
+                &nbsp;<input name="btnExit" type="button" class="btnSubmit" value="取 消" onclick="javascript: location.href = document.referrer;" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

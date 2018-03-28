@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "神州行充值";
+    Layout = "~/Views/PayCenter/PayCenterLayout.cshtml";
+}
+
+<div id="cczx_right">
+    <div id="chongzhi2">
+        <h1>1.选择充值目标</h1>
+        <div class="pay_wh_tt p_textd">
+            <ul class="clearfix">
+                <li class="where yx current" id="buytogame"><i></i>充值到游戏</li>
+                <li class="where zs" id="buytoplatform"><i></i>充值平台币</li>
+            </ul>
+        </div>
+        <div id="xzyx">
+            <select id="Selyx" name="GameId" class="select2" onchange="onyxchange()">
+                <option value="0">请选择游戏</option>
+            </select>
+            <select id="Selfwq" name="ServerId" class="select2">
+                <option value="0">请选择服务器</option>
+            </select>
+        </div>
+    </div>
+    <div id="chongzhi3">
+        <h1>2.填写充值账号</h1>
+        <input type="hidden" id="PayType" value="2" />
+        <p>
+            充值账号：<input type="text" name="UserName" id="UserName" value="" /><a style="color: Red">*</a><span>请填写您充值的目标账号</span>
+        </p>
+        <p>
+            确认账号：<input type="text" name="UserNameAG" id="UserNameAG" value="" /><a style="color: Red">*</a>请确认您充值的目标账号
+        </p>
+        <br />
+    </div>
+    <div id="chongzhi4">
+        <h1>3.选择充值金额</h1>
+        <p>
+            充值金额：
+                <select id="SelMoney" name="SelMoney" onchange="CheckMoney()">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                </select>
+            元
+        </p>
+        <p>
+            <span style="color: Red;">注：</span>该充值方式兑换比例为：<span style="color: Red;">1：9</span>
+        </p>
+    </div>
+    <div id="cont_main_001">
+        <div id="cont_main_top">
+        </div>
+        <div id="cont_main_center">
+            <div id="cont_main_center_top">
+                <span style="margin-left:50px;">神州行充值卡说明：</span>
+                <p>
+                    重要声明：
+                </p>
+                <p>
+                    1.友情提示全国移动卡，序列号：17位，密码：18位 江苏移动地方卡，序列号：16位，密码：17位 浙江移动地方卡，序列号：10位，密码：8位。请勿使用彩铃卡支付！
+                </p>
+                <p>
+                    2.<span style="color: red"> 必须使用与订单金额相同面额的充值卡进行支付！</span>否则将导致支付失败、且充值卡余额丢失，由此造成的损失由您承担！
+                </p>
+                <p>
+                    3.请输入正确的卡号、密码，如您连续3次提交错误，此卡将不能在本平台使用。
+                </p>
+            </div>
+        </div>
+        <div id="cont_main_bottom">
+        </div>
+    </div>
+    <div style="text-align: center">
+        <input id="Button1" type="button" value="" class="tijiao" onclick="TjOrder()" />
+    </div>
+</div>
+<script>
+    GetAllGame();
+</script>
+

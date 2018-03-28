@@ -1,0 +1,368 @@
+/*充值中心*/
+.tit_a
+{
+	height: 26px;
+	line-height: 26px;
+	text-align: right;
+	margin: 0 0 12px;
+	font-weight: normal;
+	color: #2A2A2A;
+}
+.tit_a span
+{
+	float: left;
+	font-size: 14px;
+	font-family: 'Microsoft YaHei';
+	margin-left: 15px;
+}
+.pay_wh_tt
+{
+	border-bottom: 1px dashed #FEDEBE;
+	padding: 0 0 13px 30px;
+	margin: 0 0 28px 0px;
+	overflow: hidden;
+}
+.pay_wh_tt ul
+{
+	padding: 0 0 10px 30px;
+	font-family: 'Microsoft YaHei';
+}
+.pay_wh_tt li
+{
+	height: 25px;
+	line-height: 25px;
+	margin: 0 50px 0 0;
+	font-size: 14px;
+	cursor: pointer;
+	float: left;
+}
+.pay_wh_tt .current
+{
+	color: #E06F00;
+	font-weight: bold;
+}
+.input_chk
+{
+	vertical-align: -1px;
+	_vertical-align: -2px;
+	margin-right: 5px;
+}
+.pay_wh_tt li i
+{
+	background: url(../images/check.png) no-repeat 0 -33px;
+	width: 23px;
+	height: 23px;
+	vertical-align: middle;
+	display: inline-block;
+	margin: -4px 11px 0 3px;
+}
+.pay_wh_tt li.current i
+{
+	background: url(../images/check.png) no-repeat 0 0;
+}
+
+/*选择冲入的游戏*/
+.pay_wh_conn
+{
+	height: 67px;
+	border-bottom: 1px dashed #FEDEBE;
+	margin-bottom: 15px;
+}
+.pay_sel
+{
+	font-size: 0;
+	position: relative;
+	z-index: 3;
+	padding-left: 15px;
+}
+.pay_sel li
+{
+	font-size: 12px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	display: inline-block;
+	margin: 0 28px 0 0;
+	width: 226px;
+	position: relative;
+}
+.btn_game, .btn_server
+{
+	width: 226px;
+	height: 42px;
+}
+.btn_btn
+{
+	background: url(../images/png.png) no-repeat;
+	display: inline-block;
+	vertical-align: top;
+	line-height: 200px;
+	overflow: hidden;
+}
+.btn_server
+{
+	background-position: 0 -52px;
+}
+.btn_game:hover
+{
+	background-position: -236px -156px;
+}
+.btn_server:hover
+{
+	background-position: -236px -260px;
+}
+.btn_sel, .btn_sel:hover,.btn_selserver,.btn_selserver:hover
+{
+	background-position: -236px 0;
+	width: 185px;
+	height: 42px;
+	line-height: 40px;
+	padding: 0 41px 0 0;
+	text-align: center;
+	font-size: 15px;
+	color: #FF7000;
+	font-weight:bold;
+	text-shadow: 1px 0 1px rgba(233, 255, 169, 0.6);
+	text-decoration: none;
+	overflow: hidden;
+}
+.pay_sel li .btn_sel .ico_ico,.pay_sel li .btn_selserver .ico_ico
+{
+	margin: 0 0 0 6px;
+	_margin-top: 10px;
+	_margin-bottom: 10px;
+}
+.ico_ico4
+{
+	background-position: -100px 0;
+}
+.ico_ico
+{
+	background: url(../images/i.png) no-repeat 0 0;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+/*充值账户*/
+#pay_account
+{
+	border-bottom: 1px dashed #FEDEBE;
+	padding-bottom:10px;
+	margin-bottom:10px;
+}
+#pay_account .accout
+{
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #FEDEBE;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+#pay_account .line
+{
+	width:700px;
+	overflow:hidden;
+	line-height:35px;
+}
+#pay_account .line .left
+{
+	width:130px;
+	float:left;
+	text-align:right;
+	font-size:14px;
+}
+#pay_account .line .right
+{
+	width:350px;
+	float:left;
+	text-align:left;
+	margin-left:10px;
+	padding-top: 5px;
+}
+#pay_account .line .right input
+{
+	height: 20px;
+	width: 220px;
+	line-height: 20px;
+	padding-left: 5px;
+	
+}
+.btn_uname, .btn_uname:hover
+{
+	background-position: 0 -612px;
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 0 0 13px;
+	font-size: 14px;
+	color: #414141;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+	margin-left: 15px;
+}
+/*充值金额*/
+.pay_money_conn
+{
+	border-bottom: 1px dashed #FEDEBE;
+	padding-bottom: 20px;
+	padding-left: 28px;
+}
+.pay_money_conn ul
+{
+	letter-spacing: -5px;
+}
+.pay_money_conn li
+{
+	font-size: 14px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	display: inline-block;
+	width: 101px;
+	padding: 5px 0;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+	z-index: 1;
+	color: #969696;
+}
+.pay_money_conn li label, .pay_bank_conn li label
+{
+	cursor: pointer;
+}
+.pay_money_conn li.lst
+{
+	width: auto;
+}
+.input_txt
+{
+	border: 1px solid #BBB;
+	padding: 2px 5px;
+	height: 17px;
+	line-height: 17px;
+	width: 120px;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.pay_money_conn li .txt
+{
+	margin: 0 0 0 37px;
+	display: inline-block;
+}
+
+/*选择游戏及服务器*/
+.pay_layer
+{
+	width: 533px;
+	left: 0;
+	top: 50px;
+	display: none;
+}
+.pay_layer
+{
+	border: 1px solid #DD912F;
+	position: absolute;
+	left: 15px;
+	top: 55px;
+	padding: 1px;
+	background: #FFBF6C;
+}
+/*箭头*/
+.pay_layer s
+{
+	background: url(../images/jt.png) no-repeat;
+	width: 15px;
+	height: 9px;
+	overflow: hidden;
+	font-size: 1px;
+	left: 100px;
+	top: -8px;
+	position: absolute;
+}
+.pay_server s
+{
+	right: 170px;
+	left: auto;
+}
+.pay_layer .close
+{
+	position: absolute;
+	right: 3px;
+	top: 3px;
+	background: url(http://p4.qhimg.com/t01f75ecd0138a988ce.png) no-repeat 0 -23px;
+	width: 21px;
+	height: 21px;
+	display: block;
+	text-indent: -9999px;
+	overflow: hidden;
+	z-index: 10;
+}
+.pay_layer_selconn
+{
+	padding: 10px 0;
+}
+.pay_layer_conn
+{
+	background: #fff;
+	border-radius: 0 0 2px 2px;
+}
+.pay_sel_scroll
+{
+	overflow: hidden;
+	height: 120px;
+	position: relative;
+}
+.pay_sel_scroll .pay_layer_sel
+{
+	float: left;
+	width: 510px;
+	height: 110px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 15px;
+	overflow-y: scroll;
+	padding-left:20px;
+}
+.pay_layer_sel li
+{
+	font-size: 12px;
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	display: inline-block;
+	padding: 0 0 0 19px;
+	margin: 0;
+	width: 85px;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	position: relative;
+}
+.cont_main_001
+{
+	margin-top:10px;	
+	margin-bottom:15px;
+}
+.cont_main_001 .con
+{
+	line-height:25px;
+	padding-left:25px;	
+}
+.pay_dhq
+{
+	padding-bottom:15px;
+	border-bottom:1px dashed #FEDEBE;
+	margin-bottom:10px;	
+}
+.pay_dhq_con
+{
+	padding-left:15px;
+	margin-top:10px;	
+}
+.pay_dhq_con select
+{
+	height:22px;
+	width:150px;	
+}

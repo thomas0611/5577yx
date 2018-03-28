@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "下属详情";
+    Layout = "~/Views/SpreadCenter/SpreadLayout.cshtml";
+}
+
+<div class="main">
+    <div class="user_password">
+        <div id="Search" style="padding-left: 30px; padding-bottom: 20px;">
+            选择游戏：
+            <select id="Selyx" class="select2" onchange="InitPageContent('UnderUser')">
+                <option value="0">所有游戏</option>
+            </select>
+            充值时间：
+                <input id="StartTime" class="txtInput" value="" style="width: 130px;" onclick="calendar.show(this);">至
+                <input id="EndTime" class="txtInput" value="" style="width: 130px;" onclick="calendar.show(this);" />
+            <input type="button" id="btnSearch" value="搜 索" class="btnSearch" onclick="InitPageContent('UnderUser')" />
+        </div>
+        <div class="daohang">
+            <ul class="spUl">
+                <li class="current"><a href="javascript:void(0);">下属推广详情</a></li>
+            </ul>
+            <span style="margin-left: 100px; color: Red;">总业绩：<strong id="SpreadMoney">@ViewData["SpreadMoney"]</strong></span>
+        </div>
+        <div class="zixun">
+            <table style="text-align: center; width: 99%; border: #dcdcdc" class="paydetail_table">
+                <thead>
+                    <tr>
+                        <th>下属用户 </th>
+                        <th>注册时间</th>
+                        <th>推广总金额</th>
+                        <th>推广人数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="UnderUserDetail">
+                </tbody>
+                <tfoot>
+                    <tr class="pagination">
+                        <td colspan="6">
+                            <div class="page_box" style="float: right;">
+                                <div id="NextPageContent" class="flickr right">
+                                </div>
+                                <div class="left">
+                                    <input type="hidden" value="10" id="NexttxtPageNum" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="page_box">
+            <div id="PageContent" class="flickr right">
+            </div>
+            <div class="left">
+                <input type="hidden" value="10" id="txtPageNum" />
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    GetAllGame();
+    InitPageContent("UnderUserDetail");
+    //$(".spUl li").each(function (i, k) {
+    //    $(k).click(function () {
+    //        $('.spUl li').removeClass('current');
+    //        $(k).addClass('current');
+    //        $(".user_password .zixun").hide().attr("style", 'display: none;');
+    //        $(".user_password .zixun:eq(" + i + ")").show().attr("style", 'display: block;');
+    //        switch (i) {
+    //            case 0:
+    //                InitPageContent("UnderUser");
+    //                $("#Selyx").attr("onchange", "InitPageContent('UnderUser')");
+    //                $("#btnSearch").attr("onclick", "InitPageContent('UnderUser')");
+    //                break;
+    //            case 1:
+    //                InitPageContent("UnderUserDetail");
+    //                $("#Selyx").attr("onchange", "InitPageContent('UnderUserDetail')");
+    //                $("#btnSearch").attr("onclick", "InitPageContent('UnderUserDetail')");
+    //                break;
+    //            default:
+    //                break;
+    //        }
+    //    });
+    //});
+
+    function ShowUser(a, b) {
+        var html = "<tr><td colspan=\"6\"><table id=\"NextSpreadUser\" style=\" width: 100%; table-layout: fixed;text-align: center;\" class=\"paydetail_table\"></table></td></tr>";
+        $("#NextSpreadUser").parent().parent().remove();
+        $(html).insertAfter($(a).parent().parent());
+        InitNextSpreadUser(b);
+    }
+</script>
+

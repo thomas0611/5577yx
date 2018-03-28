@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            InitPageContent("Game");
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理 &gt; 游戏内容管理 &gt; 游戏参数
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+            </div>
+            <a href="AddGame" class="tools_btn" style="@ViewData["Style"]">
+                <span><b class="add">添加游戏</b></span></a>
+        </div>
+        <div class="select_box">
+            &nbsp; 属性： &nbsp;
+             <select id="ddlProperty" class="select2" onchange="InitPageContent('Game')">
+                 <option value="0">所有属性</option>
+                 <option value="is_lock">上线</option>
+                 <option value="is_red">推荐</option>
+                 <option value="is_hot">热门</option>
+             </select>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th width="5%">ID
+                </th>
+                <th width="13%">编号
+                </th>
+                <th>游戏名称    
+                </th>
+                <th width="16%">添加时间
+                </th>
+                <th width="60">排序
+                </th>
+                <th width="110">属性
+                </th>
+                <th width="180">操作
+                </th>
+            </tr>
+        </thead>
+        <tbody id="Game">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="10" onchange="InitPageContent('Game')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

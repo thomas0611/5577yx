@@ -1,0 +1,147 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>5577yx充值抽奖</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/Lottery.js"></script>
+    <style type="text/css">
+        .t {
+            width: 146px;
+            height: 103px;
+            border: 3px solid #fff;
+            text-align: center;
+            vertical-align: middle;
+            float: left;
+            margin: 1px;
+            border-radius: 2px;
+        }
+
+        .tc {
+            width: 454px;
+            height: 325px;
+            border: 3px solid #fff;
+            text-align: center;
+            vertical-align: middle;
+            float: left;
+            margin: 1px;
+            border-radius: 3px;
+        }
+
+        .CenterDIV {
+            width: 770px;
+            height: 553px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -405px;
+            margin-top: -296px;
+            border: 8px solid #BB2424;
+            padding: 12px;
+            background-color: #97001E;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: #6B000D;">
+    <div class="CenterDIV">
+        <div>
+            <div style="width: 770px; height: 110px; float: left;">
+                <div id="C1" class="t">
+                    <img src="../Images/Lottery/award_01.jpg" />
+                </div>
+                <div id="C2" class="t">
+                    <img src="../Images/Lottery/award_02.jpg" />
+                </div>
+                <div id="C3" class="t">
+                    <img src="../Images/Lottery/award_03.jpg" />
+                </div>
+                <div id="C4" class="t">
+                    <img src="../Images/Lottery/award_04.jpg" />
+                </div>
+                <div id="C5" class="t">
+                    <img src="../Images/Lottery/award_05.jpg" />
+                </div>
+            </div>
+            <div style="width: 154px; height: 333px; float: left;">
+                <div id="C16" class="t">
+                    <img src="../Images/Lottery/award_16.jpg" />
+                </div>
+                <div id="C15" class="t">
+                    <img src="../Images/Lottery/award_15.jpg" />
+                </div>
+                <div id="C14" class="t">
+                    <img src="../Images/Lottery/award_14.jpg" />
+                </div>
+            </div>
+            <div id="T" class="tc">
+                <div style="color: red; font-size: 13px; font-weight: bold; height: 20px; background-color: #eef28d; width: 350px; margin-left: auto; margin-right: auto; padding: 3px; border-radius: 5px; margin-top: 20px;">
+                    <marquee id="LotteryInfo" direction="left" valign="top" onmouseover="stop()" onmouseout="start()" behavior="scroll" height="20px;" scrollamount="5">
+                    @Html.Raw(ViewData["LotteryInfo"])
+                    </marquee>
+                </div>
+                <input id="Start" type="button" value="" onclick="Start()" style="background-image: url(../Images/Lottery/Lottery.png); width: 294px; height: 80px; margin-top: 20px; border: none; background-color: transparent;" />
+                <div style="color: red; font-size: 15px; font-weight: bold;">
+                    <span>当前用户：</span><span>@ViewData["UserName"]</span> <span>剩余积分：</span><span id="Points">@ViewData["Points"]</span>
+                    <p>
+                        1.消耗100积分抽奖一次。
+                    </p>
+                    <p>
+                        2.如活动期间内所投放奖励被抽取 完毕，则活动自动结束。
+                    </p>
+                    <p>
+                        3.活动时间不定，请留意当月积分抽奖活动公告。
+                    </p>
+                </div>
+            </div>
+            <div style="width: 154px; height: 333px; float: left;">
+                <div id="C6" class="t">
+                    <img src="../Images/Lottery/award_06.jpg" />
+                </div>
+                <div id="C7" class="t">
+                    <img src="../Images/Lottery/award_07.jpg" />
+                </div>
+                <div id="C8" class="t">
+                    <img src="../Images/Lottery/award_08.jpg" />
+                </div>
+            </div>
+            <div style="width: 770px; height: 110px; float: left;">
+                <div id="C13" class="t">
+                    <img src="../Images/Lottery/award_13.jpg" />
+                </div>
+                <div id="C12" class="t">
+                    <img src="../Images/Lottery/award_12.jpg" />
+                </div>
+                <div id="C11" class="t">
+                    <img src="../Images/Lottery/award_11.jpg" />
+                </div>
+                <div id="C10" class="t">
+                    <img src="../Images/Lottery/award_10.jpg" />
+                </div>
+                <div id="C9" class="t">
+                    <img src="../Images/Lottery/award_09.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 200px; height: 300px; margin-top: -150px; top: 50%; color: red; font-size: 15px; font-weight: bold; position: absolute; margin-left: -225px; left: 100%; border: 5px solid #BB2424; border-radius: 2px; padding: 3px;">
+        <p>
+            1.奖品不接受除质量问题的退货，亦不可折现，奖品图片仅供参考，请以实物为准；
+        </p>
+        <p>
+            2.对于通过不正当手段获奖者，将取消资格。
+        </p>
+        <p>
+            3.实物会用过EMS等快递公司邮寄，需要3-5个工作日。
+        </p>
+        <p>
+            4.对于获奖用户未在当月活动结束前提交个人资料信息者，则认定放弃获奖资格。
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "充值中心";
+    Layout = "~/Views/PayCenter/PayCenterLayout.cshtml";
+}
+
+<div id="cczx_right">
+    <div id="chongzhi2">
+        <h1>1.选择充值目标</h1>
+        <div class="pay_wh_tt p_textd">
+            <ul class="clearfix">
+                <li class="where yx current" id="buytogame"><i></i>充值到游戏</li>
+                <li class="where zs" id="buytoplatform"><i></i>充值平台币</li>
+            </ul>
+        </div>
+        <div id="xzyx">
+            <select id="Selyx" name="GameId" class="select2" onchange="onyxchange()">
+                <option value="0">请选择游戏</option>
+            </select>
+            <select id="Selfwq" name="ServerId" class="select2">
+                <option value="0">请选择服务器</option>
+            </select>
+        </div>
+    </div>
+    <div id="chongzhi3">
+        <h1>2.填写充值账号</h1>
+        <input type="hidden" id="PayType" value="1" />
+        <p>
+            充值账号：<input type="text" name="UserName" id="UserName" value="" /><a style="color: Red">*</a><span>请填写您充值的目标账号</span>
+        </p>
+        <p>
+            确认账号：<input type="text" name="UserNameAG" id="UserNameAG" value="" /><a style="color: Red">*</a>请确认您充值的目标账号
+        </p>
+        <br />
+    </div>
+    <div id="chongzhi4">
+        <h1>3.选择充值金额</h1>
+        <p>
+            充值金额：
+                <select id="SelMoney" name="SelMoney" onchange="CheckMoney()">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="5000">5000</option>
+                </select>
+            元
+        </p>
+        <p>
+            输入金额：
+                <input id="TxtMoney" type="text" name="txtMoney" onchange="CheckMoney()" />
+            元&nbsp;&nbsp;<span style="color: Red;">注：</span> 如果上面没有您充值的金额您可以手动输入金额<span style="color: Red;">(最低5元)</span>
+        </p>
+        <p>
+            应付金额：<span style="color: Red;" id="YfMoney">10</span>元&nbsp;&nbsp;&nbsp;获得：<span
+                style="color: Red;" id="HdMoney">100游戏币</span>
+        </p>
+    </div>
+    @* <div id="chongzhi5" style="z-index: 999">
+        <h1>4.选择充值的银行</h1>
+        <div id="bank">
+            <p>
+                <span>
+                    <input type="radio" name="chongzhi" id="ICBC-NET-B2C" value="ICBC-NET-B2C" checked="checked" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="CCB-NET-B2C" value="CCB-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="ABC-NET-B2C" value="ABC-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="POST-NET-B2C" value="POST-NET-B2C" /></span>
+            </p>
+            <p>
+                <span>
+                    <input type="radio" name="chongzhi" id="BOCO-NET-B2C" value="BOCO-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="CMBCHINA-NET-B2C" value="CMBCHINA-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="BOC-NET-B2C" value="BOC-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="CEB-NET-B2C" value="CEB-NET-B2C" /></span>
+            </p>
+            <p>
+                <span>
+                    <input type="radio" name="chongzhi" id="ECITIC-NET-B2C" value="ECITIC-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="SDB-NET-B2C" value="SDB-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="SPDB-NET-B2C" value="SPDB-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="CMBC-NET-B2C" value="CMBC-NET-B2C" /></span>
+            </p>
+            <p>
+                <span>
+                    <input type="radio" name="chongzhi" id="CIB-NET-B2C" value="CIB-NET-B2C" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="PINGANBANK-NET" value="PINGANBANK-NET" /></span>
+                <span>
+                    <input type="radio" name="chongzhi" id="GDB-NET-B2C" value="GDB-NET-B2C" /></span>
+            </p>
+        </div>
+</div>*@
+    <div style="text-align: center">
+        <input type="button" value="" class="tijiao" onclick="TjOrder()" />
+    </div>
+</div>
+<script>
+    GetAllGame();
+</script>

@@ -1,0 +1,435 @@
+/*首页及内页通用样式*/
+.center {
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*header*/
+#header {
+    height: 700px;
+    background: url("../../Images/gjqx//header_bg.jpg") center top no-repeat;
+}
+
+#logo {
+    top: 10px;
+    left: 360px;
+    z-index: 2;
+}
+
+    #logo a {
+        display: block;
+        width: 281px;
+        height: 113px;
+        background: url("../../Images/gjqx//logo.png") no-repeat;
+        _background-image: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//logo.png");
+    }
+
+#nav {
+    top: 47px;
+    left: 0;
+    width: 960px;
+    height: 40px;
+    z-index: 1;
+}
+
+    #nav li {
+        float: left;
+        margin: 0 18px;
+        display: inline;
+    }
+
+    #nav .nav-4 {
+        margin-left: 295px;
+    }
+
+    #nav .nav-6 {
+        margin-left: 10px;
+    }
+
+    #nav li a {
+        display: block;
+        width: 75px;
+        height: 40px;
+        background: url("../../Images/gjqx//nav.jpg") 0 0 no-repeat;
+        outline: none;
+    }
+
+    #nav .nav-1 a {
+        background-position: -18px 0;
+    }
+
+    #nav .nav-2 a {
+        background-position: -129px 0;
+    }
+
+    #nav .nav-3 a {
+        width: 90px;
+        background-position: -240px 0;
+    }
+
+    #nav .nav-4 a {
+        background-position: -643px 0;
+    }
+
+    #nav .nav-5 a {
+        background-position: -754px 0;
+    }
+
+    #nav .nav-6 a {
+        background-position: -857px 0;
+    }
+
+    #nav li a:hover {
+        background: url("../../Images/gjqx//nav.jpg") 0 -40px no-repeat;
+    }
+
+    #nav .nav-1 a:hover {
+        background-position: -18px -40px;
+    }
+
+    #nav .nav-2 a:hover {
+        background-position: -129px -40px;
+    }
+
+    #nav .nav-3 a:hover {
+        background-position: -240px -40px;
+    }
+
+    #nav .nav-4 a:hover {
+        background-position: -643px -40px;
+    }
+
+    #nav .nav-5 a:hover {
+        background-position: -754px -40px;
+    }
+
+    #nav .nav-6 a:hover {
+        background-position: -857px -40px;
+    }
+
+#flashDeco {
+    top: 90px;
+    left: 0;
+}
+
+#roleSlider .role {
+    position: absolute;
+    width: 1440px;
+    height: 700px;
+    display: none;
+    top: 0;
+    left: 50%;
+    margin-left: -720px;
+}
+
+#roleSlider .curr {
+    display: block;
+}
+
+#roleSlider .slide-1 {
+    background: url("../../Images/gjqx//role_01.jpg") center top no-repeat;
+}
+
+#roleSlider .slide-2 {
+    background: url("../../Images/gjqx//role_02.jpg") center top no-repeat;
+}
+
+#roleSlider .slide-3 {
+    background: url("../../Images/gjqx//role_03.jpg") center top no-repeat;
+}
+
+.role-index {
+    top: 400px;
+    right: 0;
+}
+
+    .role-index li {
+        position: absolute;
+    }
+
+    .role-index .alpha-bg {
+        width: 110px;
+        height: 110px;
+        _background-image: none;
+    }
+
+    .role-index a {
+        display: block;
+        width: 108px;
+        height: 108px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        outline: none;
+    }
+
+.r-index1 {
+    top: 73px;
+    right: 206px;
+}
+
+    .r-index1 .alpha-bg {
+        background: url("../../Images/gjqx//role_btn_01.png");
+        _background-image: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_01.png");
+    }
+
+.curr .bg-1 {
+    background: url("../../Images/gjqx//role_btn_hover_01.png");
+    _background-image: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_hover_01.png");
+}
+
+.r-index2 {
+    top: 58px;
+    right: 86px;
+}
+
+    .r-index2 .alpha-bg {
+        background: url("../../Images/gjqx//role_btn_02.png");
+        _background-image: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_02.png");
+    }
+
+.curr .bg-2 {
+    background: url("../../Images/gjqx//role_btn_hover_02.png");
+    _background-image: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_hover_02.png");
+}
+
+.r-index3 {
+    top: 0;
+    right: -20px;
+}
+
+    .r-index3 .alpha-bg {
+        background: url("../../Images/gjqx//role_btn_03.png");
+        _background-image: none;
+        _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_03.png");
+    }
+
+.curr .bg-3 {
+    background: url("../../Images/gjqx//role_btn_hover_03.png");
+    _background-image: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="Images/gjqx//role_btn_hover_03.png");
+}
+
+/*main*/
+#main {
+    margin-top: -134px;
+}
+
+#sidebar {
+    margin-top: -208px;
+    width: 231px;
+    position: relative;
+}
+
+#mainbar {
+    width: 721px;
+}
+
+/*sidebar*/
+#startGame {
+    height: 144px;
+}
+
+#extraBtn {
+    padding: 17px 2px 0 3px;
+    height: 37px;
+}
+
+    #extraBtn a {
+        margin: 0 3px;
+        display: inline-block;
+        float: left;
+        width: 107px;
+        height: 32px;
+        background: url("../../Images/gjqx//mix-btn.jpg") 0 0 no-repeat;
+    }
+
+    #extraBtn #registerBtn:hover {
+        background-position: 0 -32px;
+    }
+
+    #extraBtn #rechargeBtn {
+        background-position: 0 -64px;
+    }
+
+        #extraBtn #rechargeBtn:hover {
+            background-position: 0 -96px;
+        }
+
+/*login*/
+#loginBox {
+    padding: 10px 10px 13px 25px;
+    background: #0390b2;
+    border: 2px solid #239ebc;
+    border-top: 0;
+}
+
+#fmLogin p {
+    margin-bottom: 6px;
+    line-height: 24px;
+}
+
+#fmLogin input {
+    vertical-align: middle;
+}
+
+#fmLogin .input-bar {
+    padding: 2px 5px;
+    height: 20px;
+    width: 129px;
+    background: url("../../Images/gjqx//mix-bg.jpg") 0 -54px no-repeat;
+    border: 0;
+    line-height: 22px;
+    color: #fff;
+}
+
+#forgetPw {
+    margin-left: 20px;
+    color: #fff;
+    text-decoration: underline;
+}
+
+#loginBtn {
+    margin: 0 auto;
+    display: block;
+    width: 156px;
+    height: 43px;
+    background: url("../../Images/gjqx//mix-btn.jpg") 0 -224px no-repeat;
+}
+
+    #loginBtn:hover {
+        background-position: 0 -267px;
+    }
+
+#sidebar .side-box {
+    background: url("../../Images/gjqx//sidebar_bg.jpg") repeat-y;
+    border-bottom: 2px solid #3ea0d3;
+}
+
+#sidebar .tt {
+    height: 36px;
+    background: url("../../Images/gjqx//mix-bg.jpg") no-repeat;
+}
+
+#sidebar .bd {
+    padding: 12px 11px;
+}
+
+#server .tt {
+    background-position: 0 -282px;
+}
+
+#server li {
+    margin-bottom: 6px;
+    padding: 0 8px 0 20px;
+    width: 179px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url("../../Images/gjqx//mix-bg.jpg") 0 -78px;
+}
+
+    #server li a {
+        float: left;
+        display: block;
+        width: 150px;
+        color: #fff;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        vertical-align: baseline;
+    }
+
+        #server li a:hover {
+            color: #fcff00;
+        }
+
+#server .new {
+    float: right;
+    margin-top: 5px;
+    display: block;
+    width: 28px;
+    height: 14px;
+    background: url("../../Images/gjqx//new.gif") no-repeat;
+}
+
+#moreServer {
+    margin: 10px auto 0 auto;
+    display: block;
+    width: 123px;
+    height: 25px;
+    background: url("../../Images/gjqx//mix-btn.jpg") 0 -128px;
+}
+
+    #moreServer:hover {
+        background-position: 0 -153px;
+    }
+
+#ad img {
+    margin: 0 auto 5px;
+    width: 205px;
+    border: 1px solid #8ec1dd;
+}
+
+#cutomerCenter .tt {
+    background-position: 0 -318px;
+}
+
+#cutomerCenter .bd {
+    padding: 15px 10px 20px 30px;
+}
+
+#cutomerCenter p {
+    line-height: 22px;
+}
+
+#cutomerCenter .enter {
+    margin-bottom: 3px;
+    display: inline-block;
+    width: 76px;
+    height: 23px;
+    vertical-align: middle;
+    background: url("../../Images/gjqx//mix-btn.jpg") 0 -178px;
+}
+
+    #cutomerCenter .enter:hover {
+        background-position: 0 -201px;
+    }
+
+#cooperation .tt {
+    background-position: 0 -354px;
+}
+
+#cooperation .bd {
+    margin: 15px auto 10px auto;
+    padding: 0;
+    width: 175px;
+    height: 150px;
+    overflow: hidden;
+}
+
+#cooperation .co-list li {
+    height: 50px;
+}
+
+#cooperation .co-list img {
+    width: 175px;
+    height: 45px;
+}
+
+#footer {
+    width: 100%;
+    padding-top: 45px;
+    height: 152px;
+    line-height: 22px;
+    text-align: center;
+    color: #1a1a1a;
+    background: url("../../Images/gjqx//footer.jpg") center top no-repeat;
+}

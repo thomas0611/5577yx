@@ -1,0 +1,127 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EiditMaster</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ddlRoleId").val(@ViewData["RoleId"]);
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" onsubmit="return @ViewData["Function"]">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt;用户管理 &gt; 编辑信息
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <tbody>
+                        <tr>
+                            <th style="width: 150px;">管理角色：
+                            </th>
+                            <td>
+                                <select id="ddlRoleId" name="RoleId" class="select2">
+                                    <option value="0">请选择角色权限组</option>
+                                    @Html.Raw(ViewData["Role"])
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>账户状态：
+                            </th>
+                            <td>
+                                <input type="radio" name="rblIsLock" value="NoLock" checked="checked" />启用
+                                <input type="radio" name="rblIsLock" value="Lock" />禁用 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>用户名：
+                            </th>
+                            <td>
+                                <input id="txtUserName" name="UserName" class="txtInput normal required" minlength="6" maxlength="100" value="@ViewData["UserName"]"><input type="hidden" name="MId" value="@ViewData["MId"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>登录密码：
+                            </th>
+                            <td>
+                                <input id="txtUserPwd" name="UserPWD" type="password" class="txtInput normal required" minlength="6" maxlength="16"  value="@ViewData["UserPWD"]">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>确认登录密码：
+                            </th>
+                            <td>
+                                <input id="txtUserPwd1" name="UserPWDA" type="password" class="txtInput normal required" minlength="6" maxlength="16">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>充值密码：
+                            </th>
+                            <td>
+                                <input id="txtczpwd" name="UserCzPWD" type="password" class="txtInput" minlength="6" maxlength="16"  value="@ViewData["UserCzPWD"]">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>确认充值密码：
+                            </th>
+                            <td>
+                                <input id="txtczpwd1" name="UserCzPWDA" type="password" class="txtInput" minlength="6"
+                                    maxlength="16">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>姓名：
+                            </th>
+                            <td>
+                                <input id="txtRealName" name="RealName" class="txtInput normal required" minlength="2" maxlength="30" value="@ViewData["RealName"]">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>电话：
+                            </th>
+                            <td>
+                                <input id="txtTelephone" name="Phone" class="txtInput normal" minlength="2" maxlength="30" value="@ViewData["Phone"]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>邮箱：
+                            </th>
+                            <td>
+                                <input id="txtEmail" name="Email" class="txtInput normal email" minlength="2" maxlength="50" value="@ViewData["Email"]">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" class="btnSubmit" value="提交保存" />
+                <input name="btnExit" type="button" class="btnSubmit" value="返 回" onclick="javascript: location.href = document.referrer;" />
+            </div>
+            <input id="hidpro" type="hidden" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

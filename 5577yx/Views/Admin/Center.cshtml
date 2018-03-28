@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <title>Center</title>
+</head>
+<body>
+    <div class="navigation nav_icon">
+        欢迎进入后台管理中心
+    </div>
+    <div class="line10">
+    </div>
+    <div class="nlist1">
+        <ul>
+            @*<li>本次登录IP：<asp:literal id="litIP" runat="server" text="-" /></li>
+            <li>上次登录IP：<asp:literal id="litBackIP" runat="server" text="-" /></li>
+            <li>上次登录时间：<asp:literal id="litBackTime" runat="server" text="-" /></li>*@
+        </ul>
+    </div>
+    <div class="line10">
+    </div>
+    <div class="nlist2 clearfix">
+        <h2>站点信息</h2>
+        <ul>
+            <li>站点名称：@ViewData["webname"]</li>
+            <li>公司名称：@ViewData["webcompany"]</li>
+
+            @*<li>网站域名：<%=siteConfig.weburl %></li>
+            <li>安装目录：<%=siteConfig.webpath %></li>
+            <li>网站管理目录：<%=siteConfig.webmanagepath %></li>
+            <li>附件上传目录：<%=siteConfig.attachpath %></li>
+            <li>服务器名称：<%=Server.MachineName%> </li>
+            <li>服务器IP：<%=Request.ServerVariables["LOCAL_ADDR"] %></li>
+            <li>NET框架版本：<%=Environment.Version.ToString()%></li>
+            <li>操作系统：<%=Environment.OSVersion.ToString()%></li>
+            <li>IIS环境：<%=Request.ServerVariables["SERVER_SOFTWARE"]%></li>
+            <li>服务器端口：<%=Request.ServerVariables["SERVER_PORT"]%></li>
+            <li>目录物理路径：<%=Request.ServerVariables["APPL_PHYSICAL_PATH"]%></li>
+            <li>系统版本：V<%=Common.Keys.ASSEMBLY_VERSION %></li>
+            <li>升级通知：<asp:literal id="LitUpgrade" runat="server" /></li>*@
+        </ul>
+        <div class="line10">
+        </div>
+    </div>
+    <div class="clear" style="height: 20px;">
+    </div>
+</body>
+</html>

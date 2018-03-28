@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "风云无双微端";
+}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>风云无双微端登录</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <link href="~/Style/fyws/style.css" rel="stylesheet" type="text/css" />
+<style>
+.focus_news .list{padding:12px 15px 0 0}
+#qlogin-con {display:none; margin:0 auto; width:518px;height:298px;border:1px solid #fff; border-radius:5px; top:100px; left:100px; position:fixed; background:url(/Style/fyws/login_bg.gif) no-repeat; background-position:right top; background-color:#f6fafd;}
+</style>
+
+
+</head>
+<body>
+  <!-- Main -->
+  <div class="main login_index">
+        
+        <div class="login_focus cs-clear">
+          <div class="focusImg"><img src="~/Style/fyws/309x225.jpg" /></div>
+          <div class="focus_news">
+               <h2>新闻公告</h2>
+               <ul class="list">
+                   @foreach(var n in ViewData["NewsList"] as List<Game.Model.News>)
+                   {
+                    <li><span>&nbsp;&nbsp;</span><a href="/NewsCenter/News?N=@n.Id" title="@n.Title" >@n.Title</a></li>
+                   }
+			   </ul>
+          </div>
+        </div>
+        
+        <div class="login_login cs-clear">
+           <a class="login" href="javascript:" onclick="showLogin()" title="进入游戏">进入游戏</a>
+        </div>
+		
+    </div>
+  <!-- Main end -->
+	<div id="qlogin-con" class="part-login" style="display:none;">
+		<div style="float:left;"><img src="~/Style/fyws/d22.jpg"/></div>
+		    <div class="mod-right">
+    	<div class="mhd">
+    		<div class="login-close">
+                <a href="javascript:" onclick="closeLogin()" title="关闭">X</a>
+			 </div>
+        	<h2>5577yx<span>风云无双</span></h2>
+            <p>&nbsp;</p>
+        </div>
+        <div class="mbd">
+        	<div class="quick-login" id="x-login" style="display: none;">
+            	<div class="yy-account-list"></div>
+                <p class="last"></p>
+            </div>
+            <div class="common-login" id="lay_wrap" style="display: block;">           	
+				<span id="errorinfo" style="display: none;"></span>
+				<form onsubmit="return KsLogin5()" method="post">
+                	 <p><input type="text" value="" id="UserName" name="UserName" onclick="" maxlength="50" class="inputstyle" tabindex="1" placeholder="帐号/邮箱" style="color: rgb(128, 128, 128);"/>
+					 <a href="/Home/Reg" target="_blank" tabindex="5" class="register-btn">注册新帐号</a></p>
+                     <p><input type="password" id="PWD" name="PWD" value="" maxlength="20" autocomplete="off" onblur="" class="inputstyle" tabindex="2" onfocus="" placeholder="密码" style="display: inline; position: relative; color: rgb(128, 128, 128);"/>
+					 <a href="/UserCenter/FindPwd" target="_blank" tabindex="6" class="fpassword">忘了密码？ </a></p>  
+                     <p class="last"><input value="登 录" class="btn-blue-login" onclick="" id="login_button" type="submit" tabindex="3"></p>   
+                </form>
+            </div> 
+        </div> </div>
+		<div style="clear:both;"></div>
+		</div>
+<script>
+function showLogin(){
+	document.getElementById("qlogin-con").style.display="block";
+}
+function closeLogin(){
+	document.getElementById("qlogin-con").style.display="none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Link</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+    </script>
+</head>
+<body class="mainbody">
+    <form method="post" onsubmit="return @ViewData["Function"]">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt; 系统管理 &gt; 友情链接
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">编辑友情链接</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <col width="180px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>标 题：
+                            </th>
+                            <td>
+                                <input id="txtTitle" name="LinkTitle" class="txtInput normal required" minlength="2" value="@ViewData["LinkTitle"]"
+                                    maxlength="255"><input type="hidden" name="LinkId" value="@ViewData["LinkId"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>审核状态：
+                            </th>
+                            <td>
+                                <input type="radio" name="Is_lock" value="0" />待审核
+                                <input type="radio" name="Is_lock" value="1" checked="checked" />已审核
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>推荐到首页：
+                            </th>
+                            <td>
+                                <input type="radio" name="Is_red" value="0" />不推荐
+                               <input type="radio" name="Is_red" value="1" checked="checked" />推荐
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>排 序：
+                            </th>
+                            <td>
+                                <input id="txtSortId" name="SortId" class="txtInput normal small required digits" value="@ViewData["SortId"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>联系人：
+                            </th>
+                            <td>
+                                <input id="txtUserName"class="txtInput normal" name="UserName" maxlength="50" value="@ViewData["UserName"]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>联系电话：
+                            </th>
+                            <td>
+                                <input id="txtUserTel" class="txtInput normal" name="Tel" maxlength="20" value="@ViewData["Tel"]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>电子邮箱：
+                            </th>
+                            <td>
+                                <input id="txtEmail" class="txtInput normal email" name="Email" maxlength="50" value="@ViewData["Email"]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>链接网址：
+                            </th>
+                            <td>
+                                <input id="txtSiteUrl" class="txtInput normal required" name="Url" maxlength="255" value="@ViewData["Url"]">
+                                <label>URL地址</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Logo图片：
+                            </th>
+                            <td>
+                                <input id="txtImgUrl" name="ImgUrl" class="txtInput normal left" maxlength="255" value="@ViewData["ImgUrl"]">
+                                <a href="javascript:;" class="files">
+                                    <input type="file" id="FileUpload" name="FileUpload" onchange="Upload('SingleFile', 'txtImgUrl', 'FileUpload', 0, 0, '../../../');" /></a>
+                                <span class="uploading">正在上传，请稍候...</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <input type="submit" id="btnSubmit" runat="server" value="提交保存" class="btnSubmit" />
+                                &nbsp;<input name="btnExit" type="button" class="btnSubmit" value="取 消" onclick="javascript: location.href = document.referrer;" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

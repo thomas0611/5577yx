@@ -1,0 +1,206 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>枪魂</title>
+    <link href="~/Style/qh/css.css" rel="stylesheet" />
+    <script>
+        function ChangeBeginGame() {
+            var Qufu = document.getElementById("Selfwq").value;
+            document.getElementById("BeginGame").href = "/@ViewData["GameNo"]/LoginGame?S=" + Qufu;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="top_nva">
+            <a class="nav_a" title="官网首页" href="#">官网首页</a>
+            <a class="nav_b" title="新闻公告" href="/NewsCenter/">新闻公告</a>
+            <a class="nav_c" title="游戏资料" href="/NewsCenter/">游戏资料</a>
+            <a class="nav_d" title="游戏攻略" href="/NewsCenter/">游戏攻略</a>
+            <a class="nav_e" title="游戏论坛" href="#">游戏论坛</a>
+            <a class="nav_f" title="客服中心" href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes">客服中心</a>
+        </div>
+        <div class="h_box">
+            <div class="info">
+                <div class="regist">
+                    欢迎来到5577yx枪魂，请<a href="/Home/Login">登录</a>或<a href="/Home/Reg">注册</a> !
+                <div class="select">
+                    请选择服务器:
+                    <select id="Selfwq" onchange="ChangeBeginGame()">
+                        <option value="0">请选择游戏区服</option>
+                        @Html.Raw(ViewData["ServersHtml"])
+                    </select>
+                </div>
+                </div>
+                <div class="start">
+                    <a id="BeginGame" href="@ViewData["TjqfHref"]" class="start ht fl">开始游戏</a>
+                </div>
+                <div class="top_server">
+                    <p class="clear"><a href="/@ViewData["GameNo"]/Servers" class="fr">进入服务器列表></a></p>
+                    <b class="top_server_name f14"><a href="@ViewData["TjqfHref"]">@ViewData["TjqfName"] 火爆</a></b>
+                </div>
+                <div class="doing">
+                    <a href="/NewsCenter/News?N=1353">@Html.Raw("<枪魂>开服活动:充值即送强力装备！")</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="main clear">
+        <div class="right fr">
+            <!--右边第一屏新闻-->
+            <div class="news clear">
+                <div class="news_tab b fr">
+                    <div class="tab_news_tit clear">
+                        <a class="more" href="/NewsCenter/">更多>></a>
+                        <ul>
+                            <li class="active">综合</li>
+                            <li>公告</li>
+                            <li>活动</li>
+                            <li>媒体</li>
+                        </ul>
+                    </div>
+                    <div class="tab_news_con">
+                        <ul class="tab_news_list">
+                            @Html.Raw(ViewData["News"])
+                        </ul>
+                    </div>
+                </div>
+                <div class="news_pic fl">
+                    <img width="290" height="248" src="../Images/qh/1.jpg" alt="图片" />
+                </div>
+            </div>
+            <!--右边第一屏新闻 END-->
+            <!--三张广告图片-->
+            <div class="banner">
+                <ul>
+                    <li><a href="#">
+                        <img width="240" height="89" src="../Images/qh/2.jpg">
+                    </a></li>
+                    <li><a href="#">
+                        <img width="240" height="89" src="../Images/qh/2.jpg">
+                    </a></li>
+                    <li><a href="#">
+                        <img width="240" height="89" src="../Images/qh/2.jpg">
+                    </a></li>
+                </ul>
+            </div>
+            <!--三张广告图片END-->
+            <!--游戏资料/游戏攻略-->
+            <div class="clear">
+                <div class="raiders b fr">
+                    <div class="tab_hd">
+                        <a class="more" href="/NewsCenter/">更多>></a><h3 class="tab_hd_name">游戏公告</h3>
+                    </div>
+                    <ul class="tab_news_list raiders_list">
+                        @Html.Raw(ViewData["GGNews"])
+                    </ul>
+                </div>
+                <div class="gameData b fl">
+                    <div class="tab_hd">
+                        <a class="more" href="/NewsCenter/">更多>></a><h3 class="tab_hd_name">游戏资料</h3>
+                    </div>
+                    <div class="gameData_list">
+                        <dl class="clear">
+                            <dt>新手指南</dt>
+                            <dd><a href="/NewsCenter/News?N=1406">角色属性</a> | <a href="/NewsCenter/News?N=1335">游戏介绍</a> | <a href="/NewsCenter/News?N=1334">游戏背景</a> | <a href="/NewsCenter/News?N=1407">装备属性</a> </dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt>第日必做</dt>
+                            <dd><a href="/NewsCenter/News?N=1409">军械库</a> | <a href="/NewsCenter/News?N=1424">幸运轮盘</a> | <a href="/NewsCenter/News?N=1429">生存副本</a> | <a href="/NewsCenter/News?N=1431">组队战场</a> | <a href="/NewsCenter/News?N=1430">多人副本</a> | <a href="/NewsCenter/News?N=1432">竞技场</a> | <a href="/NewsCenter/News?N=1433">世界活动</a> | <a href="/NewsCenter/News?N=1423">日常任务</a> | <a href="/NewsCenter/News?N=1422">物资押运</a> | <a href="/NewsCenter/News?N=1428">通缉令</a></dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt>系统介绍</dt>
+                            <dd><a href="/NewsCenter/News?N=1418">调校系统</a> | <a href="/NewsCenter/News?N=1412">技能战术</a> | <a href="/NewsCenter/News?N=1416">枪械进阶</a> | <a href="/NewsCenter/News?N=1413">强化系统</a> | <a href="/NewsCenter/News?N=1415">重铸系统</a> | <a href="/NewsCenter/News?N=1414">聚能系统</a> | <a href="/NewsCenter/News?N=1421">芯片及黑市系统</a> | <a href="/NewsCenter/News?N=1419">基因系统</a> </dd>
+                        </dl>
+                        <dl class="clear">
+                            <dt>坐骑宠物</dt>
+                            <dd><a href="#">暂无</a> </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--游戏资料/游戏攻略-->
+            <div class="photo b">
+                <div class="tab_hd">
+                    <a class="more" href="#">更多>></a><a class="more" href="#">我要上传>>&nbsp;</a><h3 class="tab_hd_name">游戏截图</h3>
+                </div>
+                <div class="photo_list">
+                    <ul class="clear">
+                        <li>
+                            <!--当鼠标划入photo_pic时在里面加一个em标签-->
+                            <div class="photo_pic">
+                                <a href="#">
+                                    <img width="167" height="94" src="../Images/qh/3.jpg" alt="图片" /></a>
+                            </div>
+                            <p>枪魂</p>
+                        </li>
+                        <li>
+                            <div class="photo_pic">
+                                <a href="#">
+                                    <img width="167" height="94" src="../Images/qh/3.jpg" alt="图片" /><em></em></a>
+                            </div>
+                            <p>枪魂</p>
+                        </li>
+                        <li>
+                            <div class="photo_pic">
+                                <a href="#">
+                                    <img width="167" height="94" src="../Images/qh/3.jpg" alt="图片" /></a>
+                            </div>
+                            <p>枪魂</p>
+                        </li>
+                        <li>
+                            <div class="photo_pic">
+                                <a href="#">
+                                    <img width="167" height="94" src="../Images/qh/3.jpg" alt="图片" /></a>
+                            </div>
+                            <p>枪魂</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="left fl">
+            <a href="/GameGift/" class="xsk ht" title="领新手卡">领新手卡</a>
+            <a href="/PayCenter/" class="delta ht" title="帐户冲值">帐户冲值</a>
+            <!--游戏简介-->
+            <div class="b off_b">
+                <div class="tab_hd"><span class="tab_hd_name">游戏简介</span></div>
+                <p class="left_txt" style="text-indent: 2em;">
+                    @ViewData["GameDes"]<a href="@ViewData["TjqfHref"]" class="red">马上开始游戏->></a>
+                </p>
+            </div>
+            <!--游戏简介END-->
+            <!--客服中心-->
+            <div class="b off_b">
+                <div class="tab_hd"><span class="tab_hd_name">客服中心</span></div>
+                <p class="left_txt">
+                    客服热线：400-009-4577 
+                        <br />
+                    充值客服QQ：2067257264
+                        <br />
+                    客服论坛：<a href="#" class="red">点击进入»</a>
+                    <div class="client_box"><a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes" class="client f14"><b>进入客服中心</b></a></div>
+                </p>
+            </div>
+            <!--客服中心END-->
+            <!--友情链接-->
+            <div class="b">
+                <div class="tab_hd"><span class="tab_hd_name">友情链接</span></div>
+                <p class="left_txt">
+                    @Html.Raw(ViewData["YqLink"])
+                </p>
+            </div>
+            <!--友情链接END-->
+        </div>
+    </div>
+    <br />
+    <br />
+</body>
+</html>

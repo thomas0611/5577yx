@@ -1,0 +1,569 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>仙侠傲世-11月全新资料片法魂之战</title>
+    <style type="text/css">
+        body, div, h1, h2, h3, h3, h5, h6, p, ul, ol, dl, dd, ul, ol {
+            margin: 0;
+            padding: 0;
+            font-family: "宋体";
+        }
+
+        body {
+            font-size: 12px;
+            color: #000;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url(../images/xxas/n_bg.jpg) no-repeat top center #000;
+        }
+
+        ul, ol, li {
+            padding-left: 0;
+            list-style: none;
+            border: none;
+        }
+
+        img {
+            display: block;
+            border: 0;
+            margin: 10px auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .clearfix:after {
+            content: "\200B";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+            height: 68px;
+            background: url(../images/xxas/navs.jpg) no-repeat;
+        }
+
+        h1 {
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .table {
+            background-color: #eff9fd;
+            border: 1px solid #8cc7dd;
+            margin: 0 auto;
+        }
+
+        tbody {
+            background: #fff;
+        }
+
+        thead, th {
+            background-color: #eff9fd;
+            font-weight: bold;
+            color: #000;
+            border: 1px solid #8cc7dd;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #8cc7dd;
+            text-align: center;
+            padding: 0 8px;
+            background-color: #eff9fd;
+        }
+
+        th {
+            padding: 0 10px;
+            text-align: center;
+            background-color: #FF0;
+        }
+
+        .clear {
+            clear: both;
+            height: 0px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .warp {
+            width: 998px;
+            margin: 0 auto;
+        }
+
+        #head {
+            height: 204px;
+            background: url(../images/xxas/n_head.jpg) no-repeat;
+            position: relative;
+        }
+
+        .logo {
+            width: 210px;
+            height: 109px;
+            display: block;
+            position: absolute;
+            left: -7px;
+            top: 8px;
+        }
+
+        #head p {
+            margin-left: 420px;
+            display: inline;
+            height: 26px;
+            line-height: 26px;
+            color: #e99c81;
+        }
+
+            #head p a {
+                margin: 0 5px;
+                color: #e99c81;
+            }
+
+        #main {
+            height: 153px;
+            background: url(../images/xxas/n_con1.jpg) no-repeat;
+            position: relative;
+        }
+
+        #last {
+            margin-bottom: 10px;
+        }
+
+        .index {
+            width: 82px;
+            height: 26px;
+            display: block;
+            position: absolute;
+            left: 520px;
+            top: 90px;
+            text-indent: -999em;
+        }
+
+        .atn {
+            width: 604px;
+            height: 218px;
+            background: url(../images/xxas/nav.jpg) no-repeat;
+            position: absolute;
+            top: 54%;
+            margin-top: 1px;
+        }
+
+            .atn li {
+                width: 151px;
+                height: 218px;
+                float: left;
+            }
+
+                .atn li a {
+                    display: block;
+                    width: 151px;
+                    height: 218px;
+                    font-size: 0;
+                    text-indent: -9999px;
+                }
+
+        .tit {
+            font-size: 22px;
+            font-family: "微软雅黑";
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+        }
+
+        .letter {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 20px 0;
+            width: 750px;
+            margin: 0 auto;
+        }
+
+        .pic {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+            .pic li {
+                float: left;
+                margin-right: 10px;
+                display: inline;
+            }
+
+        .red {
+            color: #F00;
+        }
+
+        #con {
+            background: url(../images/xxas/n_navbg.jpg) no-repeat;
+        }
+
+            #con .tab-index li {
+                float: left;
+                width: 208px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                cursor: pointer;
+                margin-right: 7px;
+            }
+
+                #con .tab-index li.on a {
+                    background-image: url(../images/xxas/n_navbghover.jpg);
+                    background-repeat: no-repeat;
+                    display: block;
+                    width: 208px;
+                    height: 48px;
+                }
+
+                #con .tab-index li.on .menu1 {
+                    background-position: -175px 0;
+                }
+
+                #con .tab-index li.on .menu2 {
+                    background-position: -390px 0;
+                }
+
+                #con .tab-index li.on .menu3 {
+                    background-position: -605px 0;
+                }
+
+        #menu {
+            margin-left: 175px;
+            display: inline;
+        }
+
+        #con .tab-content .tab-box {
+            display: none;
+            width: 998px;
+        }
+
+        .tab-box p {
+            padding: 0 120px;
+            text-indent: 2em;
+            margin: 0 auto;
+        }
+
+        #con .tab-content .on {
+            display: block;
+            background: url(../images/xxas/n_con.jpg) repeat-y;
+            color: #000;
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        #conbottom {
+            height: 49px;
+            background: url(../images/xxas/n_conbottom.jpg) no-repeat;
+            width: 998px;
+        }
+
+        #footer {
+            background: #000;
+        }
+
+            #footer p {
+                text-align: center;
+                padding: 30px 0;
+                color: #3e3838;
+            }
+
+        .go_top {
+            width: 22px;
+            position: fixed;
+            display: block;
+            _position: absolute;
+            padding: 4px 0;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 12px;
+            top: 565px;
+            _top: 576px;
+            background: #FF0000;
+            color: #fff;
+        }
+
+        .pic1 {
+            float: left;
+        }
+    </style>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+</head>
+
+<body>
+    <div class="warp">
+        <div id="head">
+            <h1>仙侠傲世-11月全新资料片法魂之战</h1>
+            <a href="#" class="logo" title="仙侠傲世"></a>
+            <p><a href="/xxas/Servers" title="开始游戏">开始游戏</a>|<a href="#" title="活动中心">活动中心</a>|<a href="index.html" title="返回首页">返回首页</a></p>
+        </div>
+        <div id="main">
+            <a href="ffzz" class="index" title="专题首页">专题首页</a>
+        </div>
+        <div id="con">
+            <div class="tab-index clearfix">
+                <ul>
+                    <li class="on" id="menu"><a href="#" target="_self" class="menu1"></a></li>
+                    <li><a href="#" target="_self" class="menu2"></a></li>
+                    <li><a href="#" target="_self" class="menu3"></a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-box">
+                    <h3 class="tit">法魂锻造</h3>
+                    <p>数年前，铸造大师石凯在游历太古铜门的过程中发现了一种古老的锻造工艺，将神奇的法魂锻造到装备和武器中，将大大提升装备的威力。经过多年的研究，终于完全掌握了将各种法魂锻造到装备中的方法，并且发现装备不但能属性极大提升，甚至还蕴藏着增加人物技能奇特威力。如今，法魂锻造正式开放，拿起你手中的武器装备，将它打造成绝世的神兵利器。</p>
+                    <h4 class="letter">法魂获得</h4>
+                    <p>可通过<span class="red">法魂神游、鸿蒙仙道</span>获得不同的法魂。</p>
+                    <img src="../images/xxas/pic1.jpg" />
+                    <h4 class="letter">法魂注入\进阶</h4>
+                    <p>可消耗法魂为装备注入法魂和法魂进阶。</p>
+                    <img src="../images/xxas/pic3.jpg" />
+                    <h4 class="letter">法魂属性</h4>
+                    <p>1、拥有法魂的装备，会附加<span class="red">法魂属性</span>。</p>
+                    <img src="../images/xxas/pic4.jpg" />
+                    <p>2、全身防装或攻装都注入法魂后，可激活<span class="red">法魂技能效果</span>。</p>
+                    <img src="../images/xxas/pic5.jpg" />
+                    <table class="table" cellpadding="0" cellspacing="0" border="1" style="border-collapse: collapse;">
+                        <thead>
+                            <th>法魂套装属性</th>
+                            <th>技能效果</th>
+                        </thead>
+                        <tr>
+                            <td rowspan="5">法魂套装全<br />
+                                【防装】效果</td>
+                        </tr>
+                        <tr>
+                            <td>【千钧怒击】受到攻击的目标附加撕裂效果，5秒内每秒对目标造成伤害</td>
+                        </tr>
+                        <tr>
+                            <td>【漫天箭雨】射出毒箭，在攻击区域留下毒阵，每秒对区域内目标造成伤害，毒阵持续3秒</td>
+                        </tr>
+                        <tr>
+                            <td>【风卷残云】风击符咒转化为飓风符咒，3秒后爆炸对目标造成伤害</td>
+                        </tr>
+                        <tr>
+                            <td>【醉梦】在目标身上种下毒莲花，3秒后爆炸，对目标及其周围敌人造成伤害</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">法魂套装全<br />
+                                【攻装】效果</td>
+                            <td>【乱刃风暴】施法期间，降低受到的所有伤害</td>
+                        </tr>
+                        <tr>
+                            <td>【荆棘陷阱】陷阱触发时对范围目标造成一次额外伤害</td>
+                        </tr>
+                        <tr>
+                            <td>【天火燎原】使目标获得燃烧效果，5秒内额外造成伤害</td>
+                        </tr>
+                        <tr>
+                            <td>【毒域】毒域刚召唤时对目标造成一次额外伤害</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-box on">
+                    <h3 class="tit">结婚系统</h3>
+                    <p>身无彩凤双飞翼,心有灵犀一点通。在泠泠寒冬到来之际，结婚、巡游、喜宴玩法全面到来。不管是邀约亲朋好友前来参加喜宴祝福，还是围绕云州城的豪华巡游，各种浪漫的玩法正等待着你。惦记着一直陪伴着你仙侠之旅的那个Ta？赶紧把ta带到月老处，留下你们俩的最美好回忆。</p>
+                    <h4 class="letter">结婚要求</h4>
+                    <p>·男女双方等级到达35级</p>
+                    <p>·男女双方情义值达到1314以上</p>
+                    <br />
+                    <p>满足条件的双方可组队到NPC月老处。</p>
+                    <p>·点击“结婚”选项，依照结婚流程进行结婚旅程。</p>
+                    <img src="../images/xxas/pic8.jpg" />
+                    <h4 class="letter">结缔姻缘</h4>
+                    <p>·缔结姻缘后可继续进行喜宴预定、喜帖发放、喜宴举办、迎亲巡游和神仙眷侣活动。</p>
+                    <h4 class="letter">喜宴预定</h4>
+                    <p>·玩家进行不同种类的喜宴。不同喜宴所获得的<span class="red">结婚时装</span>时效会有所不同。</p>
+                    <img src="../images/xxas/pic9.jpg" />
+                    <p>·其他玩家可索要喜帖。使用喜帖给新婚夫妻送上祝福，可获得经验奖励。</p>
+                    <h4 class="letter">举办喜宴</h4>
+                    <p>·到达喜宴举办时间，玩家进入喜宴场景。到月老处领取红包。</p>
+                    <p>·通过互动玩法、采集道具，击败怪物来增加喜宴场景内的气氛值。气氛值越高，场景内玩家获得的经验奖励越高。</p>
+                    <img src="../images/xxas/pic10.jpg" />
+                    <h4 class="letter">迎亲巡游</h4>
+                    <p>·巡游期间，可进行撒花、撒喜糖、炫耀交互玩法。喜糖不足时，可另行购买。</p>
+                    <p>·其他玩家可以拾取散落的喜糖，打开后可获得奖励。</p>
+                    <img src="../images/xxas/pic11.jpg" />
+                    <h4 class="letter">神仙眷侣</h4>
+                    <p>·成为眷侣后，可选择想要赠送的戒指种类。</p>
+                    <img src="../images/xxas/pic14.jpg" />
+                    <p>·需要男女双方在线，即可领取结婚戒指和夫妻称号（带属性）。</p>
+                </div>
+                <div class="tab-box">
+                    <h3 class="tit">3V3跨服争霸</h3>
+                    <p>各路仙侠豪杰，汇聚在云州城，通过3v3竞技来一比高下。当中高手豪杰的斗志斗勇，高超武艺！成为整个仙侠界的讨论佳话。此番争斗也引起来自外域的仙侠们关注和兴趣，来自不同服务器的高手们，也将参与到跨服3v3竞技赛中，与众多高手一决胜负。</p>
+                    <p>不论你想延续自己的辉煌，或是想一鸣惊人，只要你有壮志雄心，想在这高手云集的舞台上展光放彩，那就赶快来参加吧！</p>
+                    <h4 class="letter">参赛要求</h4>
+                    <p>·本服3v3争霸赛的前10名的战队5级</p>
+                    <br />
+                    <h4 class="letter">争霸赛赛程</h4>
+                    <p>在本服3v3争霸赛举行后的下一周四、五、六21:10-21:40，开启跨服3v3争霸赛。</p>
+                    <p>·周四进行淘汰赛，决出16强。</p>
+                    <p>·周五进行第1轮晋级赛。决出4强。</p>
+                    <p>·周六进行第2轮晋级赛。决出冠军。</p>
+                    <img src="../images/xxas/pic12.jpg" />
+                    <h4 class="letter">争霸赛流程</h4>
+                    <p>准备时间：周四、五、六 20:55-20:59。玩家在等待区内，可获得经验奖励。</p>
+                    <p>争霸赛时间：周四、五、六21:00-21:30。战斗全部结束后，争霸赛结束。</p>
+                    <h4 class="letter">奖励结算</h4>
+                    <p>根据排名给予<span class="red">丰厚的奖励</span>，包括：排名礼包、荣誉、号角、武魂碎片等。</p>
+                    <img src="../images/xxas/pic13.jpg" />
+                    <p align="center">跨服争霸奖励</p>
+                    <img src="../images/xxas/pic15.jpg" />
+                    <p align="center">跨服王者时装</p>
+                    <h4 class="letter">投注</h4>
+                    <p>参与跨服争霸赛的服务器的所有玩家均可以投注</p>
+                    <p>投注正确将奖励返还1倍的绑定铜钱，投注错误也会返还0.5倍的绑定铜钱。</p>
+                </div>
+            </div>
+            <!--tab-content-->
+            <div id="conbottom"></div>
+        </div>
+        <!--con-->
+    </div>
+    <div style="display: none; position: fixed; _position: absolute;" id="go_top" class="go_top">返回顶部</div>
+    <div id="footer">
+        <p>抵制不良游戏，拒绝盗版游戏；注意自我保护，谨防上当受骗；适度游戏益脑，沉迷游戏伤身；合理安排时间，享受健康生活。</p>
+    </div>
+
+    <script type="text/javascript">
+       
+       @*  
+         * Tab & Content selector
+         * @param {Object} options
+         * @param {String} indexWrap tab菜单项
+         * @param {String} contentWrap tab内容外层容器
+         * @param {String} tabContent tab内容子容器
+         * @param {String} classname 显示隐藏classname
+         * @param {boolean} initSelect 是否根据url参数预选tab，默认为不预选
+         * @param {string} indexName url参数预选名
+         * @param {number} switchMethod tab索引切换方式：0-click；1-mouseover，默认为click切换
+     *@
+        $.fn.TabSwitch = function (options) {
+            var that = this;
+            var opts = $.extend({
+                indexWrap: '.tab-index',
+                contentWrap: '.tab-content',
+                tabContent: '.tab-box',
+                cname: 'on',
+                initSelect: false,
+                indexName: 'no',
+                switchMethod: 0
+            }, options);
+            var indexWrap = $(opts.indexWrap),
+                contentWrap = $(opts.contentWrap);
+
+            if (opts.initSelect) {
+                var num = getQueryString(opts.indexName);
+                if (num) {
+                    changeTab(num);
+                }
+            }
+
+            switchTab();
+
+            function switchTab() {
+                switch (opts.switchMethod) {
+                    case 0:
+                        indexWrap.find('li').bind('click', changeTabStatus);
+                        break;
+                    case 1:
+                        indexWrap.find('li').bind('mouseover', changeTabStatus);
+                        break;
+                }
+            }
+
+            function changeTabStatus(el, flag) {
+                var me = flag ? el : $(this);
+                $(opts.indexWrap).find('.' + opts.cname).removeClass(opts.cname);
+                me.addClass(opts.cname);
+                selectContent(me);
+            }
+
+            function selectContent($el) {
+                contentWrap.find('.' + opts.cname).removeClass(opts.cname);
+                contentWrap.find(opts.tabContent).eq(indexWrap.find('li').index($el)).addClass(opts.cname);
+            }
+
+            /*get URL parameter*/
+            function getQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) {
+                    return unescape(r[2]);
+                }
+                return null;
+            }
+
+            /*decide to select or not*/
+            function changeTab(num) {
+                var index;
+                if (num) {
+                    index = $(opts.indexWrap).find('li').eq(num - 1);
+                    changeTabStatus(index, true);
+                }
+            }
+        };
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#con').TabSwitch({ indexWrap: '#con .tab-index', contentWrap: '#con .tab-content' });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#con').TabSwitch({ indexWrap: '#con .tab-index', contentWrap: '#con .tab-content', initSelect: true });
+        });
+    </script>
+    <script>
+        var av_height = $(window).height();
+        var av_width = $(window).width();
+        var go_top = $("#go_top");
+        var Gotop_w = go_top.width() + 2;
+        var Gotop_h = go_top.height() + 2;
+        var doc_width = 1050;
+        var Gotop_x = (av_width > doc_width ? 0.5 * av_width + 0.5 * doc_width : av_width - Gotop_w);
+        var Gotop_y = av_height - Gotop_h;
+        var ie6Hack = "<style>.go_top{position:absolute; top:expression(documentElement.scrollTop+documentElement.clientHeight - this.offsetHeight-40);</style>";
+        if ($.browser.msie && ($.browser.version == "6.0")) {
+            $("body").append(ie6Hack);
+        }
+        function setGotop() {
+            av_height = $(window).height();
+            av_width = $(window).width();
+            Gotop_y = av_height - Gotop_h - 40;
+            Gotop_x = (av_width > doc_width ? 0.5 * av_width + 0.5 * doc_width : av_width - Gotop_w);
+            if ($(window).scrollTop() > 0) {
+                go_top.fadeIn(200);
+            } else {
+                go_top.fadeOut(200);
+            }
+            if ($.browser.msie && ($.browser.version == "6.0")) {
+                go_top.animate({ "left": Gotop_x }, 0);
+                return false;
+            }
+            go_top.animate({ "left": Gotop_x, "top": Gotop_y }, 0);
+        }
+        setGotop();
+        $(window).resize(function () {
+            setGotop();
+        })
+        $(window).scroll(function () {
+            setGotop();
+        })
+        go_top.click(function () {
+            $("html , body").animate({ scrollTop: "0" }, 100);
+        })
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,86 @@
+﻿@model List<Game.Model.GameUserInfo>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PromoUserInfo</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/sty.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+</head>
+<body>
+    <div class="main">
+        <script>
+            function getExcel() {
+                $("#excelUrl").html("正在生成。。。");
+                $("form").ajaxSubmit({
+                    url: "../Models/AdminFunction.ashx?method=GetExcel",
+                    type: "post",
+                    success: function (text) {
+                        var str = "<a href=\"" + text + "\">点击下载</a>";
+                        $("#excelUrl").html(str);
+                    }
+                });
+                return false;
+            }
+        </script>
+        <div style="padding-left:10px;padding-top:10px;">
+        <div style="float:left;">
+        <form onsubmit ="return getExcel()">
+        <input type="hidden" name="GameId" value="@ViewData["GameId"]" />
+        <input type="hidden" name="ServerId" value="@ViewData["ServerId"]" />
+        <input type="submit" value="导出所有数据" />
+        </form>
+        </div>
+        <div id="excelUrl" style="float:left;padding-top:3px;padding-left:10px;"></div>
+        <div style="clear:both;"></div>
+        </div>
+            <div class="user_password" style="margin-top:10px;">
+                
+                <div class="zixun" style="overflow: auto; width: 750px;">
+                    <table style="text-align: center; width: 99%; border: #dcdcdc" class="paydetail_table">
+                        <thead>
+                            <tr>
+                                <th>用户ID </th>
+                                <th>角色名</th>
+                                <th>区服</th>
+                                <th>角色等级</th>
+                            </tr>
+                        </thead>
+                        <tbody id="SpreadUser">
+                            @foreach (var u in ViewData["listUser"] as List<Game.Model.GameUserInfo>)
+                            { 
+                            <tr>
+                                <td>@u.Id</td>
+                                <td>@u.UserName</td>
+                                <td>@u.ServerName</td>
+                                <td>@u.Level</td>
+                            </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr class="pagination">
+                                <td colspan="4"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="page_box">
+                    <div id="PageContent" class="flickr right">
+                    </div>
+                    <div class="left">
+                        <input type="hidden" value="10" id="txtPageNum" />
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<div style="background:url(/Images/bg_top.png);width:100%;height:37px;">
+<div class="top_w clear">
+    	<ul class="fl lt_li"> 
+    		<li class="setmy"><a href="javascript:SetHome(this,'http://www.5577.com');">设为首页</a></li>
+            <li class="preserve"><a href="#">保存到桌面</a></li>
+            <li class="collect"><a href="javascript:lotteryFav();addFav();">加为收藏</a></li>
+    	</ul>
+        <ul class="fr rt_li" id="topnavr_login" >
+        	<li>欢迎光临5577游戏平台，@Html.Raw(ViewData["HeadInfo"])</li>
+        </ul>
+    </div>  
+    </div>
+<!--logo start-->
+<div class=" clear header" style="margin-bottom:10px;">
+	<a href="#" class="logo"><img src="/Images/lekou.gif" alt="" style="height:74px;"></a>
+    <div class="flash"></div>
+</div>
+<!--logo end--> 
+<!--导航 start-->
+<div class="nav">
+	<ul class="clear">                                                  
+		<li class="n1">
+        	<a href="/Home" id="nav_index" class="@ViewData["HomeOn"]"><h2>首  页</h2></a></li>
+        <li class="n2">  
+        	<a href="/UserCenter"  id="grzx_id" class="@ViewData["UserCenterOn"]"><h2>个人中心</h2></a></li>
+        <li class="n3">
+        	<a href="/PayCenter"  id="czzx_id" class="@ViewData["PayCenterOn"]"><h2>充值中心</h2></a></li>
+        <li class="n4">
+        	<a href="/GameCenter" id="nav_gamecenter" class="@ViewData["GameCenterOn"]"><h2>游戏大厅</h2></a></li>
+        <li class="n5">
+        	<a href="/NewsCenter"  id="nav_news" class="@ViewData["NewsCenterOn"]"><h2>资讯中心</h2></a></li>
+         <li class="n6"><a href="/GameGift"  id="xsk_id" class="@ViewData["GameGiftOn"]"><h2>新手卡</h2></a></li>
+         @*<li class="n7">
+        	<a href="javascript:void(0);" id="kefu_id"><h2>客   服</h2></a>
+			<div class="item2">
+      			<a href="" target="_blank">在线论坛</a>
+                <a href="" target="_blank">在线客服</a>
+            </div>
+        </li>*@
+	</ul>
+</div><!--导航 end-->

@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "身份证绑定";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner">
+            <div class="user_center_content_title">
+                身份证绑定
+            </div>
+            <div class="user_center_content_right">
+                <div class="session session_first" style=@ViewData["ShowStyle1"]>
+                    <div class="board board_yes" style="width: 320px;">
+                        <span class="user_center_icon @ViewData["CardStyle"]"></span><span class="board_item">绑定身份证：@ViewData["Card"]</span>
+                    </div>
+                    <div class="center_div">
+                        <div class="line">
+                            <div class="userleft">
+                                真实姓名：
+                            </div>
+                            <div class="userright">
+                                @ViewData["RealName"]
+                            </div>
+                        </div>
+                        <div class="line">
+                            <div class="userleft">
+                                身份证：
+                            </div>
+                            <div class="userright">
+                                @ViewData["Card"]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="session session_first"style=@ViewData["ShowStyle2"]>
+                    <div class="board board_yes" style="width: 320px;">
+                        <span class="user_center_icon @ViewData["CardStyle"]"></span><span class="board_item">请您及时绑定身份证</span>
+                    </div>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>真实姓名：</label></td>
+                            <td>
+                                <input name="RealName" type="text" id="RealName" class="txt1" onblur="VerifyRealName()"></td>
+                            <td style="text-align: left"><em>*</em> <span id="RealNameMsg" class="msg">请填写您的真实姓名，以保障您的用户权益！</span></td>
+                        </tr>
+                        <tr>
+                            <td>身份证：</td>
+                            <td>
+                                <input name="Card" type="text" id="Card" class="txt1" onblur="VerifyCard()"></td>
+                            <td style="text-align: left"><em>*</em> <span id="CardMsg" class="msg">请填写真实有效的15或18位身份证号码！</span></td>
+                        </tr>
+                    </table>
+                    <div class="button_box">
+                        <input type="hidden" name="Birthday" id="Birthday" />
+                        <input type="hidden" name="Sex" id="Sex" />
+                        <input type="submit" name="Button1" value="立即绑定" onclick="UpdateUserInfo()" id="Button1"
+                            class="big_orange_button">
+                    </div>
+                </div>
+            </div>
+            <div class="session_last">
+                <h1>温馨提示：</h1>
+                <p>
+                    1. 身份证号码可以提高您账号的安全性。
+                </p>
+                <p>
+                    2. 身份证号码是账户安全的重要保证。
+                </p>
+                <p>
+                    3. 在进行游戏的过程中，系统会提示您的累计在线时间:
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;累计游戏时间超过 3 小时，游戏收益(经验，金钱)减半。
+                </p>
+                <p>
+                    &nbsp;&nbsp;&nbsp;累计游戏时间超过 5 小时，游戏收益(经验，金钱)为零。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

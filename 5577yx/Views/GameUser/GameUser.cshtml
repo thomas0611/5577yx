@@ -1,0 +1,224 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GameUser</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        $(document).ready(function () {
+            GetAllGame();
+            $("#ddlspreader1").val(@ViewData["IsSpreader"]);
+        });
+        $(document).ajaxComplete(function () {
+            $("#Selyx").val(@ViewData["RegGame"]);
+        });
+        function suoding(a) {
+            if ($("#IsLock").val()=="0") {
+                $("#IsLock").val(1);
+                $("#lblstate").html("锁定");
+                $(a).html("解锁")
+            } else {
+                $("#IsLock").val(0);
+                $("#lblstate").html("正常");
+                $(a).html("锁定")
+            }
+        }
+        function ChangeType() {
+            $("#Type").val("Reset");
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" onsubmit="return UpdateData('/GameUser/UpdateGameUser')">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt;用户管理 &gt; 编辑信息
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <tbody>
+                        <tr>
+                            <th style="width: 150px;">用户名：
+                            </th>
+                            <td>
+                                <label id="lblname">@ViewData["UserName"]</label>
+                                <input type="hidden" id="UserId" name="UserId" value="@ViewData["UserId"]" />
+                                <input type="hidden" id="Type" name="Type" value="Save" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>性别：
+                            </th>
+                            <td>
+                                <label id="lblsex">@ViewData["Sex"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>手机：
+                            </th>
+                            <td>
+                                <label id="lblphone">@ViewData["Phone"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>真实姓名：
+                            </th>
+                            <td>
+                                <label id="lblrealname">@ViewData["RealName"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>邮箱：
+                            </th>
+                            <td>
+                                <label id="lblemail">@ViewData["Email"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>QQ：
+                            </th>
+                            <td>
+                                <label id="lblqq">@ViewData["QQ"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>身份证号：
+                            </th>
+                            <td>
+                                <label id="lblcard">@ViewData["Cards"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>推广员等级：
+                            </th>
+                            <td>
+                                <select id="ddlspreader1" onchange="xiugshangji()" name="IsSpread">
+                                    <option value="0">普通用户</option>
+                                    <option value="1">推广员</option>
+                                    <option value="2">推广团长</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>会员等级：
+                            </th>
+                            <td>
+                                <label id="lblvip">@ViewData["GradeId"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>平台币：
+                            </th>
+                            <td>
+                                <label id="lblmoney">@ViewData["Money"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏币：
+                            </th>
+                            <td>
+                                <label id="lblgamemoney">@ViewData["GameMoney"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>积分：
+                            </th>
+                            <td>
+                                <label id="lblpoints">@ViewData["Points"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>出生日期：
+                            </th>
+                            <td>
+                                <label id="lblbirthday">@ViewData["BirthDay"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>所属上级：
+                            </th>
+                            <td>
+                                <input id="txtsjuser" type="text" name="Source" value="@ViewData["Source"]" />
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>被推广的游戏:
+                            </th>
+                            <td>
+                                <select id="Selyx" class="select2" name="RegGame">
+                                    <option value="0">此用户为注册用户，无被推广游戏</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>添加时间：
+                            </th>
+                            <td>
+                                <label id="lbladdtime">@ViewData["AddTime"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>最后登录时间：
+                            </th>
+                            <td>
+                                <label id="lbllastlogintime">@ViewData["LastLoginTime"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>IP：
+                            </th>
+                            <td>
+                                <label id="lblip">@ViewData["Ip"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>是否验证：
+                            </th>
+                            <td>
+                                <label id="lblvalidate">@ViewData["IsValiDate"]</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>状态：
+                            </th>
+                            <td>
+                                <label id="lblstate">@ViewData["IsLock"]</label>
+                                <input type="hidden" name="IsLock" id="IsLock" value="0" />
+                                <a href="javascriput:;" onclick="suoding(this)">锁定</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>描述：
+                            </th>
+                            <td>
+                                <label id="lbldesc">@ViewData["UserDesc"]</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" class="btnSubmit" value="提交保存" />
+                <input type="submit" class="btnSubmit" value="重置信息" onclick="ChangeType()" />
+                <input name="btnExit" type="button" class="btnSubmit" value="返 回" onclick="javascript: location.href = document.referrer;" />
+            </div>
+            <input id="hidpro" type="hidden" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

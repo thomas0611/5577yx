@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @*<link href="~/Style/tyjy/main.css" rel="stylesheet" />*@
+    <link href="~/Style/tyjy/images/main.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    
+    <title>桃园结义微端</title>
+</head>
+<body >
+<div class="main">
+  <div class="box">
+    <div class="login">
+      <form  onsubmit="return KsLogin3()" method="post">
+        <ul>
+          <li>
+            <label>用户名：</label>
+            <input type="text" class="text" id="UserName" name="UserName">
+          </li>
+          <li>
+            <label>密码：</label>
+            <input type="password" class="text" id="PWD" name="PWD">
+          </li>
+          <li class="yzm">
+            <label>验证码</label>
+            <input type="text" class="text2" id="Code" name="code">
+            <img  title="点击刷新验证码" style="cursor: pointer;"  width="70" height="25" src="../Models/VerifyCode.ashx" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;"></li>
+          <li>
+            <input type="submit" value=""  class="text3">
+            <input type="checkbox" name="autologin" id="checkbox" value="on">自动登录
+          </li>
+          <li class="ce"><a href="/Home/Reg" target="_blank" >注册账号</a>|<a href="/UserCenter/FindPwd" target="_blank">忘记密码?</a></li>
+        </ul>
+      </form>
+    </div>
+    <div class="btn"><a href="/tyjy/Servers/" target="_blank" class="b1">进入官网</a><a href="http://bbs.5577yx.com" target="_blank" class="b2">游戏论坛</a><a href="/NewsCenter/" target="_blank" class="b3">游戏资料</a><a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes" target="_blank" class="b4">在线客服</a><a href="/PayCenter/" target="_blank" class="b5">充值中心</a></div>
+    <div class="news">
+      <ul>
+        <li><span>11/30</span>·<a href="#">那些年，我们一起飞仙的同伴</a></li>
+        <li><span>11/30</span>·<a href="#">梦幻飞仙与您迎接6月激情盛夏</a></li>
+        <li><span>11/30</span>·<a href="#">5577桃园结义55服"翔云九天"18日16时火爆开启</a></li>
+      </ul>
+    </div>
+   <div class="close" onclick="ExitGame();"></div>
+  <div class="small" onclick="Minimize();"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $.ajaxSetup({
+            cache: false
+        });
+        $('.global_logout').trigger('click');
+
+    });
+
+
+
+    //页面加载完毕，告诉应用程序显示界面
+    
+    //最小化
+    function Minimize() {
+        location.href = 'app://minimize|';
+    }
+    function ExitGame() {
+        location.href = "app://exitgame|";
+    }
+    
+   
+    
+</script>
+</body>
+</html>
+

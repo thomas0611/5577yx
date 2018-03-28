@@ -1,0 +1,123 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(document).ready(function () {
+            GetAllGame();
+            InitPageContent("Order");
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理 &gt; 充值管理 &gt; 充值信息
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+                金额大于：
+                <input id="PayMoney" type="number" class="txtInput" style="width: 50px;" min="0" value="0" onchange="InitPageContent('Order')" onkeyup="this.value=this.value.replace(/\D/g,'')" />
+                订单号：
+                <input id="OrderNo" class="txtInput" style="width: 150px;" onchange="InitPageContent('Order')" />
+                充值账号：
+                <input id="UserName" class="txtInput" style="width: 120px;" onchange="InitPageContent('Order')" />
+                充值时间：
+                <input id="StartTime" class="txtInput" value="" style="width: 125px;" onclick="WdatePicker();">至
+                <input id="EndTime" class="txtInput" value="" style="width: 125px;" onclick="WdatePicker();" />
+                <input type="button" id="btnSearch" value="搜 索" class="btnSearch" onclick="InitPageContent('Order')" />
+            </div>
+        </div>
+        <div class="select_box">
+            充值类型：
+            <select id="Type" class="select2" onchange="InitPageContent('Order')">
+                <option value="0">所有</option>
+                <option value="1">游戏币</option>
+                <option value="2">平台币</option>
+            </select>
+            支付方式：
+            <select id="PayType" class="select2" onchange="InitPageContent('Order')">
+                <option value="0">所有支付方式</option>
+                <option value="1">网银支付</option>
+                <option value="2">移动卡充值</option>
+                <option value="3">联通卡充值</option>
+                <option value="4">电信充值卡</option>
+                <option value="5">Q币卡充值</option>
+                <option value="6">手动充值</option>
+                <option value="7">平台币充值</option>
+                <option value="8">支付宝充值</option>
+                <option value="9">骏网卡充值</option>
+                <option value="12">盛大卡充值</option>
+                <option value="13">网易一卡通充值</option>
+                <option value="14">完美一卡通充值</option>
+            </select>
+            订单状态：
+            <select id="State" class="select2" onchange="InitPageContent('Order')">
+                <option value="">所有</option>
+                <option value="0">未支付</option>
+                <option value="1">已付款</option>
+                <option value="2">已完成</option>
+            </select>
+            充值游戏：
+            <select id="Selyx" class="select2" onchange="onyxchange('Order')">
+                <option value="0">所有游戏</option>
+            </select>
+            游戏区服：
+             <select id="Selfwq" class="select2" onchange="InitPageContent('Order')">
+                 <option value="0">所有区服</option>
+             </select>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th width="40">类型</th>
+                <th width="60">支付方式</th>
+                <th width="40">状态</th>
+                <th>充值账号</th>
+                <th width="60">充值金额</th>
+                <th>充值游戏</th>
+                <th>充值时间</th>
+                <th>充值备注</th>
+                <th>来源</th>
+                <th>操作员</th>
+            </tr>
+        </thead>
+        <tbody id="Order">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="8" onchange="InitPageContent('Order')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+            &nbsp; &nbsp; &nbsp; 共<span style="color: Red" id="totalCount"></span>条(已完成<span style="color: Red" id="CompleteCount"></span>条
+            &nbsp;未完成<span style="color: Red" id="UnfinishedCount"></span>条)&nbsp;
+            &nbsp; &nbsp;已完成订单总额：<span style="color: Red" id="SumOrderMoney"></span>（其中手动充值：<span
+                style="color: Red" id="SdOrderMoney"></span>
+            &nbsp; &nbsp;乐扣币类型充值：<span style="color: Red" id="PtOrderMoney"></span>）
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

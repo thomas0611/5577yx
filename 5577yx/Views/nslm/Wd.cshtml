@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <link href="~/Style/nslm/ns_kh.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <title>女神联盟微端</title>
+</head>
+<body>
+    <div class="fuwuqi_dl">
+        <!--left-->
+        <div class="youxi_dl">
+            <h1 class="yx_tit">游戏登录</h1>
+            <form onsubmit="return KsLogin3()" method="post">
+                <ul class="denglu_yx">
+                    <li>
+                        <label>帐 号：</label>
+                        <div class="deng_inp">
+                            <input id="UserName" name="UserName" type="text" value="" />
+                        </div>
+                        <a target="_blank" href="/Home/Reg">注册帐号</a></li>
+                    <li class="xix"></li>
+                    <li>
+                        <label>密  码：</label>
+                        <div class="deng_inp">
+                            <input id="PWD" name="PWD" type="password" value="" />
+                        </div>
+                        <a target="_blank" href="/UserCenter/FindPwd">忘记密码</a></li>
+                    <li class="xix"></li>
+                    <li>
+                        <label>验证码：</label>
+                        <div class="yan_inp">
+                            <input id="Code" name="Code" type="text" />
+                        </div>
+                        <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;"></li>
+                    <li class="xix"></li>
+                    <li class="jiz">
+                        <input name="ck1" type="checkbox" value="" checked="checked" />
+                        <label>记住账号</label>
+                    </li>
+                    <li class="quxiao">
+                        <label class="remember_info">您可通过切换帐号取消自动登录</label>
+                    </li>
+                    <li class="bout">
+                        <input type="submit" value="登录" class="regBtn">
+                        <p class="ha_tubiao">
+                            @* <a class="deng_17173" title="17173" target="_blank" href="">17173</a>
+                            <a class="deng_sina" title="新浪微博" target="_blank" href="">新浪微博</a>*@
+                        </p>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <!--left-->
+        <!--right-->
+        <div class="pingtai_dl">
+            <h1 class="yx_tit">游戏帮助</h1>
+            <dl class="pingt_yx">
+                <dt><span>查看最新游戏信息---</span><a href="/nslm/Servers" target="_blank" title="游戏官网">游戏官网</a></dt>
+                <dd><span>充值元宝提升实力---</span><a href="/PayCenter/" target="_blank" title="充值中心">充值中心</a></dd>
+                <dd><span>查看游戏详细资料---</span><a href="/NewsCenter/" target="_blank" title="游戏资料">游戏资料</a></dd>
+                <dd><span>谈女神聊英雄心得---</span><a href="http://bbs.5577yx.com" target="_blank" title="玩家论坛">玩家论坛</a></dd>
+                <dd><span>提建议意见报BUG ---</span><a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes" target="_blank" title="客服中心">客服中心</a></dd>
+            </dl>
+            <dl class="pingt_kf">
+                <dt>客服电话：</dt>
+                <dd><i>400-009-4577</i></dd>
+            </dl>
+        </div>
+        <!--right-->
+    </div>
+</body>
+</html>

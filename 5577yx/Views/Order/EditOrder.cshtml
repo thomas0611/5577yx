@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderEdit</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script>
+        function save() {
+            var id = $("#id").val();
+            var state = $("#state").val();
+            var orderNo = $("#orderNo").val();
+            $.ajax({
+                url: "/Order/DoEdit/",
+                type: "post",
+                data: { id: id, orderNo: orderNo, state: state },
+                success: function (text) {
+                    if (text == "True") {
+                        jsprint("修改成功！", "", "Success");
+                    } else {
+                        jsprint("修改失败！", "", "Error");
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理 &gt; 充值管理 &gt; 状态修改
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            
+            <div style="padding-left:10px;padding-top:10px;">
+                <input type="hidden" id="id" value="@ViewData["id"]" />
+                <input type="hidden" id="orderNo" value="@ViewData["orderNo"]" />
+                <input type="text" id="state" name="state" style="width:80px;" value="@ViewData["state"]"/>
+                <input type="button" value="保存" onclick="save()" style="margin-left:8px;"/>
+                <input type ="button" value="返回" onclick="javacsript: location.href = document.referrer;" style="margin-left:3px;" />
+                <span style="margin-left:15px;">未支付：0</span><span style="margin-left:8px;">已付款：1</span><span style="margin-left:8px;">已完成：2</span>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

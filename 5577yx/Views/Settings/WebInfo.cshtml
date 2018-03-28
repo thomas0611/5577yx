@@ -1,0 +1,143 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@(ViewData["modelname"])</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/ui/js/ligerBuild.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/editor/kindeditor-min.js" charset="utf-8"></script>
+    <script src="~/Scripts/Admin/editor/lang/zh_CN.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        //加载编辑器
+        KindEditor.ready(function (K) {
+            window.editor = K.create('#txtContent', {
+                uploadJson: '../Models/upload_ajax.ashx?action=action=EditorFile&IsWater=1',
+                fileManagerJson: '../Models/upload_ajax.ashx?action=action=ManagerFile',
+                allowFileManager: true
+            });
+        });
+        function UpdateWebInfo() {
+            editor.sync();
+            $("form").ajaxSubmit({
+                url: "/Settings/UpdateWebInfo",
+                type: "post",
+                success: function (data, textStatus) {
+                    if (data) {
+                        jsprint("修改成功！", "", "Success");
+                    } else {
+                        jsprint("修改失败！", "", "Error");
+                    }
+                }
+            });
+            return false;
+        }
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 内容管理 &gt; 网站内容管理 &gt; @(ViewData["modelname"])
+    </div>
+    <div id="contentTab">
+        <ul class="tab_nav">
+            <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+            <li><a onclick="tabs('#contentTab',1);" href="javascript:;">SEO选项</a></li>
+        </ul>
+        <form method="post" onsubmit="return UpdateWebInfo()">
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>栏目名称：
+                            </th>
+                            <td>
+                                <input type="hidden" name="id" value="@(ViewData["id"])" />
+                                <input type="text" id="txtName" name="modelname" class="txtInput normal" maxlength="100" value="@(ViewData["modelname"])" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>标题：
+                            </th>
+                            <td>
+                                <input type="text" id="txtTitle" name="title" class="txtInput normal" maxlength="100" value="@(ViewData["title"])" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>排序数字：
+                            </th>
+                            <td>
+                                <input type="number" id="txtSortId"  name="sort_id" class="txtInput small" min="1"
+                                maxlength="10" value="@(ViewData["sort_id"])">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>显示图片：
+                            </th>
+                            <td>
+                                <input type="text" id="txtImgUrl" name="img_url"  class="txtInput normal" maxlength="255" value="@(ViewData["img_url"])">
+                                <a href="javascript:;" class="files" style="margin: 10px;">
+                                    <input type="file" id="FileUpload" name="FileUpload" onchange="Upload('SingleFile', 'txtImgUrl', 'FileUpload');" /></a>
+                                <span class="uploading">正在上传，请稍候...</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">详细内容：
+                            </th>
+                            <td>
+                                <textarea id="txtContent" name="contents" cols="100" rows="8" style="width: 99%; height: 350px;">@(ViewData["contents"])</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab_con">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>SEO标题：
+                            </th>
+                            <td>
+                                <input id="txtSeoTitle" name="seo_title" type="text" maxlength="255" class="txtInput normal" value="@( ViewData["seo_title"])">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SEO关健字：
+                            </th>
+                            <td>
+                                <textarea id="txtSeoKeywords" name="seo_keyword" maxlength="255" class="small">@(ViewData["seo_keyword"])</textarea>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SEO描述：
+                            </th>
+                            <td>
+                                <textarea id="txtSeoDescription" name="seo_desc" maxlength="255" class="small">@(ViewData["seo_desc"])</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box" style="@(ViewData["style"])">
+                <input type="submit" id="btnSubmit" value="提交保存" class="btnSubmit" />
+                &nbsp;
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        $(document).ready(function () {
+            InitPageContent("GameUser");
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <div class="navigation">
+        首页 &gt; 用户管理 &gt; 用户列表
+    </div>
+    <div class="tools_box">
+        <div class="tools_bar">
+            <div class="search_box">
+                通过
+                <select id="Require">
+                    <option value="UserName">用户名</option>
+                    <option value="ID">用户ID</option>
+                    <option value="Cards">身份证</option>
+                    <option value="Email">邮箱</option>
+                    <option value="IP">IP</option>
+                </select>：
+                 <input id="RequireText" class="txtInput" style="width: 150px;" onchange="InitPageContent('GameUser')" />
+
+                <select id="Time" class="select2">
+                    <option value="AddTime">按注册时间</option>
+                    <option value="LastLoginTime">按最后登录时间</option>
+                </select>
+                从
+                <input id="StartTime" class="txtInput" value="" style="width: 125px;" onclick="WdatePicker();">至
+                <input id="EndTime" class="txtInput" value="" style="width: 125px;" onclick="WdatePicker();" />
+
+                <input type="button" id="btnSearch" value="搜 索" class="btnSearch" onclick="InitPageContent('GameUser')" />
+            </div>
+        </div>
+        <div class="select_box">
+            <select id="SourceIsNull" class="select2" onchange="InitPageContent('GameUser')">
+                <option value="0">显示所有用户</option>
+                <option value="1">显示具有上级的用户</option>
+                <option value="2">显示没有上级的用户</option>
+            </select>
+        </div>
+    </div>
+    <!--列表展示.开始-->
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable" style="text-align: center">
+        <thead>
+            <tr>
+                <th width="5%">ID
+                </th>
+                <th>用户名
+                </th>
+                <th>平台币</th>
+                <th>积分</th>
+                <th>注册时间    
+                </th>
+                <th>最后登录时间</th>
+                <th>注册IP
+                </th>
+                <th>来源
+                </th>
+            </tr>
+        </thead>
+        <tbody id="GameUser">
+        </tbody>
+    </table>
+    <!--列表展示.结束-->
+    <div class="line15">
+    </div>
+    <div class="page_box">
+        <div id="PageContent" runat="server" class="flickr right">
+        </div>
+        <div class="left">
+            显示<input name="txtPageNum" type="text" value="10" onchange="InitPageContent('GameUser')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                onafterpaste="this.value=this.value.replace(/\D/g,'')" id="txtPageNum" class="txtInput2 small2" />条/页
+
+        </div>
+    </div>
+    <div class="line10">
+    </div>
+</body>
+</html>

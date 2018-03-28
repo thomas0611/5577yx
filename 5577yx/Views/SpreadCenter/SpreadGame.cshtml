@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Static &amp; Dynamic Tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>推广链接</title>
+<link href="~/Style/font-awesome.css" rel="stylesheet" />
+<link href="~/Style/ace.min.css" rel="stylesheet" />
+<link href="~/Style/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/Admin/jquery.form.js"></script>
+<script src="~/Scripts/Admin/md5.js"></script>
+<script src="~/Scripts/Admin/Verify.js"></script>
+<script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <style>
+        * {margin:0px;padding:0px;border:0px;
+        }
+        
+        li {list-style:none;
+        }
+        .main {
+            padding-left:15px;
+            /*padding-top:20px;*/
+            margin-top: 0px;
+            color: #333;
+            line-height: 14px;
+            width: 790px;
+            overflow: auto;
+
+       }
+        .main .game .line li {
+            width: 225px;
+            height: 140px;
+            float: left;
+            text-align: center;
+            color: #333333;
+            margin-right: 30px;
+        }
+
+    </style>
+</head>
+
+<body style="background:#fff; ">
+    <div class="page-header" style="margin-top:10px;">
+    <h1><i class="icon icon-link"></i>&nbsp;推广链接</h1>
+  </div>
+<div class="main">
+    <div class="choose">
+        <p style="font-size: 14px; font: 微软雅黑; color: #333; padding-left: 20px;">
+            请您先选取推广游戏图标，然后复制文本框内推广链接
+        </p>
+        <p style="margin-top: 15px; padding-left: 30px;">
+            <textarea name="txturl" id="txturl" readonly="readonly" style="width: 680px; height: 120px;line-height:150%;">请复制 @ViewData["GameName"] 的推广链接，链接地址：
+ http://tg.5577yx.com/?action=@ViewData["Action"] </textarea>
+        </p>
+
+        <div>
+        </div>
+    </div>
+    <div class="game">
+        <div class="topgame" style="padding-left:15px;">
+            选择要推广的游戏
+        </div>
+        <div class="line">
+            <ul>
+                @Html.Raw(ViewData["HtmlGame"])
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    function GetSpreadText(a, b) {
+        $("#txturl").html("请复制 " + a + " 的推广链接，链接地址： \n http://tg.5577yx.com/?action=" + b);
+    }
+</script>
+    </body>
+    </html>

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "会员注册";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+<form method="post" onsubmit="return GameUserReg()">
+    <div class="container" style="height:500px;">
+        <div class="tit" id="con_tit">
+            <h2>快速创建您的5577游戏帐号：</h2>
+            <div class="sub_tit">
+                畅享游戏给您带来的乐趣！
+            </div>
+        </div>
+        <div class="logindiv">
+            <div class="log_link">
+                如您已注册“5577游戏”网站，可直接 <a href="/Home/Login">登录</a>
+            </div>
+            <table style="text-align: center">
+                <tr>
+                    <td>
+                        <label>用户名：</label></td>
+                    <td>
+                        <input name="UserName" type="text" id="UserName" class="txt1" onblur="VerifyUserName()"></td>
+                    <td style="text-align: left"><em>*</em><span id="UserNameMsg" class="msg">长度为6～16位，由字母、数字组成，且只能以字母开头</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>密码：</label></td>
+                    <td>
+                        <input name="PWD" type="password" id="PWD" class="txt1" onkeyup="VerifyPWDStrong()" onblur="VerifyPWD()" maxlength="16"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDMsg" class="msg">密码长度为6～16位，不可与账号相同。</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>确认密码：</label></td>
+                    <td>
+                        <input type="password" id="PWDAgain" name="PWDAgain" class="txt1" maxlength="16" onblur="VerifyPWDAgain()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDAgainMsg" class="msg">再一次输入密码进行确认，效验密码是否填写错误。</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>电子邮箱：</label></td>
+                    <td>
+                        <input name="Email" type="text" id="Email" maxlength="50" class="txt1" onblur="VerifyEmail()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="EmailMsg" class="msg">请务必输入真实有效的邮箱。</span></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>真实姓名：</label></td>
+                    <td>
+                        <input name="RealName" type="text" id="RealName" class="txt1" onblur="VerifyRealName()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="RealNameMsg" class="msg">请填写您的真实姓名，以保障您的用户权益！</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>身份证号码：</label></td>
+                    <td>
+                        <input name="Card" type="text" id="Card" class="txt1" onblur="VerifyCard()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="CardMsg" class="msg">请填写真实有效的15或18位身份证号码！</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>验证码：</label></td>
+                    <td>
+                        <input name="Code" type="text" id="Code" class="txt1" style="width: 185px; text-transform: uppercase;" onblur="VerifyCode()">
+                        <img src="../Models/VerifyCode.ashx" width="70" height="22" alt="点击切换验证码" title="点击切换验证码" style="margin-top: 2px; vertical-align: top; cursor: pointer;" onclick="ToggleCode(this, '../Models/VerifyCode.ashx');return false;">
+                    </td>
+                    <td style="text-align: left"><em>*</em> <span id="CodeMsg" class="msg">请输入正确的验证码。</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input id="Ck" type="checkbox" name="Ck" checked="checked">
+                        我已阅读并同意 《<a href="/About/?Id=4" target="_blank">5577游戏平台用户服务条款</a>》</td>
+                    <td style="text-align: left"><span id="CkMsg"></span>
+                        <input type="hidden" name="Birthday" id="Birthday" />
+                        <input type="hidden" name="Sex" id="Sex" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Login_an">
+            <input type="submit" name="btnreg" value="" id="btnreg" class="btn_log">
+        </div>
+    </div>
+</form>

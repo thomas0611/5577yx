@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="~/Style/ahxx/base.css"/>
+    <link rel="stylesheet" href="~/Style/ahxx/inner.css"/>
+    <script type="text/javascript" src="~/Style/ahxx/jquery.js"></script>
+    <script type="text/javascript" src="~/Style/ahxx/jquery.d.imagechange.min.js"></script>
+    <script type="text/javascript" src="~/Style/ahxx/comman.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/comman.js"></script>
+</head>
+<body>
+    <div class="wrap inner">
+        <div class="top-box">
+            <div class="welcome">
+                <span class="user">@ViewData["UserName"]</span> 欢迎您登陆，请选择服务器！ <a href="Wd">【注销】</a>
+            </div>
+            <div class="server-pro">
+                <div class="i-logined">
+                    <ul class="server-list">
+                        <li class="normal"><a href="@ViewData["LLHref"]">@ViewData["LLName"]</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="pros">
+                    <ul class="server-list">
+                        <li class="busy"><a href="@ViewData["TjqfHref"]">@ViewData["TjqfName"]</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-box">
+            <div class="tabs">
+                <ul>
+                    <li class="hover">
+                        <a show='pro-box' class="pro" href="javascript:void(0)">推荐服务器</a>
+                    </li>
+                    <li>
+                        <a show='pro-300' class="pro_300" href="javascript:void(0)">推荐服务器</a>
+                    </li>
+                </ul>
+                <div class="quick-way">
+                    @*<input value="" class="text" type="text"/>
+                    <input value="" class="submit" type="submit"/>*@
+                </div>
+            </div>
+            <div class="box">
+                <ul class="server-list tab pro-box">
+                    @foreach (var s in ViewData["serverList"] as List<Game.Model.GameServer>)
+                    {
+                        <li class="normal" style="width:95px;"><a href="client://loadgame|http://www.5577yx.com/ahxx/LoginGame?S=@s.QuFu " target="_self">@s.Name</a></li>
+                    }
+                    
+                </ul>
+                <ul class="pro-300 tab server-list" style="display: none">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(".bottom-box").setTab({
+        btn:'.tabs li a',
+        div:'.tab'
+    });
+</script>
+<!--[if lt IE 7 ]>
+
+<script>
+    DD_belatedPNG.fix(".server-list li,.tabs li a,background");
+</script>
+<![endif]-->
+</body>
+</html>

@@ -1,0 +1,151 @@
+﻿@model Game.Model.Games
+@{
+    ViewBag.Title = "5577yx首页";
+    Layout = "~/Views/MainLayout.cshtml";
+    
+}
+
+
+@*@RenderPage("~/Views/Home/Left.cshtml")*@
+
+@Html.Action("Left", "Home")
+<div class="right">
+@*<div style="float: left; margin-left: 10px" id="index_right">*@
+    <div id="flash" style="overflow: hidden; height: 294px;margin-left:12px;" class="mb10">
+        <div style="position: relative; width: 688px; height: 294px; float: left;">
+            <div id="slider" style="width: 688px; height: 294px; overflow: hidden;">
+                <ul id="imgs" style="width: 10000px; margin-left: 0px;">
+                    @Html.Raw(ViewData["IndexPic"])
+                </ul>
+            </div>
+            <ol id="controls">
+                <li id="controls1" class="current"><a rel="0" href="javascript:void(0);"></a></li>
+                <li id="controls2" class=""><a rel="1" href="javascript:void(0);"></a></li>
+                <li id="controls3" class=""><a rel="2" href="javascript:void(0);"></a></li>
+                <li id="controls4" class=""><a rel="3" href="javascript:void(0);"></a></li>
+                <li id="controls5" class=""><a rel="4" href="javascript:void(0);"></a></li>
+            </ol>
+        </div>
+        @*<div class="news">
+            <div class="hd">
+                <ul class="newsUl">
+                    <li class="current"><a href="javascript:void(0);">公告</a> </li>
+                    <li><a href="javascript:void(0);">活动</a> </li>
+                    <li class="more"><a href="/NewsCenter/">more</a> </li>
+                </ul>
+            </div>
+            <!--公告-->
+            <div class="area area0">
+                @Html.Raw(ViewData["NewsGG"])
+            </div>
+            <!--活动-->
+            <div class="area area1">
+                @Html.Raw(ViewData["NewsHD"])
+            </div>
+        </div>*@
+    </div>
+    <div class="boutique">
+    <div class="speaker">
+            	<h3>精品游戏</h3>
+                <div class="box-c" id="up_slide" style=" height:24px; overflow: hidden;">
+                	@*<ul></ul>*@</div></div>
+    <div class="list">
+                	<ul>
+                        @Html.Raw(ViewData["HotGame"])
+                	</ul></div>
+    <!--热门游戏-->
+        <div class="hot">
+	<div class="title">
+    	<h3>热门游戏</h3>
+    </div>
+    <div class="h_list" id="h_list">
+    	<ul class="clear">
+
+            @Html.Raw(ViewData["TjGame"])
+    	</ul></div></div>
+
+    @*<div style="width: 744px; float: left; overflow: hidden;" class="game">
+        <h1>
+            <span>热门游戏</span>
+        </h1>
+        <div style="height: 170px; width: 740px; margin-left: 2px;">
+            @Html.Raw(ViewData["HotGame"])
+        </div>
+    </div>
+</div>
+<!--推荐游戏-->
+<div style="width: 744px; float: left; margin-left: 10px; overflow: hidden;" class="game">
+    <h1>
+        <span>推荐游戏</span><a href="/GameCenter/">更多游戏>></a>
+    </h1>
+    <div style="padding: 5px 20px;">
+        @Html.Raw(ViewData["TjGame"])
+    </div>
+</div>*@
+
+    </div>
+@*<div id="online_qq_layer">
+    <div id="online_qq_tab">
+        <a id="floatShow" style="display: block" href="javascript:void(0);">收缩</a>
+        <a id="floatHide" style="display:none" href="javascript:void(0);">展开</a>
+    </div>
+    <div id="onlineService" style="display: none;">
+
+        <div class="conts">
+            @*<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=2067257264" target="_blank" id="qqkf">企业QQ交谈<span>7X24小时在线</span></a>*@
+            @*<h3>400-009-4577</h3>
+            <ul id="qqlists">
+                <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes"><img src="http://wpa.qq.com/pa?p=2:2067257264:51" alt="点击这里给我发消息">小余</a></li>
+            </ul>
+        </div>
+    </div>
+</div>*@
+    </div>
+<script>
+    jQuery(function(){
+        //精品游戏
+        $('.boutique .list ul li').hover(function(){
+            $(this).children('.into').stop().animate({bottom:'2px'},300); 
+        },function(){
+            $(this).children('.into').stop().animate({bottom:'-252px'},300); 
+        });
+        //热门游戏
+        $(".hot .h_list ul li").hover(function () {
+            $(this).addClass("hov");
+        }, function () {
+            $(this).removeClass("hov");
+        });
+        //热闹游戏
+        // $('.gmore').click(function(){
+        //			$(this).toggleClass('gmored')
+        //			$(this).parents('.posb').next('.pro').slideToggle(100);
+        //	    });
+		
+        $('.gmore').click(function(){
+		
+            var obj=$('.h_list li');
+            obj.css('z-index','1');
+            $(this).parent().parent().css('z-index','2')
+            var oClick=$('.gmore');
+            var is = $(this).hasClass("gmored");
+            $('.btn_box button').removeClass('gmored');
+            if(is) {
+                $(this).removeClass('gmored');
+            }else{
+                $(this).addClass('gmored');
+            }
+            $('.pro').hide();
+            $(this).parents('.posb').next('.pro').show();
+
+        });
+		
+        $(document).click(function(event){
+            if($('.gmore')){
+                if($(event.target).attr("class")!="gmore gmored"){
+                    $('.btn_box button').removeClass('gmored');
+                    $('.pro').hide();
+					
+                }
+            }
+        });})
+</script>

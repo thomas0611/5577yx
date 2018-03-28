@@ -1,0 +1,211 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.index{
+    background:url("../../Images/ahxx/index_bg.jpg") no-repeat;
+}
+.sprite{
+	background:url("../../Images/ahxx/pngs.png") no-repeat;
+}
+.top{
+	width:612px;
+	height:190px;
+	clear:both;
+}
+.news-box{
+	float:left;
+	width:270px;
+	margin-left:45px;
+	_margin-left:22px;
+	margin-top:51px;
+}
+.news-box li{
+	width:270px;
+	height:26px;
+	line-height:26px;
+	border-bottom:1px dashed #dea443;
+	overflow:hidden;
+}
+.news-box li a{
+	color:#faf5cd;
+}
+.news-box li i{
+	float:right;
+	color:#faf5cd;
+	*margin-top:-26px;
+}
+.news-box li a:hover{
+	color:#fb9b05;
+}
+.news-box li a:hover i{
+	color:#fb9b05;
+}
+.square{
+	float:left;
+	width:5px;
+	height:5px;
+	display:block;
+	margin:12px 5px 9px 2px;
+	background-position:-224px -292px;
+	overflow:hidden;
+}
+.kaifu{
+	float:right;
+	width:252px;
+	height:163px;
+	margin-top:18px;
+	margin-right:26px;
+	_margin-right:13px;
+	border:1px solid #8d4916;
+}
+.kaifu img{
+	width:252px;
+	height:163px;
+	display:block;
+}
+.game-info{
+	height:32px;
+	margin-top:13px;
+	margin-left:65px;
+	overflow:hidden;
+}
+.game-info dt{
+	float:left;
+	color:#fdab53;
+	line-height:32px;
+}
+.game-info dd{
+	float:left;
+	width:75px;
+	height:24px;
+	margin-left:15px;
+	line-height:32px;
+	text-align:right;
+}
+.game-info dd a{
+	color:#da631b;
+}
+.dot{
+	float:left;
+	width:13px;
+	height:13px;
+	display:block;
+	margin-top:11px;
+	background-position:-223px -271px;
+}
+.logo-link{
+	float:left;
+	margin-top:60px;
+	margin-left:37px;
+}
+.logo-link a{
+	width:142px;
+	height:62px;
+	display:block;
+}
+.top-box{
+
+}
+.login-box{
+	float:left;
+	width:405px;
+	margin-left:-15px;
+	_margin-left:-50px;
+	margin-top:30px;
+}
+.reg-box{
+	position:relative;
+	float:left;
+	width:405px;
+	margin-left:-15px;
+	_margin-left:-50px;
+	margin-top:30px;
+}
+.item{
+    height:35px;
+    font:14px/35px "微软雅黑";
+    margin-bottom:5px;
+}
+.item label{
+    float: left;
+    display: inline;
+    height: 35px;
+    overflow: hidden;
+    width:100px;
+}
+.item label.username{
+    background-position: -220px -2px;
+}
+.item label.pwd{
+    background-position: -220px -42px;
+}
+.item label.reg-pwd1{
+    background-position: -220px -84px;
+}
+.item .text{
+    width:133px;
+    height:27px;
+    line-height:27px;
+    color:#fff;
+	margin-top:6px;
+    padding:0 8px;
+    background-position: -1px -42px;
+    float:left;
+}
+.item.hover .text{
+	width:144px;
+	height:29px;
+	line-height:29px;
+	margin-top:5px;
+    background-position: -1px -2px;
+}
+.others{
+    padding-left:100px;
+    line-height:20px;
+    color:#ff9f00;
+}
+.others a{
+    margin-left:5px;
+    color:#ff9f00;
+}
+.others a:hover,.a-link:hover{
+    text-decoration: underline;
+}
+.others a.reg-link{
+	margin-left:70px;
+	outline:none;
+}
+span.check-box{
+    display: inline-block;
+    padding-left: 22px;
+    background-position: -222px -144px;
+    cursor: pointer;
+}
+span.check-box.checked{
+	background-position: -222px -117px;
+}
+.inner-box{
+	width:405px;
+}
+.btn{
+	float:right;
+	_margin-top:-75px;
+}
+.button{
+	width:134px;
+	height:70px;
+	cursor:pointer;
+	background-position:-15px -302px;
+}
+.reg-box .button{
+	_margin-top:-40px;
+    background-position:-157px -302px;
+}
+.a-link{
+	color:#ff9f00;
+	position:absolute;
+	top:80px;
+	left:310px;
+	outline:none;
+	text-decoration:underline;
+}

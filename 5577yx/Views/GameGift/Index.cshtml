@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "游戏礼包";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+@Html.Action("Left", "Home")
+<div class="gameGolf" style="float: left; margin-left: 10px">
+    <div class="golftip">
+        <div class="title">
+            游戏礼包
+        </div>
+        <div class="tip">
+            <div class="l">
+            </div>
+            <div class="w">
+                新手卡和礼包激活码是5577游戏平台为了帮助新手玩家更快的上手游戏、更便捷的发展角色而推出的一种游戏虚拟卡。 5577游戏平台中大部分游戏均有提供新手卡或礼包激活码(部分为直接在游戏中提供),以下列表显示的是当前正在发放的新手卡
+                        和激活码卡,数量有限,先到先得。
+            </div>
+        </div>
+        <div class="gameList">
+            <div class="tit">
+                <h1>您有<a style="color: #09C; margin: 0px 5px;">@ViewData["GiftCount"]</a>款游戏礼包可以领取</h1>
+            </div>
+            <div class="games" id="Gift">
+            </div>
+            <input id="txtPageNum" type="hidden" value="9" />
+            <div class="page1">
+            <div id="PageContent" style="margin-right: 20px; margin-top: 10px; margin-bottom: 23px;"
+                class="flickr">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    InitPageContent("Card");
+
+</script>

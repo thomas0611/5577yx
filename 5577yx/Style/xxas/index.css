@@ -1,0 +1,78 @@
+/* 首页样式 */
+.more{float:right; line-height:35px;}
+
+/*新闻公告*/
+#News{background:url("../../images/xxas/mix-bg.jpg") -220px -540px no-repeat;}
+#News .tt{margin:0 2px; padding:2px 15px 0 0; height:35px; background:none; border-bottom:1px solid #b8ebfc;}
+#News .wrap{padding:12px 25px; height:159px; background:none; display:none;}
+#News .tab-index li{float:left;}
+#News .tab-index a{display:block; margin-right:1px; padding-top:5px; width:92px; height:29px; text-align:center; font:18px "Microsoft Yahei"; color:#006fb9; background:url("../../images/xxas/mix-bg.jpg") -130px -90px no-repeat; outline:none;}
+#News .tab-index .on a,
+#News .tab-index a:hover{background-position:0 -90px; color:#fff; text-decoration:none;}
+#News .tab-con{height:184px; overflow:hidden;}
+#News .tab-con .on{display:block;}
+#News .esp{margin-bottom:12px; width:415px; height:28px; line-height:28px; text-align:center; font-weight:bold; background:url("../../images/xxas/mix-bg.jpg") 0 -125px no-repeat;}
+#News .esp a{color:#f00;}
+#News .date{float:right; color:#999;}
+#News .tab-con li{line-height:22px;}
+#News .news-list a{margin-left:8px; display:inline-block; vertical-align:middle; width:330px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+#News .news-list a:hover{color:#f00; text-decoration:none;}
+
+/*广告曲*/
+#AD{height:96px;}
+#AD a{margin-right:6px; float:left;}
+#AD a.last{margin-right:0;}
+#AD img{width:150px; height:94px; border:1px solid #25589a;}
+
+/*游戏资料*/
+#Info .tt{background-position:-220px -240px;}
+#Info .more,
+#Photo .more{margin-right:12px; color:#fff; line-height:37px;}
+#Info .wrap{padding:12px 20px 0 20px; height:168px; background-position:-220px -581px;}
+#Info ul{zoom:1;}
+#Info li{padding:8px 0 8px 30px; height:34px; border-bottom:1px dashed #c9dfe9; background:url("../../images/xxas/mix-icon.png") 0 -76px no-repeat; vertical-align: bottom;}
+#Info h5{float:left; margin-top:8px; width:80px; height:20px;}
+#Info .info1 h5{background:url("../../images/xxas/mix-icon.png") 0 -151px no-repeat;}
+#Info .info2 h5{background:url("../../images/xxas/mix-icon.png") 0 -210px no-repeat;}
+#Info .info3 h5{background:url("../../images/xxas/mix-icon.png") 0 -270px no-repeat;}
+#Info .info-link{float:left; width:310px;}
+#Info .info-link a{line-height:18px;}
+#Info .last{border:none;}
+
+/*轮播图*/
+#SlideShow{padding:10px; width:210px; height:201px; background:url("../../images/xxas/mix-bg.jpg") -470px 0 no-repeat;}
+.slide-pic{width:210px; height:201px; overflow:hidden; position:relative;}
+.slide-pic li{width:210px; height:201px;}
+.slide-pic a{width:210px; height:201px;}
+.slide-pic img{width:210px; height:201px;}
+.smallslider-btns{position:absolute;}
+.smallslider-btns span{display:inline-block; width:16px; height:16px; text-align:center; font-weight:bold; line-height:16px; background:#FFF; opacity:0.5; filter:alpha(opacity=50); cursor:pointer;}
+.smallslider-btns .current-btn{text-decoration:none; background:#0091cc; opacity:1; filter:alpha(opacity=100); color:#fff;}
+
+/*排行榜*/
+#Ranking .tt{background-position:-700px 0;}
+#Ranking .wrap{padding:8px 20px; height:270px; background-position:-700px -37px;}
+.ranking-table{margin-top:3px; width:100%;}
+.ranking-table th,
+.ranking-table td{height:19px; line-height:19px; border-bottom:1px dashed #b9d5e4; color:#1b74a7; text-align:center;}
+.ranking-table th.no{width:30px;}
+
+/*截图*/
+#Photo{margin-bottom:0;}
+#Photo .tt{background-position:-220px -330px;}
+#Photo .wrap{padding:10px 8px; height:140px; background-position:-220px -366px; display:none;}
+#Photo .tab-index{padding:8px 9px 0; _padding-top:7px;}
+#Photo .tab-index li{float:left; margin-right:4px;}
+#Photo .tab-index a{display:block; width:85px; height:30px; background:url("../../images/xxas/mix-bg.jpg") 0 0 no-repeat;}
+#Photo .on .tab1,
+#Photo .tab-index .tab1:hover{background-position:0 -30px;}
+#Photo .tab-index .tab2{background-position:-85px 0;}
+#Photo .on .tab2,
+#Photo .tab-index .tab2:hover{background-position:-85px -30px;}
+#Photo .tab-index .tab3{background-position:-170px 0;}
+#Photo .on .tab3,
+#Photo .tab-index .tab3:hover{background-position:-170px -30px;}
+#Photo .tab-con{height:160px;}
+#Photo .tab-con li{margin:0 4px; float:left; display:inline; text-align:center;}
+#Photo .tab-con img{width:163px; height:103px; margin-bottom:10px; border:1px solid #70d0d8;}
+#Photo .tab-con .on{display:block;}

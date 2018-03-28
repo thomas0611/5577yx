@@ -1,0 +1,79 @@
+/*用户中心*/
+body{ line-height:20px; color:#3a3a3a; margin:0 auto}
+img{  border:none}
+/*颜色*/
+.span_hs{ color:#ff7f00; padding-left:5px; padding-right:5px}
+.span_red{ color:#d12121;font-size:14px; line-height:30px}
+.span_lanse{ color:#2c84dd;}
+.span_lvse{ color:#009943}
+
+
+
+
+#user_body {width:984px; min-height:500px; margin:0 auto; margin-top:16px; font-size:12px;}
+
+
+
+
+.user_menu_div { height:42px; font-size:16px; text-align:center; line-height:42px;}
+.user_menu_div a{ width:192px; height:42px; line-height:42px; vertical-align:middle; text-decoration:none; color:#3b3b3b; cursor:pointer; display:block}
+.user_menu_div a:hover{ width:192px; height:42px; display:block; background: url(../images/menu_hover.jpg); color:#FFFFFF}
+.user_menu_div img { vertical-align:middle;}
+.user_menu_div span{height:42px; line-height:42px;display:inline-block}
+#user_body_right{ width:779px; float:left; margin-left:13px; background: url(../images/user_body_right_bg.jpg); background-repeat:repeat-y}
+#user_right1{ height:185px} 
+#user_right2{ height:590px}  
+.user_right2_left{ width:500px; float:left;border:1px solid #c3c3c3; height:450px; background-color:#FFFFFF; margin-left:20px; display:inline}   
+.user_right2_right{ width:234px; float:left;border:1px solid #c3c3c3; height:450px; margin-left:10px; background-color:#FFFFFF}  
+.user_right2_left_title span{ float:right}
+.user_right2_left_title{ background:url(../images/right_title_bg.jpg); height:32px; line-height:32px}
+.user_right2_right_title { background:url(../images/right_title_bg.jpg); height:32px; line-height:32px}
+.user_right2_right_title span{ float:right}
+.user_game{ background-color:#FFFFFF}
+
+.user_game li{ float:left; list-style-type:none; width:230px; height:145px; text-align:center}
+.user_game img{  padding:5px;border:1px solid #d0d0d0; width:200px; height:90px;}
+.user_kaifu { text-align:center;}
+.user_kaifu ul { margin-left:0px}
+.user_kaifu li{ list-style-type:none; background-image:url(../images/023.png); background-repeat:no-repeat; width:205px; border-bottom:1px dashed #959595; height:25px; margin-left:5px; margin-top:9px; font-size:13px;}
+.user_kaifu span { display:block}
+.user_kaifu_span2 { width:210px; float:left; text-align:left; margin-left:20px; margin-top:-2px;}
+.user_kaifu a{ text-decoration:none; color:Blue; font-family: Verdana;}
+.user_kaifu a:hover{ text-decoration:none; color:#E06F00; font-family: Verdana;}
+
+#user_right3{}
+
+.toptitle{ background:url(../images/user_body_rigth_title.png) no-repeat; height:43px}
+.bottilte{ background:url(../images/user_body_rigth_bot.jpg) no-repeat; height:7px; line-height:7px; }
+.user_head{ width:115px; height:105px; border:1px solid #FEDEBE; padding:5px; background:#FFFFFF}
+.user_z1{ width:135px; height:185px; margin-left:15px; text-align:center; margin-top:-20px; float:left; z-index:999; display:inline}
+.user_z2{ height:165px; width:270px; float:left; padding-top:20px; padding-left:10px}
+.user_z2 ul{ margin-left:0px; padding-left:0px; margin-top:7px;}
+.user_z2 li{ list-style-type:none; line-height:25px; margin-top:3px;}
+.user_z3{ width:320px; height:158px; padding-top:15px; margin-left:20px; float:left} 
+.user_z3 ul{ margin-left:0px; padding-left:0px}
+.user_z3 li{ float:left; list-style-type:none; width:100px; text-align:center}
+
+
+
+.user_infor{ margin-left:30px; width:500px; height:500px; margin-top:50px}
+.user_infor_div { height:40px}
+.user_infor_span_left{ width:100px; text-align:right; display:block; float:left}
+/*.user_infor_span_right{ width:300px; text-align:left; display:block; float:left; padding-left:20px}*/
+.user_infor_btn { margin-top:10px; padding-left:140px}
+
+.user_password{ width:580px; 
+height:auto; margin-left:3px;margin-top:20px
+}
+.user_password_div{ width:190px; height:400px; float:left; margin-left:15px; margin-right:15px; line-height:27px}
+.user_password_span_ts{ color:#ce1616; line-height:38px; font-weight:bold; font-size:14px}
+
+
+.user_anquan{ margin-left:30px; width:650px; height:500px; margin-top:50px}
+.user_anquan_sfz_input{ padding-top:30px; padding-left:30px;line-height:40px; font-size:15px}
+.user_anquan_sfz_shuoming {padding-left:50px; line-height:40px; color:#fe6700; font-size:15px; font-weight:bold}
+
+.btnbind11{ background:url(../images/btn_queding.jpg) no-repeat; width:67px; height:23px; border:0px; cursor:pointer;}
+
+.aa{ width:80px; height:40px; display:block; cursor:pointer; float:left; text-decoration:none; font-size:14px; color:#999999; line-height:40px; text-align:center}
+.aa:hover{ width:80px; height:40px; display:block; float:left; background-color:#999999;cursor:pointer; color:#fff}

@@ -1,0 +1,183 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/assets/countdown/jquery.countdown.js"></script>
+    <link href="~/Style/sty.css" rel="stylesheet" />
+    <link href="~/Scripts/Admin/assets/css/styles.css" rel="stylesheet" />
+    <link href="~/Scripts/Admin/assets/countdown/jquery.countdown.css" rel="stylesheet" />
+    <style type="text/css">
+        .left_btn {
+            text-align:center;margin-bottom:0px;width:110px;
+        }
+        .left_btn a {
+            display:block;padding-top:44px; height:30px;width:110px;background-repeat:no-repeat;font-size:14px;color:#fff;
+        }
+        .left_btn a:hover {
+            background-position:0 -75px;
+        }
+    </style>
+</head>
+<body style="font-size: 12px; background-color: #000000; padding: 0px; margin: 0px; width: 100%; overflow: hidden">
+    <div id="Top" style="width: 100%; height: 34px;overflow:hidden">
+        <div style="height: 34px; background: url(/images/top_head_bg.jpg); color: #dddad3; width: 100%; margin: 0 auto">
+            <ul class="top_liebiao" style="width:100%">
+                <li style="margin-left: 145px;">5577yx平台:<span style="color: #ecd106"><a href="http://www.5577yx.com"
+                    style="color: #ecd106" target="_blank">www.5577yx.com</a></span>【服务器：<span style="color: #ecd106">@ViewData["ServerName"]</span>】
+                </li>
+                <li style="margin-left: 250px;">
+                    <img src="/images/1.png"><a href="/NewsCenter/" target="_blank">官方公告</a></li>
+                <li>
+                    <img src="/images/2.png"><a href="/NewsCenter/" target="_blank">精彩活动</a></li>
+                <li>
+                    <img src="/images/3.png"><a href="/Home/" target="_blank">热门游戏</a></li>
+                <li>
+                    <img src="/images/4.png"><a href="/PayCenter/?G=@ViewData["GameNo"]&S=@ViewData["Qf"]"
+                            target="_blank">充值</a></li>
+                <li>
+                    <img src="/images/5.png"><a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.5577yx.com/');">设为首页</a></li>
+                <li>
+                    <img src="/images/6.png" /><a href="/GameGift/" target="_blank">新手卡</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="Left" style="margin: 0px; float: left; background: url(/images/play_left_bg.png)">
+        <div id="GLeft" style="width: 110px; margin: 0px; font-size: 12px; float: left; display: block;">
+            <div >
+                <img src="/images/gamelog_03.png" style="height:73px;width:110px;border:0px;" >
+            </div>
+            @*<div class="xiaobiaoti">
+            </div>*@
+            <div class="left_btn" style="height:35px;padding-top:20px; background-color:#0F2B46;font-size:14px;color:#fff;">精彩活动</div>
+            @*<div style="height: 20px">
+            </div>*@
+            <div class="left_btn">
+                @*<a href="/NewsCenter/" target="_blank">
+                    <img src="/images/yxzl003.png"></a>*@
+                <a href="/NewsCenter/" target="_blank" style=" background-image:url(/images/leftbg5.jpg);">游戏资料</a>
+            </div>
+            <div class="left_btn">
+                <a href="/@ViewData["GameNo"]/" target="_blank" style=" background-image:url(/images/leftbg1.jpg);">游戏官网</a>
+                    @*<img src="/images/kj_03.png"></a>*@
+            </div>
+            <div class="left_btn">
+                <a href="http://bbs.5577yx.com" target="_blank" style=" background-image:url(/images/leftbg6.jpg);">火爆论坛</a>
+                    @*<img src="/images/kj_03-06.png"></a>*@
+            </div>
+            <div class="left_btn">
+                <a href="/GameGift/" target="_blank" style=" background-image:url(/images/leftbg2.jpg);">领取礼包</a>
+                    @*<img src="/images/kj_03-08.png"></a>*@
+            </div>
+            <div class="left_btn">
+                <a href="/PayCenter/?G=@ViewData["GameNo"]&S=@ViewData["Qf"]" target="_blank" style=" background-image:url(/images/leftbg3.jpg);">充值入口</a>
+                    @*<img src="/images/kj_03-10.png"></a>*@
+            </div>
+            <div class="left_btn">
+                <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2067257264&amp;site=qq&amp;menu=yes"
+                    target="_blank"style=" background-image:url(/images/leftbg4.jpg);">联系客服</a>
+                    @*<img src="/images/gamekfpic_03.png">*@
+                    @*<img src="/images/QQ&Phone.png">*@
+                
+            </div>
+            <div class="left_btn" style="background-color:#0F2B46"><p style="color:#fff;">QQ:2067257264</p><p style="color:#fff;">Tel:400-009-4577</p></div>
+        </div>
+        <div style="width: 10px; height: 100%; margin: 0px; background-color: #000000; font-size: 12px; float: left">
+            <table height="100%" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tbody>
+                    <tr>
+                        <td bgcolor="#000">
+                            <img height="1" width="0" src="/images/ccc.gif" />
+                        </td>
+                        @* <td id="leftbar" background="/images/kj_leftbg.jpg" style="visibility: hidden;">
+                            <a onclick="switchSysBar()" href="javascript:void(0);">
+                                <img height="27" border="0" width="8" title="展开左侧菜单" src="/images/pic24.jpg" />
+                            </a>
+                        </td>*@
+                        <td id="rightbar" background="/images/kj_leftbg.jpg">
+                            <a onclick="switchSysBar()" href="javascript:void(0);">
+                                <img height="27" border="0" width="8" title="隐藏左侧菜单" src="/images/pic23.jpg" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="Right" style="float: left; margin: 0px; padding: 0px; display: block;">
+        <iframe id="MainFrame" src="@ViewData["LoginUrl"]" style="width: 100%; height: 100%" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <div id="RightTime" style="float: left; margin: 0px; padding: 0px; display: none;">
+        <p id="note" style="margin-top: 120px; font-size: 28px;"></p>
+        <div id="countdown" style="font-size: 40px;"></div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        var State = "@(ViewData["State"])";
+        var TimeSpan = @(ViewData["TimeSpan"]) +(new Date()).getTime();
+        if (State == 1) {
+            document.getElementById("Right").style.display = "none";
+            document.getElementById("RightTime").style.display = "block";
+            var note = $('#note');
+            $('#countdown').countdown({
+                timestamp: TimeSpan,
+                callback: function (days, hours, minutes, seconds) {
+                    if ((days + hours + minutes + seconds) > 0) {
+                        var message = "距离开服时间还有：<br/>";
+
+                        message += days > 0 ? '' + days + ' 天 ,' : '';
+                        message += hours > 0 ? '' + hours + ' 小时 ,' : '';
+                        message += minutes > 0 ? '' + minutes + ' 分钟 , 和 ' : '';
+                        message += seconds + " 秒 " + " <br />";
+
+                        note.html(message);
+                    } else {
+                        location.reload();
+                    }
+
+                }
+            });
+        } else if (State == 2) {
+            alert("服务器正在维护中....");
+            location.href = "Servers";
+        }
+        SetStyle();
+    });
+    $(window).resize(function () {
+        SetStyle();
+    });
+    function SetStyle() {
+        var height = $(window).height();
+        var width = $(window).width();
+        if (height < 510) {
+            height = 510;
+        }
+        $("body").height(height);
+        $("#Left").height(height - 34);
+        $("#Right").height(height - 34);
+        $("#Right").width(width - $("#Left").width())
+        $("#RightTime").height(height - 34);
+        $("#RightTime").width(width - $("#Left").width())
+    }
+    function switchSysBar() {
+        if (document.getElementById('GLeft').style.display == "block") {
+            document.getElementById('GLeft').style.display = "none";
+            $("#rightbar img").attr("src", "/images/pic24.jpg");
+            SetStyle();
+        }
+        else {
+            document.getElementById('GLeft').style.display = "block";
+            $("#rightbar img").attr("src", "/images/pic23.jpg");
+            SetStyle();
+        }
+    }
+</script>

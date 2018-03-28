@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "游戏大厅";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+@Html.Action("Left", "Home")
+<div id="index_right" style="float:left; width: 712px;  background-color: White;">
+    <!--推荐游戏-->
+    <div style="width: 712px; float: left; overflow: hidden;" class="game">
+        <h1 style="height: 34px; background: url(http://image.5599.com/images/web/index/img/bg_hot_tit.png) repeat-x 0 0; border: 1px solid  #ebe8e8;">
+            <span style ="height: 34px; font: 16px/34px \5fae\8f6f\96c5\9ed1; color: #454c5d; padding-left:10px;">热门游戏</span></h1>
+        <div style="height: 270px; width: 710px; margin-left: 2px;">
+            <div class="gamecenter_list">
+                <div class="list">
+                    <ul>@Html.Raw(ViewData["HotGame"])</ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!--选择游戏-->
+    <div style="width: 712px; float: left; overflow: hidden; margin-top: 6px;" class="game">
+        <div class="all">
+            <h1 style="height: 34px; background: url(http://image.5599.com/images/web/index/img/bg_hot_tit.png) repeat-x 0 0; border: 1px solid  #ebe8e8;"><span style ="height: 34px; font: 16px/34px \5fae\8f6f\96c5\9ed1; color: #454c5d; padding-left:10px;">所有游戏列表</span></h1>
+            <div class="h_list">
+            <ul> @Html.Raw(ViewData["AllGame"])</ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(function(){
+        //精品游戏
+        $('.gamecenter_list .list ul li').hover(function () {
+            $(this).children('.into').stop().animate({bottom:'2px'},300); 
+        },function(){
+            $(this).children('.into').stop().animate({bottom:'-252px'},300); 
+        });
+        //热门游戏
+        $(".all .h_list ul li").hover(function () {
+            $(this).addClass("hov");
+        }, function () {
+            $(this).removeClass("hov");
+        });
+        //热闹游戏
+        // $('.gmore').click(function(){
+        //			$(this).toggleClass('gmored')
+        //			$(this).parents('.posb').next('.pro').slideToggle(100);
+        //	    });
+		
+        $('.gmore').click(function(){
+		
+            var obj=$('.h_list li');
+            obj.css('z-index','1');
+            $(this).parent().parent().css('z-index','2')
+            var oClick=$('.gmore');
+            var is = $(this).hasClass("gmored");
+            $('.btn_box button').removeClass('gmored');
+            if(is) {
+                $(this).removeClass('gmored');
+            }else{
+                $(this).addClass('gmored');
+            }
+            $('.pro').hide();
+            $(this).parents('.posb').next('.pro').show();
+
+        });
+		
+        $(document).click(function(event){
+            if($('.gmore')){
+                if($(event.target).attr("class")!="gmore gmored"){
+                    $('.btn_box button').removeClass('gmored');
+                    $('.pro').hide();
+					
+                }
+            }
+        });})
+</script>
+

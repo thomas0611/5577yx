@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "领取新手卡";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+@RenderPage("~/Views/Home/Left.cshtml")
+<div class="getGolf">
+    <div class="gameDetail">
+        <div class="left">
+            <img title="@ViewData["CardName"]" class="style1" src="@ViewData["Img"]">
+        </div>
+        <div class="right">
+            <h1>@ViewData["CardName"]</h1>
+            <p>
+                <label>
+                    领取条件：</label>免费
+            </p>
+            <p>
+                <label>
+                    剩余数量：</label><span id="CardCount">@ViewData["CardCount"]</span>
+            </p>
+        </div>
+        <div class="btn">
+            <input type="hidden" value="@ViewData["CardId"]" id="G" />
+            <input type="hidden" value="@ViewData["GameNo"]" id="Gn" />
+            <input type="submit" name="btnok" value="我要领取" id="btnok" class="btngetcard" onclick="GetNewsCard()">
+        </div>
+    </div>
+    <div style="text-align: center" id="Msg">
+    </div>
+    <div class="tip">
+        <div class="tipUl">
+            <ul>
+                <li class="current"><a href="javscript:void(0);">使用说明</a></li>
+            </ul>
+        </div>
+        <div class="tipArea">
+            @Html.Raw(ViewData["CardDes"])
+        </div>
+    </div>
+</div>

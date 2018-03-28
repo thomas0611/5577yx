@@ -1,0 +1,104 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="left">
+    <div id="login" @Html.Raw(ViewData["LoginStyle"]) >
+	    <div class="login">
+		    <strong>用户登录</strong>
+		    <div class="login_form">
+                    <form method="post" onsubmit="return KsLogin()">
+                        <div id="loginForm">
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="border:0;padding:0;margin:0;text-align:left;">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align:center;border:0;">
+                                            <input name="UserName" type="text" value="@ViewData["UserName"]" id="UserName" class="usernameinput" placeholder="用户名" style="width:163px;height:29px;line-height:29px;padding-left:10px;font-size:14px;border:1px solid #ffd800;box-shadow:0 0 5px #ffd800;">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:center;padding-bottom:5px;border:0;">
+                                           <input name="PWD" type="password" id="PWD" class="passwordinput" value="@ViewData["PWD"]" placeholder="密码" style="width:163px;height:29px;padding-left:10px;line-height:29px;font-size:14px;border:1px solid #ffd800;box-shadow:0 0 5px #ffd800;">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0;">
+                                            <div class="autologin">
+                                                <input name="ck1" type="checkbox" id="ck1" checked="checked"><span>记住账号</span>
+                                                @*<span class="get_pwd"><a href="/UserCenter/FindPwd" title="找回密码">找回密码</a></span>*@<span class="get_pwd" style="padding-left:10px;"><a href="/Home/Reg" title="注册">注册新账号</a></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                   @* <tr>
+                                        <td colspan="2" style="border:0;">
+                                            <span style="height: 20px; margin-left: 20px; color: Red; font-weight: bold;">&nbsp;</span>
+                                            <span style="height: 20px; color: Red; font-weight: bold;" class="error"></span>
+                                        </td>
+                                    </tr>*@
+                                    <tr>
+                                        <td style="border:0;">
+                                            <div class="login_btn">
+                                                <button class="log" onclick="javascript:KsLogin();">登录</button>
+                                                @*<input type="submit" value="" class="btn_login">*@
+                                                <a href="/Home/Reg" target="_blank" class="btn_reg"></a>
+                                            </div>
+                                            <div class="clear">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+	    </div>
+    </div>
+    <div id="logined" class="loginbox" @Html.Raw(ViewData["LoginedStyle"])>
+            <div class="wrap">
+                <div class="personal">
+                <a href="/UserCenter" class="hd" target="_blank"><img width="100" height="100" src="/Images/users/@ViewData["Photo"]" alt="" id="headerurl"></a>
+                <div class="detail">
+                    <ul>
+                        <li id="user_good">您好!</li>
+                        <li class="t1" id="nick_name">@ViewData["UserNameed"]</li>
+                        <li id="user_tgid">钻石：<span>@ViewData["Money"]</span></li>
+                        <li><a href="/UserCenter/LoginOut">退出</a></li>
+                    </ul>
+                </div>
+            </div>
+           </div>
+        </div>
+	<div class="game_list">
+        <ul class="intro">
+	        <li><a href="/"><img src="../upload/201404/15/1.jpg"></a></li>
+	        <li><a href="/nslm" target="_blank"><img src="../upload/201404/15/2.jpg"></a></li>
+	        <li><a href="/fyws" target="_blank"><img src="../upload/201404/15/3.jpg"></a></li>
+        </ul>	
+    </div>
+    <div class="advance">
+	<div class="tit">开服预告</div>
+	<ul>
+        @Html.Raw(ViewData["NewServerHtml"])
+	</ul></div>
+    <!--客服信息-->   
+	<div class="customer">
+        <div class="tit" style="height:75px;">客服信息</div>
+        <ul>
+            <li class="e"><a href="mailto:service@5577yx.com" target="_blank">客服邮箱</a></li>
+            <li class="cus"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2067257264&amp;site=qq&amp;menu=yes" target="_blank">在线客服</a></li>
+            @*<li class="online"><a href="#" target="_blank">在线论坛</a></li>*@
+        </ul>	
+    </div>  
+<script>
+    $(".userlist_menu li").each(function (i, k) {
+        var li = $(this);
+        li.mouseover(function () {
+            $('.userlist_menu li').removeClass('current');
+            $(this).addClass('current');
+            $(".list ul").hide().attr("style", 'display: none;');
+            $(".list ul:eq(" + i + ")").show().attr("style", 'display: block;');
+        });
+    });
+</script>
+  </div>      

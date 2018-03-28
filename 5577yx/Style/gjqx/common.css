@@ -1,0 +1,23 @@
+/*reset*/
+html{ overflow-x:hidden;}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,ul,ol,form{margin:0;}
+body{font-size:12px; font-family:Arial, Helvetica, sans-serif; color:#fff; background-color:#d2f1fb; min-width:980px; overflow-x:hidden;}
+ul,ol{padding-left:0; list-style:none;}
+img{display:block; border:0;}
+table{clear:both; border-collapse:collapse;}
+a{color:#005f80; text-decoration:none;}
+a:hover{color:#1ea6d5;}
+var{margin:0 5px;}
+
+.fl{float:left;}
+.fr{float:right;}
+.hide-wd{font-size:0; text-indent:-2000px;}
+.clearfix:after{content:"\200B"; display:block; height:0; clear:both;}
+.clearfix{*zoom:1;}
+.alpha-bg{display:block;}
+.box{margin-bottom:8px;}
+.cut{overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.abs{position:absolute;}
+
+
+

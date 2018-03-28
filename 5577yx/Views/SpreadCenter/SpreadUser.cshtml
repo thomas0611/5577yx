@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+    
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Static &amp; Dynamic Tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>推广用户</title>
+<link href="~/Style/ace.min.css" rel="stylesheet" />
+<link href="~/Style/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Style/font-awesome.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/Admin/jquery.form.js"></script>
+<script src="~/Scripts/Admin/md5.js"></script>
+<script src="~/Scripts/Admin/Verify.js"></script>
+<script src="~/Scripts/Admin/AdminFunction.js"></script>
+<script src="~/Scripts/Admin/My97DatePicker/WdatePicker.js"></script>
+<style>
+    * {margin:0px;padding:0px;
+    }
+    li {list-style:none;
+    }
+    .paydetail_table {border:solid 1px #ddd;
+    }
+    .turnback {text-align:left;padding:8px 20px;border:solid 1px #ddd;
+    }
+    td a:hover {cursor:pointer;
+    }
+</style>
+</head>
+
+<body style="background:#fff; ">
+<div class="page-content">
+  <div class="page-header">
+    <h1><i class="icon icon-group"></i>&nbsp;推广用户</h1>
+  </div>
+
+  <!-- /.page-header -->
+<div class="page-header" style="padding-left:0px;">
+    <div class="tabbable">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active"> <a data-toggle="tab" href="#search"> <i class="icon blue icon-search bigger-110"></i> 搜索 </a> </li>
+      </ul>
+      <div class="tab-content">
+        <div id="search" class="tab-pane in active">
+          <form class="form-horizontal" id="validation-form"  method="post">
+          
+            <div class="clearfix" style=" margin-top:10px;">游戏：
+                <select id="Selyx" class="select2" onchange="InitPageContent('SpreadUser')">
+                <option value="0">所有游戏</option>
+            </select>
+            </div>
+            <div class='clearfix' style='margin-top:10px; left:-5px;'>
+                <div  style='margin-bottom:5px;width:230px; float:left;'><span class='pull-left' style='line-height:30px'>时间：</span>
+                <div class='input-group input-group-sm' >
+                <input type='text' id='StartTime' name='t1' class='form-control' value='' onclick="WdatePicker();"/><span class='input-group-addon'> <i class='icon icon-calendar'></i> </span> </div></div><span class='pull-left' style='line-height:30px'>&nbsp;&nbsp;&nbsp;到</span><div class='col-xs-6' style='margin-bottom:5px;width:215px'>
+                    <div class='input-group input-group-sm'>
+                    <input type='text' id='EndTime' name='t2' class='form-control' value='' onclick="WdatePicker();"/><span class='input-group-addon'> <i class='icon icon-calendar'></i> </span> </div></div><span class='pull-left' style='line-height:30px;color:#666'> </span>
+                <input type="button" value="查看" class="btn btn-info btn-sm"  onclick="InitPageContent('SpreadUser')" /> 
+                <span style="margin-right: 100px;float:right; color: Red;">总业绩：<strong id="SpreadMoney">@ViewData["SpreadMoney"]</strong></span>
+            </div>   
+          </form>
+        </div>
+      </div>
+        <table style="text-align: center; width: 99%; border: #dcdcdc" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="width:159px;">推广用户 </th>
+                        <th style="width:323px;">注册时间</th>
+                        <th style="width:139px;">推广总金额</th>
+                        <th style="width:203px;">注册Ip/推广人数</th>
+                        <th style="width:165px;"></th>
+                    </tr>
+                </thead>
+                <tbody id="SpreadUser">
+                </tbody>
+                <tfoot>
+                    <tr class="pagination">
+                        <td colspan="5" >
+                            <div class="page_box" style="float: left;padding-left:20px;">
+                                <div id="NextPageContent" class="flickr right">
+                                </div>
+                                <div class="left">
+                                    <input type="hidden" value="10" id="NexttxtPageNum" />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        <div class="page_box">
+            @*<span>注：角色名为实时查询，切换页数时会有1~2秒延迟，请耐心等待一下。</span>*@
+            <div id="PageContent" class="flickr right" >
+            </div>
+            <div class="left">
+                <input type="hidden" value="10" id="txtPageNum" />
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- /.page-content --> 
+<script>
+    GetAllGame();
+    InitPageContent('SpreadUser');
+    function ShowUser(a, b) {
+        var html = "<tr><td colspan=\"5\" class=\"turnback\"><a href=\"javascript:HideUser();\">返回</a></td></tr><tr><td colspan=\"5\"><table id=\"NextSpreadUser\" style=\" width: 100%; table-layout: fixed\" class=\"paydetail_table\"></table></td></tr>";
+        $("#NextSpreadUser").parent().parent().remove();
+        //$(html).insertAfter($(a).parent().parent());
+        $("#SpreadUser").children("tr").hide();
+        $(".pagination").show();
+        $(html).insertAfter($("#SpreadUser"));
+        InitNextSpreadUser(b);
+    }
+    function HideUser() {
+        $("#NextSpreadUser").parent().parent().remove();
+        $(".turnback").parent().remove();
+        $(".pagination").hide();
+        $("#SpreadUser").children("tr").show();
+    }
+</script>
+
+</body>
+</html>

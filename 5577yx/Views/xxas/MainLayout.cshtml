@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*<link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <link href="~/Style/sty.css" rel="stylesheet" />*@
+    <link href="~/Style/index.css" rel="stylesheet" />
+    <link href="~/Style/public.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/md5.js"></script>
+    <script src="~/Scripts/Admin/Verify.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+</head>
+<body class="body">
+    <div id="Top" style="width: 100%; height: 180px">
+        @{Html.RenderAction("Top", "Home");}
+    </div>
+    <div class="wrap_bg">
+	<div class="bg_inner">
+		<ul><li style=" background: url(/Images/wrapbg.jpg) no-repeat center top">
+            @*<a href="/" class="l" ></a>
+            <a href="/" class="r" ></a>*@
+		    </li>			
+    	</ul>
+    </div>
+</div>
+    <div id="Center" >
+        <div class="index">
+        @RenderBody()
+            </div>
+    </div>
+    <div id="Footer" style="width: 100%; height: 100px;margin :0 auto;">
+        @*@RenderPage("~/Views/Home/Footer.cshtml")*@
+        @{Html.RenderAction("Footer", "Home");}
+    </div>
+    @*<div id="winpop">
+        <div class="title">您有新的消息<span class="close" onclick="tips_pop()">X</span></div>
+        <div class="con" id="Xiaoxi"></div>
+    </div>*@
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+.inner{
+    background: url("../../Images/ahxx/server_bg.jpg") no-repeat;
+}
+.bottom-box .tabs li a,.server-list li{
+    background: url("../../Images/ahxx/pngs.png") no-repeat;
+}
+.top-box{
+    padding-left: 30px;
+    height: 155px;
+}
+.welcome{
+    height: 30px;
+    line-height: 30px;
+    color:#d4c69d;
+}
+.welcome a{
+    color:red;
+}
+.server-pro{
+    padding-top: 45px;
+    height:64px;
+    overflow: hidden;
+}
+.server-pro .i-logined,.server-pro .pros{
+    float: left;
+    width:270px;
+    padding-left: 10px;
+    padding-top:10px;
+}
+.server-list li{
+    height: 24px;
+    line-height: 24px;
+    padding-left:24px;
+    float: left;
+    margin-bottom:15px;
+    display: inline;
+    margin-left: 10px;
+}
+.server-list li a{
+    color:#fff;
+    white-space:nowrap;
+}
+.server-list li.busy{
+    background-position: -221px -172px;
+}
+.server-list li.normal{
+    background-position: -221px -232px;
+}
+.server-list li.stop{
+    background-position: -221px -202px;
+}
+.bottom-box{
+    padding-left:30px;
+}
+.bottom-box .tabs{
+    height: 33px;
+}
+.bottom-box .tabs ul{
+    float: left;
+}
+.bottom-box .tabs li{
+    float: left;
+    margin-right:5px;
+    display: inline;
+}
+.bottom-box .tabs li a{
+    display: block;
+    width:91px;
+    height: 33px;
+    text-indent: -9999px;
+}
+.bottom-box .tabs li a.pro{
+    background-position: -20px -191px;
+}
+.bottom-box .tabs li a.pro_300{
+    background-position: -20px -225px;
+}
+.quick-way{
+    float: right;
+    padding-top:8px;
+    width:115px;
+    padding-right:40px;
+}
+.quick-way .text{
+    width:30px;
+    height: 20px;
+    color:#000;
+    padding:0 5px;
+    margin-right:15px;
+    float: left;
+}
+.quick-way .submit{
+    width:57px;
+    height: 24px;
+    float: right;
+    cursor: pointer;
+}
+.bottom-box .box{
+    height:170px;
+    margin-top:20px;
+    width:545px;
+    overflow-x:hidden;
+    position:relative;
+    top:0;
+    left:0;
+    overflow-y:auto;
+}

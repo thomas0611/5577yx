@@ -1,0 +1,454 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>5577yx仙侠傲世官网</title>
+    <link href="~/Style/xxas/common.css" rel="stylesheet" />
+    <link href="~/Style/xxas/index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/xxas/jquery.smallslider.js"></script>
+</head>
+<body>
+    <div id="Header">
+        <div class="role-pic">
+            <div class="role r1 on">
+                <div class="intro"></div>
+            </div>
+            <div class="role r2">
+                <div class="intro"></div>
+            </div>
+            <div class="role r3">
+                <div class="intro"></div>
+            </div>
+            <div class="role r4">
+                <div class="intro"></div>
+            </div>
+        </div>
+        <div id="FLashDeco">
+            <object width="600" height="400" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="VideoPlayer">
+                <param name="movie" value="../Content/xxas/head.swf">
+                <param name="quality" value="high">
+                <param name="allowscriptaccess" value="always">
+                <param name="wmode" value="transparent">
+                <embed width="600" height="400" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" src="../Content/xxas/head.swf" />
+            </object>
+        </div>
+        <div class="head-wrap">
+            <div id="Logo">
+                <h1 class="hide-wd">仙侠傲世</h1>
+                <span class="alpha-bg"></span>
+                <a href="index.html"></a>
+            </div>
+            <div id="Title">
+                <h2 class="hide-wd">逆行伐仙，战尽诸天</h2>
+            </div>
+            <div class="role-index hide-wd">
+                <ul>
+                    <li class="r-index1 on">
+                        <span class="alpha-bg on"></span>
+                        <a href="#">荒蛮</a>
+                    </li>
+                    <li class="r-index2">
+                        <span class="alpha-bg"></span>
+                        <a href="#">莲华</a>
+                    </li>
+                    <li class="r-index3">
+                        <span class="alpha-bg"></span>
+                        <a href="#">玄羽</a>
+                    </li>
+                    <li class="r-index4">
+                        <span class="alpha-bg"></span>
+                        <a href="#">妙冰</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hl-bar">
+                <div id="Video">
+                    <a href="#">
+                        <img src="../images/xxas/video_alt.jpg" />
+                    </a>
+                </div>
+                <div id="Login">
+                    <a href="@ViewData["TjqfHref"]">
+                        <div id="StartGame"></div>
+                    </a>
+
+                    @*<object width="249" height="72" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="VideoPlayer">
+                            <param name="movie" value="../Content/xxas/start.swf">
+                            <param name="quality" value="high">
+                            <param name="allowscriptaccess" value="always">
+                            <param name="wmode" value="transparent">
+                            <embed width="249" height="72" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" src="../Content/xxas/start.swf" />
+                        </object>*@
+                    <form onsubmit="return KsLogin2()" method="post" name="loginForm" id="LoginForm" class="clearfix">
+                        <div class="input-bar fl">
+                            <input type="text" name="UserName" id="Username" value="" placeholder="请输入用户名" />
+                            <input type="password" name="PWD" id="PWD" value="" placeholder="请输入密码" />
+                        </div>
+                        <div class="btn-bar fr">
+                            <input type="submit" name="loginBtn" id="LoginBtn" class="hide-wd" />
+                            <a href="/Home/Reg" target="_self" id="RegisterBtn" class="hide-wd">注册</a>
+                            <label for="autologin">
+                                <input type="checkbox" name="ck1" id="AutoLogin" checked />自动登录</label>
+                            <a href="/UserCenter/FindPwd" target="_self">忘记密码？</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p class="alert">适龄提示：本游戏适合18周岁以上玩家</p>
+        </div>
+    </div>
+
+    <div id="Main">
+        <div class="center">
+            <div id="Nav">
+                <ul class="hide-wd">
+                    <li><a class="nav1" href="/NewsCenter/" target="_self">新闻公告</a></li>
+                    <li><a class="nav2" href="/NewsCenter/" target="_self">游戏资料</a></li>
+                    <li class="on index-btn">
+                        <span class="alpha-bg"></span>
+                        <a class="nav3" href="/xxas/" target="_self">官网首页</a>
+                    </li>
+                    <li><a class="nav4" href="http://bbs.5577yx.com" target="_blank">玩家论坛</a></li>
+                    <li><a class="nav5" href="/PayCenter/" target="_blank">充值中心</a></li>
+                </ul>
+            </div>
+            <div id="Content">
+                <div class="hd"></div>
+                <div class="mid clearfix">
+                    <div class="fl sidebar">
+                        <div id="Servers" class="box">
+                            <div class="tt">
+                                <h3 class="hide-wd">服务器选择</h3>
+                            </div>
+                            <div class="wrap">
+                                <ul>
+                                    @Html.Raw(ViewData["ServersHtml"])
+                                </ul>
+                                <a href="/@ViewData["GameNo"]/Servers" class="more-servers">更多服务器&gt;&gt;</a>
+                            </div>
+                        </div>
+
+                        <div id="CustomerService" class="box">
+                            <div class="tt">
+                                <h3 class="hide-wd">客服中心</h3>
+                            </div>
+                            <div class="wrap">
+                                <p>客服论坛：<a href="http://bbs.5577yx.com">点击进入>>>></a></p>
+                                <p>客服电话：400-009-4577</p>
+                                <p>充值客服：QQ:2067257264</p>
+                                <p>客服邮箱：service@5577yx.com</p>
+                                <p>客服时间：7x24小时服务</p>
+                                <a href="http://wpa.qq.com/msgrd?v=3&uin=2067257264&site=qq&menu=yes" target="_blank" class="hide-wd enter">进入客服中心</a>
+                            </div>
+                        </div>
+
+                        <div id="Cooperation" class="box">
+                            <div class="tt">
+                                <h3 class="hide-wd">合作媒体</h3>
+                            </div>
+                            <div class="wrap">
+                                <ul>
+                                    <li><a href="#" target="_blank">
+                                        <img src="../images/xxas/co_alt_1.jpg" /></a></li>
+                                    <li><a href="#" target="_blank">
+                                        <img src="../images/xxas/co_alt_2.jpg" /></a></li>
+                                    <li><a href="#" target="_blank">
+                                        <img src="../images/xxas/co_alt_3.jpg" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fr mainbar">
+                        <div class="fl">
+                            <div id="News" class="box">
+                                <div class="tt">
+                                    <a class="more" href="/NewsCenter/">更多&gt;&gt;</a>
+                                    <ul class="tab-index">
+                                        <li class="on"><a href="/NewsCenter/">新闻</a></li>
+                                        <li><a href="/NewsCenter/">公告</a></li>
+                                        <li><a href="/NewsCenter/">活动</a></li>
+                                        <li><a href="/NewsCenter/">媒体</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-con">
+                                    <div class="wrap on">
+                                        <p class="esp"><a href="#">我是新闻内容</a></p>
+                                        <ul class="news-list">
+                                            @Html.Raw(ViewData["News"])
+                                        </ul>
+                                    </div>
+                                    <div class="wrap">
+                                        <p class="esp"><a href="#">我是公告内容</a></p>
+                                        <ul class="news-list">
+                                            @Html.Raw(ViewData["GGNews"])
+                                        </ul>
+                                    </div>
+                                    <div class="wrap">
+                                        <p class="esp"><a href="#">我是活动内容</a></p>
+                                        <ul class="news-list">
+                                        </ul>
+                                    </div>
+                                    <div class="wrap">
+                                        <p class="esp"><a href="#">我是媒体内容</a></p>
+                                        <ul class="news-list">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="AD" class="box">
+                                <a href="#">
+                                    <img src="../images/xxas/ad_alt_1.jpg" /></a>
+                                <a href="#">
+                                    <img src="../images/xxas/ad_alt_2.jpg" /></a>
+                                <a class="last" href="#">
+                                    <img src="../images/xxas/ad_alt_3.jpg" /></a>
+                            </div>
+
+                            <div id="Info" class="box">
+                                <div class="tt">
+                                    <a href="/NewsCenter/" class="more">更多</a>
+                                    <h3 class="hide-wd">游戏资料</h3>
+                                </div>
+                                <div class="wrap">
+                                    <ul>
+                                        <li class="info1">
+                                            <h5 class="hide-wd">游戏资料</h5>
+                                            <div class="info-link">
+                                                <var>|</var><a href="/NewsCenter/News?N=1660">游戏背景</a><var>|</var><a href="/NewsCenter/News?N=1708">强化转移</a><var>|</var><a href="/NewsCenter/News?N=1703">宠物技能</a><var>|</var><a href="/NewsCenter/News?N=1697">装备洗练</a><var>|</var><a href="/NewsCenter/News?N=1696">装备熔炼</a><var>|</var><a href="/NewsCenter/News?N=1695">新版强化</a><var>|</var><a href="/NewsCenter/News?N=1694">装备进阶</a><var>|</var><a href="/NewsCenter/News?N=1693">装备淬炼</a>
+                                            </div>
+                                        </li>
+                                        <li class="info2">
+                                            <h5 class="hide-wd">系统资料</h5>
+                                            <div class="info-link">
+                                                <var>|</var><a href="/NewsCenter/News?N=1692">野外BOSS</a><var>|</var><a href="/NewsCenter/News?N=1691">循环任务</a><var>|</var><a href="/NewsCenter/News?N=1690">勋章系统</a><var>|</var><a href="/NewsCenter/News?N=1689">悬赏任务</a><var>|</var><a href="/NewsCenter/News?N=1688">修行任务</a><var>|</var><a href="/NewsCenter/News?N=1687">仙侠成就</a><var>|</var><a href="/NewsCenter/News?N=1684">职业技能</a><var>|</var><a href="/NewsCenter/News?N=1683">时装烙印</a>
+                                            </div>
+                                        </li>
+                                        <li class="info3 last">
+                                            <h5 class="hide-wd">特色玩法</h5>
+                                            <div class="info-link">
+                                                <var>|</var><a href="/NewsCenter/News?N=1681">深入敌后</a><var>|</var><a href="/NewsCenter/News?N=1678">山河图任务</a><var>|</var><a href="/NewsCenter/News?N=1677">跑环任务</a><var>|</var><a href="/NewsCenter/News?N=1676">副本模式</a><var>|</var><a href="/NewsCenter/News?N=1675">翅膀系统</a><var>|</var><a href="/NewsCenter/News?N=1674">称号系统</a><var>|</var><a href="/NewsCenter/News?N=1673">宝石提纯</a><var>|</var><a href="/NewsCenter/News?N=1672">帮派神树</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fr">
+                            <div id="SlideShow" class="box">
+                                <!-- banner轮播图 -->
+                                <div class="slide-pic">
+                                    <ul>
+                                        <li class="curr"><a href="#">
+                                            <img src="../images/xxas/banner_alt_1.jpg" /></a></li>
+                                        <li><a href="#">
+                                            <img src="../images/xxas/banner_alt_2.jpg" /></a></li>
+                                        <li><a href="#">
+                                            <img src="../images/xxas/banner_alt_1.jpg" /></a></li>
+                                        <li><a href="#">
+                                            <img src="../images/xxas/banner_alt_2.jpg" /></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            @*<div id="Ranking" class="box">
+                                    <div class="tt">
+                                        <h3 class="hide-wd">排行榜</h3>
+                                    </div>
+                                    <div class="wrap">
+                                        <select>
+                                            <option>个人等级</option>
+                                            <option>服务器</option>
+                                        </select>
+                                        <select>
+                                            <option>182服</option>
+                                            <option>110服</option>
+                                            <option>130服</option>
+                                        </select>
+                                        <table class="ranking-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="no">排名</th>
+                                                    <th>角色</th>
+                                                    <th>等级</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>西门辰岳</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>拉丁</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>杨雁凝</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>独自买醉</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>束之高阁</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>西门辰岳</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>拉丁</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>杨雁凝</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>9</td>
+                                                    <td>独自买醉</td>
+                                                    <td>42</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>束之高阁</td>
+                                                    <td>42</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>*@
+                        </div>
+
+                        <br clear="all" />
+
+                        <div id="Photo" class="box">
+                            <div class="tt">
+                                <a href="#" class="more">更多</a>
+                                <ul class="tab-index hide-wd">
+                                    <li class="on"><a class="tab1" href="photo.html?no=1">玩家照片</a></li>
+                                    <li><a class="tab2" href="photo.html?no=2">游戏截图</a></li>
+                                    <li><a class="tab3" href="photo.html?no=3">精美场景</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-con">
+                                <div class="wrap on">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_1.jpg" /></a>
+                                            <a href="#">精美场景一</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_2.jpg" /></a>
+                                            <a href="#">精美场景二</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_3.jpg" /></a>
+                                            <a href="#">精美场景三</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_4.jpg" /></a>
+                                            <a href="#">精美场景四</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="wrap">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_3.jpg" /></a>
+                                            <a href="#">精美场景三</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_4.jpg" /></a>
+                                            <a href="#">精美场景四</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_1.jpg" /></a>
+                                            <a href="#">精美场景一</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_2.jpg" /></a>
+                                            <a href="#">精美场景二</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="wrap">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_1.jpg" /></a>
+                                            <a href="#">精美场景一</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_4.jpg" /></a>
+                                            <a href="#">精美场景四</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_2.jpg" /></a>
+                                            <a href="photo-detail.html">精美场景二</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/xxas/photo_alt_3.jpg" /></a>
+                                            <a href="#">精美场景三</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Footer">
+        <div class="center">
+            <p>健康游戏忠告：抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</p>
+        </div>
+    </div>
+
+    <!-- 视频播放层 -->
+    <div id="ShowMask">
+        <div id="Mask"></div>
+        <div id="PlayerBox">
+        </div>
+    </div>
+    <script src="~/Scripts/xxas/common.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#News').TabSwitch({ indexWrap: '#News .tab-index', contentWrap: '#News .tab-con' });
+            $('#Photo').TabSwitch({ indexWrap: '#Photo .tab-index', contentWrap: '#Photo .tab-con' });
+            $('#SlideShow .slide-pic').smallslider({ time: 5000, onImageStop: true, switchEffect: 'ease', switchEase: 'easeOutSine', switchPath: 'left', switchMode: 'hover', switchTime: 300, showText: false });
+        });
+    </script>
+</body>
+</html>

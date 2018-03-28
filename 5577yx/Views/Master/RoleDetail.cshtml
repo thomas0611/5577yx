@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RoleDetail</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/ui/js/ligerBuild.min.js"></script>
+    <script>
+        var JsonData = eval(@(Html.Raw(ViewData["Json"])));
+        var tab = null;
+        var accordion = null;
+        var tree = null;
+        $(function () {
+            //设置频道菜单
+            $("#global_channel_tree").ligerTree({
+                data: JsonData,
+                checkbox: false,
+                idFieldName: 'CompetenceId',
+                parentIDFieldName: 'ParentCompetenceId',
+                textFieldName: "CompetenceName"
+            });
+
+            //加载插件菜单
+            loadPluginsNav();
+
+            $("#tab-tools-nav").bind("click", function () {
+                var offset = $(this).offset(); //取得事件对象的位置
+                menu.show({ top: offset.top + 27, left: offset.left - 120 });
+                return false;
+            });
+
+            tab = $("#framecenter").ligerGetTabManager();
+            accordion = $("#global_left_nav").ligerGetAccordionManager();
+            tree = $("#global_channel_tree").ligerGetTreeManager();
+
+            //tree.expandAll(); //默认展开所有节点
+            $("#pageloading_bg,#pageloading").hide();
+        });
+
+        //频道菜单异步加载函数，结合ligerMenu.js使用
+        function loadChannelTree() {
+            if (tree != null) {
+                tree.clear();
+                tree.setData(JsonData);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="navigation">
+        <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt;系统管理 &gt; 查看角色权限
+    </div>
+    <ul id="global_channel_tree" style="margin-top: 3px;">
+    </ul>
+</body>
+</html>

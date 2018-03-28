@@ -1,0 +1,53 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*整体定义*/
+body {margin:0; text-align:center; font-size:12px; color:#8479c9; font-family:Tahoma;  background: #040210 url(../../Images/tgzt/tgzt03.jpg) no-repeat center;}
+
+#awap{width:980px; overflow:hidden; display:inherit; margin:0px auto}
+
+#td{ background-color:#ffd2e9;}
+body,form,box,div,id,class,p,span,h1,h2,h3,h4,h5,h6,ul,li,ol,dl,dt,dd,em,input,textarea,label{ margin:0; padding:0; font-style:normal;center }
+li{list-style:none;}
+img{border:0; margin:0; padding:0;}
+a {color:#e46161; text-decoration:none;}
+a:hover{color:#b10606; text-decoration:none;}
+
+
+
+
+#tgzt01{ background: url(../../Images/tgzt/tgzt01.jpg) no-repeat center; width:980px; height:304px;}
+#tgzt02{ background: url(../../Images/tgzt/tgzt02.jpg) no-repeat center; width:980px; height:562px;}
+#tgzt04{ background: url(../../Images/tgzt/tgzt04.jpg) no-repeat center; width:980px; height:134px;}
+#tgzt04 ul{padding:53px 0 0 0; line-height: 20px; }
+.nav1{width:242px;height:103px; display:block; float:left; margin:0px 0px 0px 0px;background: url(../../Images/tgzt/tgzt.jpg) no-repeat center;}
+.nav2{width:74px;height:26px; display:block; float:right; margin:0px 0px 0px 0px;}
+.nav3{width:74px;height:26px; display:block; float:right; margin:0px 0px 0px 0px;}
+.nav4{width:74px;height:26px; display:block; float:right; margin:0px 0px 0px 0px; }
+
+.gamestart{width:100px; height:100px; display:block; overflow:hidden;  position:relative; top:140px;left:-400px; float:left;}
+.biaoti01{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:20px; left:195px; float:left;}
+.biaoti02{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:150px; left:225px; float:left;}
+.biaoti03{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:281px; left:190px;float:left;}
+.biaoti04{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:515px; left:-95px;  float:left;}
+.biaoti05{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:485px; left:90px; float:left;}
+.biaoti06{width:86px; height:28px; display:block; overflow:hidden;  position:relative; top:449px; left:290px;float:left;}
+
+
+										  
+								  
+#nav-01,#nav-02,#nav-03,#nav-04,#nav-05,#nav-06,#nav-07,#nav-08,#nav-09,#nav-10{display:none;  width:592px; padding:37px 39px; position:relative; }
+.tanchu button{ background:url(../../Images/tgzt/close.png) no-repeat;width:30px; height:34px; border:0px; position:absolute; right:47px; top:43px; cursor:pointer;}
+.tanchu dt{height:24px; overflow:hidden;}
+.tanchu dd{background:url(../../Images/tgzt/middle.jpg) repeat-y;}
+.tanchu_title{border-bottom:1px solid #de3d2f; width:538px; height:58px; margin:0 auto; display:block; text-align:left; padding-bottom:5px;}
+.tanchu_content{padding:25px 40px 5px 52px; text-align:left; line-height:22px; color:#482700;}
+.tanchu_content h1{font-size:12px; color:#482700;}
+
+.gogamebtn a{width:153px; height:60px; margin:0 auto; display:block; background:url(../../Images/tgzt/start.jpg) no-repeat;}
+.gogamebtn a:hover{width:153px; height:60px; margin:0 auto; display:block; background:url(../../Images/tgzt/start_hover.jpg) no-repeat;}
+
+
+
+
+

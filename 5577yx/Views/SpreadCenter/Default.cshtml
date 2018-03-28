@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+    
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Static &amp; Dynamic Tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>推广主页</title>
+<link href="~/Style/ace.min.css" rel="stylesheet" />
+<link href="~/Style/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Style/font-awesome.css" rel="stylesheet" />
+    <style>
+        * {margin:0px;padding:0px;
+        }
+        li {list-style:none;
+        }
+    </style>
+</head>
+
+<body style="background:#fff; ">
+<div class="page-content"  >
+  <div class="page-header">
+    <h1><i class="icon icon-desktop"></i>&nbsp; 我的工作台</h1>
+      <div style="margin-top:20px;">
+      <span style="margin-left: 80px;">推广员：@ViewData["UserName"]</span><br />
+      <span style="margin-left: 80px;" id="SpreadMoney">总业绩：@ViewData["SpreadMoney"]</span><br />
+      <span style="margin-left: 80px;">推广人数：@ViewData["SpreadCount"]人</span>
+      </div>
+  </div>
+   </div>
+
+</body>
+</html>

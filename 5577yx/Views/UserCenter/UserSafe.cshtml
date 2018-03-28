@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "用户安全中心";
+    Layout = "~/Views/UserCenter/UserCenterLayout.cshtml";
+}
+
+<div id="chright">
+    <div class="user_center_content">
+        <div class="user_center_content_inner" style="padding-bottom: 45px;">
+            <div class="user_center_content_title">
+                安全信息
+            </div>
+            <div class="user_center_content_right">
+                <div class="session session_first">
+                    <div class="security_block">
+                        <div>
+                            <span class="label">当前安全级别:</span> <span class="sec_bar"><span class="sec_bar_inner">
+                                @Html.Raw(ViewData["Safe"]) </span></span>
+                        </div>
+                        <div class="security_info">
+                            <div class="security_info_head">
+                            </div>
+                            <p>
+                                <span>@ViewData["SafeInfo"]</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="session session_line">
+                    <div class="s_left">
+                        <div class="user_center_icon @ViewData["EamilStyle"]">
+                        </div>
+                    </div>
+                    <div class="s_mid">
+                        <!--邮箱-->
+                        <h2>@ViewData["EmailText"]
+                        </h2>
+                        <p>
+                            通过邮箱认证的账户，玩家可在忘记密码的时候通过认证邮箱取回密码。
+                        </p>
+                    </div>
+                    <div class="s_right">
+                        <a href="/UserCenter/UserEmail" class="orange_link">设置&gt;&gt;</a>
+                    </div>
+                </div>
+                <!--身份证-->
+                <div class="session session_line">
+                    <div class="s_left">
+                        <div class="user_center_icon @ViewData["CardsStyle"]">
+                        </div>
+                    </div>
+                    <div class="s_mid">
+                        <h2>@ViewData["CardsText"]
+                        </h2>
+                        <p>
+                            您可以进入游戏，我们建议您绑定身份证提高账号安全性。
+                        </p>
+                    </div>
+                    <div class="s_right">
+                        <a href="/UserCenter/UserCard" class="orange_link">设置&gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+<div id="codecontent">
+    <div class="email2" style="@ViewData["MsgStyle"]">
+        <div class="emailtop">
+            <div class="pic">
+            </div>
+            <span id="Msg">@ViewData["Msg"]</span>
+        </div>
+        <p>
+            <span>5577yx中心提示:</span><br />
+            <span id="MsgText" style="color: red;">@ViewData["MsgText"]</span>
+            <label id="showtip">
+                <br />
+                <br />
+                <a href='/Home' style='text-decoration: none'>返回首页</a>
+            </label>
+        </p>
+    </div>
+
+    <div class="changecode" style="@ViewData["UpdatePwdStyle"]">
+        <div class="emailtop">
+            <div class="pic">
+            </div>
+            修改密码
+        </div>
+        <div class="infor">
+            <p>
+                新的密码：
+                    <input type="password" name="txtpwd1" id="txtpwd1">
+            </p>
+            <p>
+                重新输入：
+                    <input type="password" name="txtpwd" id="txtpwd">
+            </p>
+            <span style="color: Red; display: block; width: 200px; margin-left: 70px;"></span>
+            <input id="btnlogin" class="next" onclick="UpadatePwd()" />
+        </div>
+    </div>
+</div>

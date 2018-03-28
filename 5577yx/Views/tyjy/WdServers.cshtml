@@ -1,0 +1,78 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+   
+    <link href="~/Style/tyjy/images/main.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <title>桃园结义微端</title>
+</head>
+<body>
+<div class="main">
+    <div class="box fwq">
+    <ul class="log_info">
+      <li><a class="change" href="Wd" target="_blank">更换账号</a>@ViewData["UserName"]</li>
+      <li><a href="@ViewData["TjqfHref"]" target="_blank">@ViewData["TjqfName"]</a></li>
+      <li><a href="@ViewData["LLHref"]" target="_blank">@ViewData["LLName"]</a></li>
+    </ul>
+    <div class="fwq_list">
+     
+        <h3><a style="cursor:default;">服务器列表</a></h3>
+      <div class="list_cont">
+        <ul>
+          @Html.Raw(ViewData["gsHtml"])
+          
+          
+        </ul>
+      </div>
+    </div>
+    <div class="close" onclick="ExitGame();"></div>
+  <div class="small" onclick="Minimize();"></div>
+  </div>
+    
+  
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $.ajaxSetup({
+            cache: false
+        });
+        $('.global_logout').trigger('click');
+
+    });
+
+
+
+    //页面加载完毕，告诉应用程序显示界面
+    function LoadFinished() {
+        location.href = 'app://finished';
+    }
+    //最小化
+    function Minimize() {
+        location.href = 'app://minimize|';
+    }
+    function ExitGame() {
+        location.href = "app://exitgame|";
+    }
+    function LoadGame(flashurl) {
+        $.getJSON(flashurl + '&from_client=1&jsoncallback=?', function (url) {
+
+            location.href = 'app://loadgame|' + url + '&from_launcher=1';
+
+
+
+        });
+
+    }
+
+</script>
+    
+</body>
+</html>
+

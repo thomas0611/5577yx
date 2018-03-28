@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "新闻中心";
+    Layout = "~/Views/MainLayout.cshtml";
+}
+
+
+@Html.Action("Left", "Home")
+<div class="rightbar_home">
+    <div class="news_t_home">
+        <div class="news_t_ico">
+        </div>
+        <div class="news_t_more">
+        </div>
+    </div>
+    <div class="bk3">
+    </div>
+    <div class="cat-area_home">
+        <div class="news-select">
+            <em>公告发布：<a class="current">官方公告</a>
+                <a class="">精彩活动</a> </em>
+            <span class="filter-span">选择游戏：</span>
+            <input id="ddltype" type="hidden" value="2" />
+            <div class="news-bar">
+                <select id="Selyx" class="select2" onchange="InitPageContent('News')">
+                    <option value="0">全部游戏资讯</option>
+                </select>
+            </div>
+        </div>
+        <div class="content">
+            <ul class="list lh24 f12" id="IndexNews">
+                <li><span class="rt">2013-08-05</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1323"
+                    style="color: #FF0000">&lt;神将三国&gt;28服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-05</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1322"
+                    style="color: #FF0000">《天界》53服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-04</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1321"
+                    style="color: #FF0000">&lt;武尊&gt;8月5日更新公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-04</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1320"
+                    style="color: #FF0000">《热血海贼王》5日更新公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-04</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1319"
+                    style="color: #FF0000">&lt;武尊&gt;8月7日合服公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-04</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1318"
+                    style="color: #FF0000">《武尊》双线11服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-03</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1317"
+                    style="color: #000000">《神将三国》7-19、20-23、24-25服合区公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-03</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1316"
+                    style="color: #000000">&lt;冒险契约&gt;合区公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-02</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1315"
+                    style="color: #FF0000">《冒险契约》双线5服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-02</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1311"
+                    style="color: #000000">《盗魂传》8月6日更新公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-02</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1310"
+                    style="color: #FF0000">《战•三国》8月5日停机更新维护公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-02</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1309"
+                    style="color: #FF0000">《战•三国》8月5日停机更新维护公告</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-02</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1308"
+                    style="color: #FF0000">《天界》双线52服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-01</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1307"
+                    style="color: #000000">《热血海贼王》3服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-01</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1306"
+                    style="color: #FF0000">《战三国》6服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+                <li><span class="rt">2013-08-01</span>[官方公告] <a href="http://localhost:8080/news.aspx?newsid=3&id=1305"
+                    style="color: #FF0000">《武尊》双线10服火爆开启</a></li>
+                <li class="bk8 hr"></li>
+            </ul>
+        </div>
+        <div class="page1" style="width: 650px; margin-bottom: 1px;">
+            <div id="PageContent" class="flickr ">
+            </div>
+            <input type="hidden" id="txtPageNum" value="17" />
+        </div>
+    </div>
+</div>
+<script>
+    GetAllGame();
+    InitPageContent("News");
+    $(".news-select a").each(function (i, k) {
+        var li = $(this);
+        li.click(function () {
+            $('.news-select a').removeClass('current');
+            $(this).addClass('current');
+            i == 0 ? $("#ddltype").val(2) : $("#ddltype").val(4);
+            InitPageContent("News");
+        });
+    });
+</script>

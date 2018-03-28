@@ -1,0 +1,353 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Game</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script>
+        GetAllServer(@ViewData["GameId"]);
+        $(document).ajaxComplete(function () {
+            $("#Selfwq").val(@ViewData["tjqf"]);
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <form method="post" onsubmit="return @(ViewData["Function"])">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt; 游戏管理 &gt; 编辑信息
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+                <li><a onclick="tabs('#contentTab',1);" href="javascript:;">游戏详细信息</a></li>
+                <li style="@ViewData["IsShow"]"><a onclick="tabs('#contentTab',2);" href="javascript:;">游戏参数配置</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>游戏编号：
+                            </th>
+                            <td>
+                                <input id="txtgameno" name="GameNo" class="txtInput normal required" maxlength="50"
+                                    onkeyup="value=value.replace(/[^\w\.\/]/ig,'')" value="@ViewData["GameNo"]" />
+                                <label>*不可重复</label>
+                                <input id="GameId" type="hidden" name="GameId" value="@ViewData["GameId"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏名称：
+                            </th>
+                            <td>
+                                <input id="txtname" name="GameName" class="txtInput normal required" maxlength="50" value="@ViewData["GameName"]" />
+                                <label>*不可重复</label>
+                            </td>
+                        </tr>
+                        <tr style="@ViewData["IsShow"]">
+                            <th>推荐区服：
+                            </th>
+                            <td>
+                                <select id="Selfwq" name="tjqf" class="select2">
+                                    <option value="0">请选择推荐区服</option>
+                                </select>
+
+                                推广链接到本游戏注册后进入的区服如果未选择则跳转到平台
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏类型：
+                            </th>
+                            <td>
+                                <input id="txtleixing" name="GameLx" class="txtInput normal" maxlength="20" value="@ViewData["GameLx"]" />
+                                如：角色扮演
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏特征：
+                            </th>
+                            <td>
+                                <input id="txttezheng" name="GameTz" class="txtInput normal" maxlength="20" value="@ViewData["GameTz"]" />
+                                如：武侠
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>操作类型：
+                            </th>
+                            <td>
+                                <input id="txtczleixing" name="GameCzlx" class="txtInput normal" maxlength="20" value="@ViewData["GameCzlx"]" />
+                                如：即时战斗
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏画面：
+                            </th>
+                            <td>
+                                <input id="txthuamian" name="GameHm" class="txtInput normal" maxlength="20" value="@ViewData["GameHm"]" />
+                                如：3D
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>收费模式：
+                            </th>
+                            <td>
+                                <input id="txtsfmoshi" name="GameSfms" class="txtInput normal" maxlength="20" value="@ViewData["GameSfms"]" />
+                                如：商城收费
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏属性：
+                            </th>
+                            <td>
+                                <input type="checkbox" name="IsRed" checked="@ViewData["IsRed"]" />是否推荐
+                                <input type="checkbox" name="IsHot" checked="@ViewData["IsHot"]" />是否热门
+                                <input type="checkbox" name="IsLock" checked="@ViewData["IsLock"]" />是否上线
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>排序数字：
+                            </th>
+                            <td>
+                                <input id="txtSortId" name="SortId" type="number" class="txtInput small required digits" min="1"
+                                    maxlength="10" value="@ViewData["SortId"]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏币比例：
+                            </th>
+                            <td>1元=<input type="number" id="txtyxbbl" name="GameMoneyScale" class="txtInput normal required" 
+                                value="@ViewData["GameMoneyScale"]" maxlength="50" style="width: 80px" min="1"  />游戏币<label>*</label>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab_con" style="display: none;">
+                <table class="form_table">
+                    @*<tr>
+                        <th width="150">游戏币名称：
+                        </th>
+                        <td>
+                            <input id="txtyxbname" name="GameMoneyName" class="txtInput normal required" maxlength="50" value="@ViewData["GameMoneyName"]" />
+                            <label>*</label>
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <th>游戏官网：
+                        </th>
+                        <td>
+                            <input id="txtcom" name="GameCom" class="txtInput normal" maxlength="250" value="@ViewData["GameCom"]" />
+                            不包含http://
+                            可不填,若填写将跳转到该地址
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏论坛：
+                        </th>
+                        <td>
+                            <input id="txtbbs" name="GameBBS" class="txtInput normal" maxlength="50" value="@ViewData["GameBBS"]" />
+                            不包含http://
+                            可不填,若填写将跳转到该地址
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>开服活动地址：
+                        </th>
+                        <td>
+                            <input id="Txthd" name="game_url_hd" class="txtInput normal" value="@ViewData["game_url_hd"]"/>
+                            如：商城收费
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>登录器地址：
+                        </th>
+                        <td>
+                            <input id="txtDengLuQi" name="game_url_xzq" class="txtInput normal left" value="@ViewData["game_url_xzq"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File9" name="File9" onchange="Upload('SingleFile', 'txtDengLuQi', 'File9');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(227x121)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏截图1：
+                        </th>
+                        <td>
+                            <input id="txtimg1" name="Pic1" class="txtInput normal left" maxlength="255" value="@ViewData["Pic1"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File1" name="File1" onchange="Upload('SingleFile', 'txtimg1', 'File1');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(305x202)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏截图2：
+                        </th>
+                        <td>
+                            <input id="txtimg2" name="Pic2" class="txtInput normal left" maxlength="255" value="@ViewData["Pic2"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File2" name="File2" onchange="Upload('SingleFile', 'txtimg2', 'File2');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(305x202)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏截图3：
+                        </th>
+                        <td>
+                            <input id="txtimg3" name="Pic3" class="txtInput normal left" maxlength="255"  value="@ViewData["Pic3"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File3" name="File3" onchange="Upload('SingleFile', 'txtimg3', 'File3');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(305x202)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏截图4：
+                        </th>
+                        <td>
+                            <input id="txtimg4" name="Pic4" class="txtInput normal left" maxlength="255"  value="@ViewData["Pic4"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File4" name="File4" onchange="Upload('SingleFile', 'txtimg4', 'File4');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(305x202)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>推广列表图片：
+                        </th>
+                        <td>
+                            <input id="txtlbimg" name="GameListImg" class="txtInput normal left" maxlength="255" value="@ViewData["GameListImg"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File5" name="File5" onchange="Upload('SingleFile', 'txtlbimg', 'File5');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(230*113)（在推广页面显示）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏列表图片：
+                        </th>
+                        <td>
+                            <input id="txttjimg" name="IndexTjImg" class="txtInput normal left" maxlength="255" value="@ViewData["IndexTjImg"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File6" name="File6" onchange="Upload('SingleFile', 'txttjimg', 'File6');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(118*86)（在游戏列表显示）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏官网图片：
+                        </th>
+                        <td>
+                            <input id="txthbimg" name="IndexHbImg" class="txtInput normal left" maxlength="255" value="@ViewData["IndexHbImg"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File7" name="File7" onchange="Upload('SingleFile', 'txthbimg', 'File7');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(425*200)（在选服页面显示）
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>首页热门图片：
+                        </th>
+                        <td>
+                            <input id="txtsyhdimg" name="IndexHdImg" class="txtInput normal left" maxlength="255" value="@ViewData["IndexHdImg"]">
+                            <a href="javascript:;" class="files">
+                                <input type="file" id="File8" name="File8" onchange="Upload('SingleFile', 'txtsyhdimg', 'File8');" /></a>
+                            <span class="uploading">正在上传，请稍候...</span>(230*148)（在首页显示）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>游戏描述：
+                        </th>
+                        <td>
+                            <textarea id="txtdesc" name="GameDesc" cols="60" rows="4">@ViewData["GameDesc"]</textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab_con" style="display: none;">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>游戏名称：
+                            </th>
+                            <td>@ViewData["GameName"]</td>
+                        </tr>
+                        <tr>
+                            <th>代理商编号:
+                            </th>
+                            <td>
+                                <input id="txtagentid" name="AgentId" class="txtInput normal" maxlength="50" value="@ViewData["AgentId"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏登录网关：
+                            </th>
+                            <td>
+                                <input id="txtlogin" name="LoginCom" class="txtInput normal" maxlength="100" width="420" value="@ViewData["LoginCom"]" />
+                                不包含http://
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>游戏充值网关：
+                            </th>
+                            <td>
+                                <input id="txtpay" name="PayCom" class="txtInput normal" width="420" value="@ViewData["PayCom"]"/>
+                                不包含http://
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>查询帐号角色网关：
+                            </th>
+                            <td>
+                                <input id="txtexist" name="ExistCom" class="txtInput normal" width="420" value="@ViewData["ExistCom"]"/>
+                                不包含http://
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>登录密钥：
+                            </th>
+                            <td>
+                                <input id="txtloginticket" name="LoginTicket" class="txtInput normal" width="420" value="@ViewData["LoginTicket"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>充值密钥：
+                            </th>
+                            <td>
+                                <input id="txtpayticket" name="PayTicket" class="txtInput normal" width="420" value="@ViewData["PayTicket"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>查询密钥:
+                            </th>
+                            <td>
+                                <input id="txtselectticket" name="SelectTicket" class="txtInput normal" width="420" value="@ViewData["SelectTicket"]"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>防沉迷密钥:
+                            </th>
+                            <td>
+                                <input id="txtfcmticket" name="FcmTicket" class="txtInput normal" width="420" value="@ViewData["FcmTicket"]"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" id="btnSubmit" value="提交保存" class="btnSubmit" />
+                &nbsp;<input name="btnExit" type="button" class="btnSubmit" value="取 消" onclick="javascript: location.href = document.referrer;" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

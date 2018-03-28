@@ -1,0 +1,183 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="description" content="Static &amp; Dynamic Tables" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>添加下属</title>
+<link href="~/Style/font-awesome.css" rel="stylesheet" />
+<link href="~/Style/ace.min.css" rel="stylesheet" />
+<link href="~/Style/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/Admin/jquery.form.js"></script>
+<script src="~/Scripts/Admin/md5.js"></script>
+<script src="~/Scripts/Admin/Verify.js"></script>
+<script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <style>
+        * {margin:0px;padding:0px;border:0px;
+        }
+        
+        li {list-style:none;
+        }
+        input {height:30px;
+        }
+        .main {
+            padding-left:15px;
+            /*padding-top:20px;*/
+            margin-top: 0px;
+            color: #333;
+            line-height: 14px;
+            width: 790px;
+            min-height:600px;
+            overflow: auto;
+
+       }
+        .main .game .line li {
+            width: 225px;
+            height: 140px;
+            float: left;
+            text-align: center;
+            color: #333333;
+            margin-right: 30px;
+        }
+         .logindiv label {
+        width: auto;
+        font-size: 13px;
+    }
+         .msgE {
+    background: url(../Images/paytishi.png) no-repeat;
+    background-position: 10px -111px;
+    height: 19px;
+    font-size: 12px;
+    padding-left: 35px;
+    color: red;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    line-height: 20px;
+}
+
+.msg {
+    background: url(../Images/paytishi.png) no-repeat;
+    background-position: 10px 4px;
+    height: 19px;
+    font-size: 12px;
+    padding-left: 35px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    line-height: 20px;
+}
+
+.msgS {
+    background: url(../Images/paytishi.png) no-repeat;
+    background-position: 10px -68px;
+    height: 19px;
+    font-size: 12px;
+    padding-left: 35px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    line-height: 20px;
+    color: green;
+}
+
+.msgN {
+    background: url(../Images/paytishi.png) no-repeat;
+    background-position: 10px -153px;
+    height: 19px;
+    font-size: 12px;
+    padding-left: 35px;
+    color: sandybrown;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    line-height: 20px;
+}
+/*显示JS提示框*/
+#msgprint.pcent {
+    top: 35%;
+    right: 45%;
+    position: fixed;
+    z-index: 99;
+    opacity: 0.9;
+    display: none;
+}
+
+#msgprint.success, #msgprint.error, #msgprint.warning {
+    padding: 5px 10px 5px 24px;
+}
+
+#msgprint.success {
+    border: 1px solid #CCF9C1;
+    color: #090;
+    background: url(../images/msg_icon.gif) 5px 6px no-repeat #F1FEF2;
+}
+
+#msgprint.error {
+    border: 1px solid #F9F2B7;
+    color: #F00;
+    background: url(../images/msg_icon.gif) 5px -23px no-repeat #FDF8E8;
+}
+
+#msgprint.warning {
+    border: 1px solid #FAF4B8;
+    color: #C52716;
+    background: url(../images/msg_icon.gif) 5px -53px no-repeat #FEFDE9;
+}
+.btn_log {
+    width: 158px;
+    height: 44px;
+    background: url(../images/Login_en.gif);
+    border: none;
+    cursor: pointer;
+    line-height: 40px;
+}
+    </style>
+</head>
+
+<body style="background:#fff; ">
+    <div class="page-header" style="margin-top:10px;">
+    <h1><i class="icon icon-plus"></i>&nbsp;添加下属</h1>
+  </div>
+    <div class="main">
+    <form method="post" onsubmit="return SpreadUserReg()">
+        <div class="logindiv" style="padding: 0px; margin: 0px;margin-top:20px;">
+            <table style="text-align: center; font-size: 13px;">
+                <tr style="margin-bottom:13px;">
+                    <td>
+                        <label>用户名：</label></td>
+                    <td style="border-collapse: collapse">
+                        <input name="UserName"  type="text" id="UserName" class="txt1" onblur="VerifyUserName()"></td>
+                    <td style="text-align: left"><em>*</em><span id="UserNameMsg" class="msg">长度为6～16位，由字母、数字组成，且只能以字母开头</span></td>
+                </tr>
+                <tr >
+                    <td>
+                        <label>密码：</label></td>
+                    <td style="border:20px;height:32px;">
+                        <input name="PWD" type="password" id="PWD" class="txt1" onkeyup="VerifyPWDStrong()" onblur="VerifyPWD()" maxlength="16"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDMsg" class="msg">密码长度为6～16位，不可与账号相同。</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>确认密码：</label></td>
+                    <td>
+                        <input type="password" id="PWDAgain" name="PWDAgain" class="txt1" maxlength="16" onblur="VerifyPWDAgain()"></td>
+                    <td style="text-align: left"><em>*</em> <span id="PWDAgainMsg" class="msg">再一次输入密码进行确认，效验密码是否填写错误。</span></td>
+                </tr>
+            </table>
+        </div>
+        <div class="Login_an" style="padding-left:65px;">
+            <input type="submit" name="btnreg" value="" id="btnreg" class="btn_log">
+        </div>
+    </form>
+</div>
+
+    </body>
+    </html>
+
+
+

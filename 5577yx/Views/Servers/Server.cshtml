@@ -1,0 +1,141 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Server</title>
+    <link href="~/Scripts/Admin/ui/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
+    <link href="~/Style/Admin/style.css" rel="stylesheet" />
+    <link href="~/Style/Admin/pagination.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/Admin/jquery.form.js"></script>
+    <script src="~/Scripts/Admin/AdminFunction.js"></script>
+    <script src="~/Scripts/Admin/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#Selyx").val(@ViewData["GameId"]);
+            $("#State").val(@ViewData["State"]);
+        });
+    </script>
+</head>
+<body class="mainbody">
+    <form method="post" onsubmit="return @(ViewData["Function"])">
+        <div class="navigation">
+            <a href="javascript:location.href=document.referrer;" class="back">后退</a>首页 &gt; 服务器管理 &gt; 编辑信息
+        </div>
+        <div id="contentTab">
+            <ul class="tab_nav">
+                <li class="selected"><a onclick="" href="javascript:;">基本信息</a></li>
+            </ul>
+            <div class="tab_con" style="display: block;">
+                <table class="form_table">
+                    <col width="150px">
+                    <col>
+                    <tbody>
+                        <tr>
+                            <th>所属游戏：
+                            </th>
+                            <td>
+                                <select id="Selyx" name="GameId" class="select2">
+                                    <option value="0">请选择游戏</option>
+                                    @Html.Raw(ViewData["AllGameHtml"])
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器编号：
+                            </th>
+                            <td>
+                                <input id="txtno" name="ServerNo" class="txtInput normal required" maxlength="30"  value="@ViewData["ServerNo"]"  />
+                                <label>*游戏商指定</label>
+                                <input id="ServerIs" type="hidden" name="ServerId" value="@ViewData["ServerId"]" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器服数：
+                            </th>
+                            <td>
+                                <input id="txtqufu" name="QuFu" class="txtInput normal required" maxlength="3" value="@ViewData["QuFu"]" />
+                                <label>
+                                    *输入数字即可如 1
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器名称：
+                            </th>
+                            <td>
+                                <input id="txtname" name="ServerName" class="txtInput normal required" maxlength="50" value="@ViewData["ServerName"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器线路：
+                            </th>
+                            <td>
+                                <input id="txtline" name="Line" class="txtInput normal required" maxlength="50" value="@ViewData["Line"]" />
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器状态：
+                            </th>
+                            <td>
+                                <select id="State" name="State" class="select2">
+                                    <option value="1">即将开启</option>
+                                    <option value="2">维护</option>
+                                    <option value="3">流畅</option>
+                                    <option value="4">火爆</option>
+                                </select>
+                                *即将开启状态到开服时间将自动更新为正常状态。
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>开服时间：
+                            </th>
+                            <td>
+                                <input name="StartTime" class="txtInput normal required" value="@ViewData["StartTime"]" onclick="WdatePicker({ dateFmt: 'yyyy-M-d H:mm:ss' });" />
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>排序数字：
+                            </th>
+                            <td>
+                                <input id="txtSortId" name="Sort_Id" class="txtInput small required digits" value="@ViewData["Sort_Id"]"
+                                    maxlength="10">
+                                <label>*</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>服务器图标：
+                            </th>
+                            <td>
+                                <input id="txtImgUrl" name="Img" class="txtInput normal left" maxlength="255" value="@ViewData["Img"]">
+                                <a href="javascript:;" class="files">
+                                    <input type="file" id="FileUpload" name="FileUpload" onchange="Upload('SingleFile', 'txtImgUrl', 'FileUpload');" /></a>
+                                <span class="uploading">正在上传，请稍候...</span>(220x90)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th valign="top">服务器描述：
+                            </th>
+                            <td>
+                                <textarea id="txtContent" name="ServerDesc" cols="60" rows="4">@ViewData["ServerDesc"]</textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="foot_btn_box">
+                <input type="submit" id="btnSubmit" value="提交保存" class="btnSubmit" />
+                &nbsp;<input name="btnExit" type="button" class="btnSubmit" value="取 消" onclick="javascript: location.href = document.referrer;" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

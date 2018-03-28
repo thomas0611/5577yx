@@ -1,0 +1,129 @@
+﻿@{
+    Layout = "~/Views/MainLayout.cshtml";
+}
+<link href="~/Style/my_center.css" rel="stylesheet"/>
+<div >
+    
+        <div class="left">
+		<div class="side_bar">
+    	<ul>
+    		<li>
+            	<a href="/UserCenter"><span class="lo i1"></span>个人资料<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/MyInfoEdit"><span class="lo i2"></span>修改资料<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UserSafe"><span class="lo i3"></span>安全信息<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UserMsg"><span class="lo i4"></span>消息管理<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UserCard"><span class="lo i5"></span>身份证绑定<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UserEmail"><span class="lo i6"></span>邮箱绑定<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UserMiBao"><span class="lo i7"></span>设置密保<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/UpdatePwd"><span class="lo i8"></span>修改密码<span class="gui"></span></a>
+            </li>
+            <li>
+            	<a href="/UserCenter/LoginOut"><span class="lo i9"></span>退出登录<span class="gui"></span></a>
+            </li>
+            
+    	</ul>
+    </div>
+        <div class="customer" style="margin-top:-30px;">
+    	<div class="tit" style="margin-bottom:-20px;">开服预告</div>
+        <ul>
+        	<li class="e"><a href="mailto:gm@service.jj.cn">客服邮箱</a></li>
+            <li class="cus"><a href="http://www.jj.cn/service/index.php?sysid=10020">在线客服</a></li>
+            
+        </ul>	
+    </div>
+</div>
+        @*<div id="chleft">
+            <!--充值中心--->
+            <div id="ch_individual">
+                <img src="/Images/individual.jpg">
+            </div>
+            <div id="uccenter_nav">
+                <div class="ch_id @ViewData["UserInfoON"]">
+                    <a href="/UserCenter"><span class="@ViewData["menu1On"]"></span>基本资料</a>
+                </div>
+                <div class="ch_son">
+                    <a href="/UserCenter" class="ch_son_a_cur">
+                        <p class="@ViewData["MyInfoOn"]">
+                            我的资料
+                        </p>
+                    </a><a href="/UserCenter/MyInfoEdit">
+                        <p class="@ViewData["MyInfoEditOn"]">
+                            修改资料
+                        </p>
+                    </a>
+                </div>
+                <div class="ch_id @ViewData["UserInfo2On"]">
+                    <a href="/UserCenter/UserSafe"><span class="@ViewData["menu2On"]"></span>帐号信息</a>
+                </div>
+                <div class="ch_son">
+                    <a href="/UserCenter/UserSafe">
+                        <p class="@ViewData["UserSafeOn"]">
+                            安全信息
+                        </p>
+                    </a><a href="/UserCenter/UserMsg">
+                        <p class="@ViewData["UserMsgOn"]">
+                            消息管理
+                        </p>
+                    </a><a href="/UserCenter/UserCard">
+                        <p class="@ViewData["UserCardOn"]">
+                            身份证绑定
+                        </p>
+                    </a><a href="/UserCenter/UserEmail">
+                        <p class="@ViewData["UserEmailOn"]">
+                            邮箱绑定
+                        </p>
+                    </a><a href="/UserCenter/UserMiBao">
+                        <p class="@ViewData["UserMiBaoOn"]">
+                            设置密保
+                        </p>
+                    </a><a href="/UserCenter/UpdatePwd">
+                        <p class="@ViewData["UpdatePwdOn"]">
+                            修改密码
+                        </p>
+                    </a><a href="/UserCenter/LoginOut">
+                        <p>
+                            退出登录
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="ch_id @ViewData["UserInfo3On"]">
+                <a href="/UserCenter/PayHistory"><span class="@ViewData["menu3On"]"></span>充值中心</a>
+            </div>
+            <div class="ch_son">
+                <a href="/PayCenter/">
+                    <p class="">
+                        我要充值
+                    </p>
+                </a>
+            </div>
+            <div class="ch_son">
+                <a href="/UserCenter/PayHistory">
+                    <p class="@ViewData["PayHistoryOn"]">
+                        充值历史
+                    </p>
+                </a>
+            </div>
+            
+            <div class="ch_son" style="padding: 20px 0px;">
+                &nbsp;
+            </div>
+        </div>*@
+    <div class="right">
+        @RenderBody()
+    </div>
+</div>
